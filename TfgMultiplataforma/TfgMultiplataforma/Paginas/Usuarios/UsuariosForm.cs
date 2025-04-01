@@ -61,11 +61,56 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                         }
                         else
                         {
-                            MessageBox.Show("El cliente no pertenece a ningún equipo.");
+                            // Si no pertenece a ningún equipo, mostrar los botones de acción
+                            MostrarPantallaSinEquipo();
                         }
                     }
                 }
             }
+        }
+
+        private void MostrarPantallaSinEquipo()
+        {
+            // Limpiar todos los controles del formulario antes de agregar los nuevos
+            this.Controls.Clear();
+
+            // Crear y mostrar el texto que indica que no pertenece a ningún equipo
+            Label mensaje = new Label();
+            mensaje.Text = "No perteneces a ningún equipo";
+            mensaje.Font = new Font("Arial", 16);
+            mensaje.AutoSize = true; // Esto ajusta automáticamente el tamaño del texto para que se ajuste al contenido
+            mensaje.Location = new Point((this.ClientSize.Width - mensaje.Width) / 2 - 150, 50); // Desplazar más hacia la izquierda
+            this.Controls.Add(mensaje);
+
+            // Crear el botón para crear equipo
+            Button buttonCrearEquipo = new Button();
+            buttonCrearEquipo.Text = "Crear equipo";
+            buttonCrearEquipo.Size = new Size(200, 40);
+            buttonCrearEquipo.Location = new Point((this.ClientSize.Width - buttonCrearEquipo.Width) / 2, mensaje.Bottom + 20); // Centrado y debajo del mensaje
+            buttonCrearEquipo.Click += ButtonCrearEquipo_Click; // Evento click para crear equipo
+            this.Controls.Add(buttonCrearEquipo);
+
+            // Crear el botón para unirse a un equipo
+            Button buttonUnirseEquipo = new Button();
+            buttonUnirseEquipo.Text = "Unirse a un equipo";
+            buttonUnirseEquipo.Size = new Size(200, 40);
+            buttonUnirseEquipo.Location = new Point((this.ClientSize.Width - buttonUnirseEquipo.Width) / 2, buttonCrearEquipo.Bottom + 20); // Centrado y debajo del primer botón
+            buttonUnirseEquipo.Click += ButtonUnirseEquipo_Click; // Evento click para unirse a un equipo
+            this.Controls.Add(buttonUnirseEquipo);
+        }
+
+        private void ButtonCrearEquipo_Click(object sender, EventArgs e)
+        {
+            // Crear el formulario crearEquipo (lo abrimos como una nueva página para la creación de equipos)
+            crearEquipo formularioCrearEquipo = new crearEquipo(idCliente);  // Suponiendo que tienes un formulario llamado crearEquipo
+
+            // Mostrar el formulario para crear un nuevo equipo
+            formularioCrearEquipo.ShowDialog();
+        }
+
+        private void ButtonUnirseEquipo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Has pulsado el botón para unirte a un equipo.");
         }
 
         // Método para cargar los miembros del equipo

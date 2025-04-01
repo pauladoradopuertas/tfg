@@ -1,0 +1,144 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TfgMultiplataforma.Paginas.Usuarios
+{
+    public partial class crearEquipo : Form
+    {
+        private string conexionString = "Server=localhost;Database=tfg_bbdd;Uid=root;Pwd=;";
+        private UsuariosForm usuariosForm;
+        private int idUsuario;  // Asegúrate de tener el ID del usuario que está creando el equipo
+
+        public crearEquipo(int idUsuario)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;  // Guardamos el id del usuario que está creando el equipo
+
+            // Llenar el ComboBox con los valores del ENUM visible (si/no)
+            comboBox_visible_crear.Items.Add("si");
+            comboBox_visible_crear.Items.Add("no");
+            comboBox_visible_crear.SelectedIndex = 0;  // Seleccionar "si" por defecto, si lo deseas
+        }
+
+        private void button_cancelar_crear_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Cerrar sin guardar cambios
+
+        }
+
+        private void button_editar_crear_Click(object sender, EventArgs e)
+        {
+            string nombreEquipo = textBox_nombre_crear.Text.Trim();
+            string visible = comboBox_visible_crear.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(nombreEquipo) || string.IsNullOrEmpty(visible))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return;
+            }
+
+            CrearNuevoEquipo(nombreEquipo, visible);
+        }
+
+        private void CrearNuevoEquipo(string nombreEquipo, string visible)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                // Cambiar la consulta para agregar la fecha de creación con CURDATE() para solo la fecha
+                string query = @"
+                INSERT INTO equipos (nombre, visible, fecha_creacion) 
+                VALUES (@nombre, @visible, CURDATE()); 
+                SELECT LAST_INSERT_ID();"; // Obtiene el ID del equipo recién creado
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombreEquipo);
+                    cmd.Parameters.AddWithValue("@visible", visible);
+
+                    int idNuevoEquipo = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (idNuevoEquipo > 0)
+                    {
+                        // Ahora asignamos al usuario que creó el equipo como "Capitán"
+                        AsignarCapitanAlEquipo(idNuevoEquipo);
+
+                        MessageBox.Show("El equipo ha sido creado correctamente.");
+                        this.Close(); // Cerrar después de crear el equipo
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al crear el equipo.");
+                    }
+                }
+            }
+        }
+
+        // Método para asignar al usuario que crea el equipo como capitán
+        private void AsignarCapitanAlEquipo(int idEquipo)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                // Iniciar una transacción para asegurar que ambas operaciones sean atómicas
+                MySqlTransaction transaction = conn.BeginTransaction();
+
+                try
+                {
+                    // 1. Asignar el rol de "Capitán" al cliente en la tabla clientes
+                    string queryActualizarRol = @"
+                        UPDATE clientes 
+                        SET id_rol_usuario = (SELECT id_rol_usuario FROM roles_usuario WHERE nombre = 'Capitán'),
+                            id_estado_usuario = 1 
+                        WHERE id_cliente = @idUsuario;";
+
+
+                    using (MySqlCommand cmd = new MySqlCommand(queryActualizarRol, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                        cmd.Transaction = transaction;
+                        cmd.ExecuteNonQuery();  // Ejecutar la actualización del rol y estado
+                    }
+
+                    // 2. Insertar la relación entre el cliente y el equipo en la tabla clientes-equipos
+                    string queryInsertarClienteEquipo = @"
+                        INSERT INTO `clientes-equipos` (id_cliente, id_equipo) 
+                        VALUES (@idUsuario, @idEquipo);";
+
+                    using (MySqlCommand cmd = new MySqlCommand(queryInsertarClienteEquipo, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                        cmd.Parameters.AddWithValue("@idEquipo", idEquipo);
+                        cmd.Transaction = transaction;
+                        cmd.ExecuteNonQuery();  // Insertar la relación cliente-equipo
+                    }
+
+                    // Confirmar la transacción
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // En caso de error, revertir la transacción
+                    transaction.Rollback();
+                    MessageBox.Show("Error al asignar el rol de Capitán y el estado activo: " + ex.Message);
+                }
+            }
+        }
+
+        private void button_anadir_crear_Click(object sender, EventArgs e)
+        {
+            // Como el equipo está siendo creado, no tiene sentido agregar miembros inmediatamente
+            MessageBox.Show("Primero debes crear el equipo antes de añadir miembros.");
+        }
+    }
+}

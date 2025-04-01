@@ -105,6 +105,7 @@
             Controls.Add(label_rol_anadir);
             Controls.Add(label_usuario_anadir);
             Name = "anadirMiembro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Añadir Miembro";
             ResumeLayout(false);
             PerformLayout();
