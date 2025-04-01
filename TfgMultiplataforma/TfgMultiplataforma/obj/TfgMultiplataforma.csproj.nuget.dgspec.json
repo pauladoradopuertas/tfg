@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\paula\\Desktop\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj": {}
+    "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj": {}
   },
   "projects": {
-    "C:\\Users\\paula\\Desktop\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj": {
+    "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paula\\Desktop\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj",
+        "projectUniqueName": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj",
         "projectName": "TfgMultiplataforma",
-        "projectPath": "C:\\Users\\paula\\Desktop\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj",
+        "projectPath": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\TfgMultiplataforma.csproj",
         "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paula\\Desktop\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\obj\\",
+        "outputPath": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

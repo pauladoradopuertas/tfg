@@ -14,7 +14,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 {
     public partial class UsuariosForm : Form
     {
-        private int idCliente;
+        public int idCliente;
         private int idEquipo; // Almacenamos el id del equipo
         private string nombreEquipoActual; // Para almacenar el nombre actual del equipo
 
@@ -34,7 +34,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         }
 
         // Método para obtener el id del equipo al que pertenece el cliente
-        private void ObtenerEquipoDelCliente(int idCliente)
+        public void ObtenerEquipoDelCliente(int idCliente)
         {
             using (MySqlConnection conn = new MySqlConnection(conexionString))
             {

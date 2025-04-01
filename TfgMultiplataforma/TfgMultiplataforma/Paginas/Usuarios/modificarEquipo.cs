@@ -16,11 +16,13 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 
         private int idEquipo;
         private string conexionString = "Server=localhost;Database=tfg_bbdd;Uid=root;Pwd=;";
+        private UsuariosForm usuariosForm; // Atributo para la referencia del formulario
 
         public modificarEquipo(int idEquipo, UsuariosForm usuariosForm)
         {
             InitializeComponent();
             this.idEquipo = idEquipo;
+            this.usuariosForm = usuariosForm; // Guardamos la referencia correctamente
             CargarDatosEquipo(); // Cargar datos del equipo al abrir el formulario
         }
 
@@ -212,6 +214,10 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                     if (filasAfectadas > 0)
                     {
                         MessageBox.Show("Los cambios se han guardado correctamente.");
+
+                        // Llamar al método de actualización en UsuariosForm antes de cerrar
+                        usuariosForm.ObtenerEquipoDelCliente(usuariosForm.idCliente);
+
                         this.Close(); // Cerrar la ventana después de guardar los cambios
                     }
                     else
