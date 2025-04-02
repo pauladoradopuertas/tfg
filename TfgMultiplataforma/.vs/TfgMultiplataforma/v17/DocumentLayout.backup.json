@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\crearequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\modificarequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 277,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -112,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UsuariosForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
@@ -120,20 +120,22 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T16:19:28.748Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "UsuariosForm.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
               "ToolTip": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAowGgAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAASwKIAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T16:34:44.823Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -187,26 +189,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "crearEquipo.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "crearEquipo.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
-              "ToolTip": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs [Design]",
-              "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs [Design]",
+              "ToolTip": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T16:31:16.753Z",
               "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "crearEquipo.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
               "ToolTip": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAowGIAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAASwDMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T16:35:09.302Z",
               "IsPinned": true,

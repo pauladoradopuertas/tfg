@@ -46,6 +46,10 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             }
 
             CrearNuevoEquipo(nombreEquipo, visible);
+            // Abrir UsuariosForm para cargar los datos del nuevo equipo
+            UsuariosForm usuariosForm = new UsuariosForm(idUsuario);
+            usuariosForm.Show();
+            this.Close(); // Cerrar crearEquipo
         }
 
         private void CrearNuevoEquipo(string nombreEquipo, string visible)

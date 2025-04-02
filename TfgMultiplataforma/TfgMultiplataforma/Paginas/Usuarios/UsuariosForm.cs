@@ -106,6 +106,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 
             // Mostrar el formulario para crear un nuevo equipo
             formularioCrearEquipo.ShowDialog();
+            this.Close(); // Cerrar definitivamente la ventana actual
         }
 
         private void ButtonUnirseEquipo_Click(object sender, EventArgs e)
@@ -156,6 +157,10 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             if (dialogResult == DialogResult.Yes)
             {
                 AbandonarEquipo(idCliente, idEquipo);
+                // Cerrar este formulario y abrir uno nuevo
+                this.Close(); // Cierra la ventana actual
+                UsuariosForm nuevosUsuariosForm = new UsuariosForm(idCliente); // Nueva instancia
+                nuevosUsuariosForm.Show(); // Mostrar (recargará los datos limpios)
             }
         }
 
