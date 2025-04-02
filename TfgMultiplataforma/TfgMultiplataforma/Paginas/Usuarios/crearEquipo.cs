@@ -58,26 +58,38 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             {
                 conn.Open();
 
-                // Cambiar la consulta para agregar la fecha de creación con CURDATE() para solo la fecha
-                string query = @"
-                INSERT INTO equipos (nombre, visible, fecha_creacion) 
-                VALUES (@nombre, @visible, CURDATE()); 
-                SELECT LAST_INSERT_ID();"; // Obtiene el ID del equipo recién creado
-
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                // 1. Primero verificamos si el equipo ya existe
+                string queryVerificar = "SELECT COUNT(*) FROM equipos WHERE nombre = @nombre";
+                using (MySqlCommand cmdVerificar = new MySqlCommand(queryVerificar, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nombre", nombreEquipo);
-                    cmd.Parameters.AddWithValue("@visible", visible);
+                    cmdVerificar.Parameters.AddWithValue("@nombre", nombreEquipo);
+                    int existe = Convert.ToInt32(cmdVerificar.ExecuteScalar());
 
-                    int idNuevoEquipo = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (existe > 0)
+                    {
+                        MessageBox.Show("Ya existe un equipo con ese nombre. Por favor, elige otro.");
+                        return; // Salir del método sin crear el equipo
+                    }
+                }
+
+                // 2. Si no existe, procedemos a crearlo
+                string queryInsert = @"
+                    INSERT INTO equipos (nombre, visible, fecha_creacion) 
+                    VALUES (@nombre, @visible, CURDATE()); 
+                    SELECT LAST_INSERT_ID();";
+
+                using (MySqlCommand cmdInsert = new MySqlCommand(queryInsert, conn))
+                {
+                    cmdInsert.Parameters.AddWithValue("@nombre", nombreEquipo);
+                    cmdInsert.Parameters.AddWithValue("@visible", visible);
+
+                    int idNuevoEquipo = Convert.ToInt32(cmdInsert.ExecuteScalar());
 
                     if (idNuevoEquipo > 0)
                     {
-                        // Ahora asignamos al usuario que creó el equipo como "Capitán"
                         AsignarCapitanAlEquipo(idNuevoEquipo);
-
                         MessageBox.Show("El equipo ha sido creado correctamente.");
-                        this.Close(); // Cerrar después de crear el equipo
+                        this.Close();
                     }
                     else
                     {

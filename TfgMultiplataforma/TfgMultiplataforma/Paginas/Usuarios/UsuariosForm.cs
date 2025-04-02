@@ -111,7 +111,14 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 
         private void ButtonUnirseEquipo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Has pulsado el botón para unirte a un equipo.");
+            this.Hide(); // Ocultar la ventana actual
+            unirseEquipo formUnirse = new unirseEquipo(idCliente);
+            formUnirse.ShowDialog();
+
+            // Al cerrar el formulario de unirse, mostrar el formulario actualizado
+            UsuariosForm nuevosUsuariosForm = new UsuariosForm(idCliente);
+            nuevosUsuariosForm.Show();
+            this.Close();
         }
 
         // Método para cargar los miembros del equipo
