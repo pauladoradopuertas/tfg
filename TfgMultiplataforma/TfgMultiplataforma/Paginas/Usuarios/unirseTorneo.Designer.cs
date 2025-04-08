@@ -110,7 +110,7 @@
             Controls.Add(label_unir_torneo);
             Name = "unirseTorneo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "unirseEvento";
+            Text = "Unirse Torneo";
             Load += unirseTorneo_Load;
             ResumeLayout(false);
             PerformLayout();

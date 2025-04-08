@@ -153,7 +153,7 @@
             Controls.Add(label_nombre_editar);
             Name = "modificarEquipo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "modificarEquipo";
+            Text = "Modificar Equipo";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -45,6 +45,7 @@
             listBox_torneos = new ListBox();
             comboBox_eventos = new ComboBox();
             label_usuarios_torneo = new Label();
+            button_ver_perfil = new Button();
             tabControl_usuario.SuspendLayout();
             tabPage_usuario_equipo.SuspendLayout();
             tabPage_usuario_eventos.SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             tabControl_usuario.Controls.Add(tabPage_usuario_equipo);
             tabControl_usuario.Controls.Add(tabPage_usuario_eventos);
-            tabControl_usuario.Location = new Point(2, 2);
+            tabControl_usuario.Location = new Point(3, 38);
             tabControl_usuario.Name = "tabControl_usuario";
             tabControl_usuario.SelectedIndex = 0;
             tabControl_usuario.Size = new Size(797, 429);
@@ -233,11 +234,23 @@
             label_usuarios_torneo.TabIndex = 1;
             label_usuarios_torneo.Text = "Torneos";
             // 
+            // button_ver_perfil
+            // 
+            button_ver_perfil.Font = new Font("Segoe UI", 12F);
+            button_ver_perfil.Location = new Point(683, 12);
+            button_ver_perfil.Name = "button_ver_perfil";
+            button_ver_perfil.Size = new Size(110, 35);
+            button_ver_perfil.TabIndex = 18;
+            button_ver_perfil.Text = "Perfil";
+            button_ver_perfil.UseVisualStyleBackColor = true;
+            button_ver_perfil.Click += button_ver_perfil_Click;
+            // 
             // UsuariosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 447);
+            ClientSize = new Size(812, 479);
+            Controls.Add(button_ver_perfil);
             Controls.Add(tabControl_usuario);
             Name = "UsuariosForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -272,5 +285,6 @@
         private ListBox listBox_miembros;
         private Label label_estado_torneo;
         private Button button_unir_torneo;
+        private Button button_ver_perfil;
     }
 }

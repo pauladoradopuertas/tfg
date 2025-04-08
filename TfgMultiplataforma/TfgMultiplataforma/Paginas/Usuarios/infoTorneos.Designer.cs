@@ -97,7 +97,7 @@
             Controls.Add(label_titulo_torneo);
             Name = "infoTorneos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "infoTorneos";
+            Text = "Info Torneos";
             ResumeLayout(false);
             PerformLayout();
         }

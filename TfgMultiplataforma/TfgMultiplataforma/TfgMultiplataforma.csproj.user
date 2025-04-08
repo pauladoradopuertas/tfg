@@ -16,6 +16,9 @@
     <Compile Update="Paginas\Usuarios\modificarEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\Usuarios\perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Paginas\Usuarios\unirseEquipo.cs">
       <SubType>Form</SubType>
     </Compile>

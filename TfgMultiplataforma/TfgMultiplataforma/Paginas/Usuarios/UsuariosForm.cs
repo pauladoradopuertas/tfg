@@ -434,5 +434,14 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             unirseTorneo formUnirseTorneo = new unirseTorneo(idCliente, idEquipo);
             formUnirseTorneo.Show(); // En vez de ShowDialog
         }
+
+        private void button_ver_perfil_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario Perfil (perfil.cs)
+            perfil perfilForm = new perfil(idCliente); // Asegúrate de que el formulario PerfilForm existe y acepta el idCliente como parámetro.
+
+            // Mostrar el formulario de perfil
+            perfilForm.ShowDialog(); // Usamos ShowDialog para mostrarlo como una ventana modal (bloqueante)
+        }
     }
 }

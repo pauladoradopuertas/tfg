@@ -120,7 +120,7 @@
             Controls.Add(label_titulo_unirse);
             Name = "unirseEquipo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "unirseEquipo";
+            Text = "Unirse Equipo";
             ResumeLayout(false);
             PerformLayout();
         }
