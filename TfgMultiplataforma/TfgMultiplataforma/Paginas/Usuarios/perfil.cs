@@ -26,6 +26,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         private void perfil_Load(object sender, EventArgs e)
         {
             CargarDatosCliente(idCliente);
+            CargarHistorialPartidas(idCliente);  // Cargar el historial de partidas
         }
 
         // Método para cargar los datos del cliente
@@ -179,6 +180,94 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         private void button_editar_perfil_Click(object sender, EventArgs e)
         {
             GuardarCambios(); // Llamamos al método para guardar los cambios
+        }
+
+        private void CargarHistorialPartidas(int idCliente)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                // Obtener el id del equipo del cliente
+                int idEquipo = ObtenerIdEquipoCliente(idCliente);
+
+                // Consulta para obtener las partidas en las que ha participado el equipo
+                string query = @"
+        SELECT 
+            ep1.id_partida,  -- Añadir el campo id_partida
+            e1.nombre AS equipo1, 
+            e2.nombre AS equipo2, 
+            ep1.puntos AS puntos_equipo1, 
+            ep2.puntos AS puntos_equipo2
+        FROM 
+            `equipos-partidas` ep1
+        INNER JOIN 
+            `equipos-partidas` ep2 ON ep1.id_partida = ep2.id_partida AND ep1.id_equipo != ep2.id_equipo
+        INNER JOIN 
+            equipos e1 ON ep1.id_equipo = e1.id_equipo
+        INNER JOIN 
+            equipos e2 ON ep2.id_equipo = e2.id_equipo
+        WHERE 
+            ep1.id_partida IN (SELECT id_partida FROM `equipos-partidas` WHERE id_equipo = @idEquipo)
+        ORDER BY ep1.id_partida";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idEquipo", idEquipo);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listBox_partidas_perfil.Items.Clear();  // Limpiar el ListBox
+
+                        // Usamos un HashSet para evitar duplicados
+                        HashSet<int> partidasCargadas = new HashSet<int>();
+
+                        while (reader.Read())
+                        {
+                            int idPartida = Convert.ToInt32(reader["id_partida"]);  // Ahora se puede acceder a id_partida
+
+                            // Solo agregar la partida si no se ha añadido antes
+                            if (!partidasCargadas.Contains(idPartida))
+                            {
+                                string equipo1 = reader["equipo1"].ToString();
+                                string equipo2 = reader["equipo2"].ToString();
+                                int puntosEquipo1 = Convert.ToInt32(reader["puntos_equipo1"]);
+                                int puntosEquipo2 = Convert.ToInt32(reader["puntos_equipo2"]);
+
+                                string partidaInfo = $"{equipo1} ({puntosEquipo1} puntos) vs {equipo2} ({puntosEquipo2} puntos)";
+                                listBox_partidas_perfil.Items.Add(partidaInfo);
+
+                                // Añadimos el id de la partida al HashSet para evitar duplicados
+                                partidasCargadas.Add(idPartida);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Método para obtener el id del equipo del cliente
+        private int ObtenerIdEquipoCliente(int idCliente)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = "SELECT id_equipo FROM clientes WHERE id_cliente = @idCliente";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
+
+        private void button_volver_historial_perfil_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

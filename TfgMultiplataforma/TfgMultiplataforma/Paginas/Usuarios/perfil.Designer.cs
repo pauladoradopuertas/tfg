@@ -280,6 +280,7 @@
             button_volver_historial_perfil.TabIndex = 5;
             button_volver_historial_perfil.Text = "Volver";
             button_volver_historial_perfil.UseVisualStyleBackColor = true;
+            button_volver_historial_perfil.Click += button_volver_historial_perfil_Click;
             // 
             // listBox_partidas_perfil
             // 

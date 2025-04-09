@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\unirsetorneo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|c:\\users\\paula\\documents\\github\\tfg\\tfgmultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\tfgmultiplataforma\\paginas\\usuarios\\unirsetorneo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{76E1666A-FE7C-4B95-896A-80376663642A}|TfgMultiplataforma\\TfgMultiplataforma.csproj|solutionrelative:tfgmultiplataforma\\paginas\\usuarios\\unirsetorneo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -90,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 277,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Document",
@@ -102,12 +102,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Login.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T15:16:22.314Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Login.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Login.cs",
@@ -116,8 +115,7 @@
               "ViewState": "AgIAADkAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T15:16:59.315Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -129,26 +127,24 @@
               "RelativeToolTip": "TfgMultiplataforma\\Registro.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T15:03:10.146Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Registro.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Registro.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Registro.cs",
               "ToolTip": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Registro.cs",
               "RelativeToolTip": "TfgMultiplataforma\\Registro.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAiwHIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwF8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T15:11:33.156Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "UsuariosForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
@@ -156,12 +152,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T16:19:28.748Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UsuariosForm.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\UsuariosForm.cs",
@@ -170,12 +165,11 @@
               "ViewState": "AgIAAK4BAAAAAAAAAAAxwMEBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T16:34:44.823Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "modificarEquipo.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\modificarEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\modificarEquipo.cs",
@@ -183,12 +177,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\modificarEquipo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T14:50:02.205Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "modificarEquipo.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\modificarEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\modificarEquipo.cs",
@@ -197,12 +190,11 @@
               "ViewState": "AgIAANoAAAAAAAAAAAAUwMgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T15:10:11.063Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "anadirMiembro.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\anadirMiembro.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\anadirMiembro.cs",
@@ -210,12 +202,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\anadirMiembro.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T15:04:37.752Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "anadirMiembro.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\anadirMiembro.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\anadirMiembro.cs",
@@ -224,8 +215,7 @@
               "ViewState": "AgIAAFAAAAAAAAAAAAA0wBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T15:18:48.038Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -237,12 +227,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T16:31:16.753Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "crearEquipo.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\crearEquipo.cs",
@@ -251,12 +240,11 @@
               "ViewState": "AgIAAIsAAAAAAAAAAAAkwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T16:35:09.302Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "unirseEquipo.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\unirseEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\unirseEquipo.cs",
@@ -264,12 +252,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\unirseEquipo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T15:29:40.156Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "unirseEquipo.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\unirseEquipo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\unirseEquipo.cs",
@@ -278,12 +265,11 @@
               "ViewState": "AgIAAG8AAAAAAAAAAAAuwDIAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T15:30:34.966Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "infoTorneos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\infoTorneos.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\infoTorneos.cs",
@@ -291,12 +277,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\infoTorneos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T15:58:45.499Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "infoTorneos.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\infoTorneos.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\infoTorneos.cs",
@@ -305,8 +290,7 @@
               "ViewState": "AgIAACQCAAAAAAAAAAAAAPwBAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T16:04:54.6Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -318,12 +302,11 @@
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\unirseTorneo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T13:38:24.351Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "unirseTorneo.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\unirseTorneo.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\unirseTorneo.cs",
@@ -332,12 +315,11 @@
               "ViewState": "AgIAAL4AAAAAAAAAAAAkwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T13:58:35.385Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
               "Title": "perfil.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\perfil.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\perfil.cs",
@@ -350,13 +332,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "perfil.cs",
               "DocumentMoniker": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\perfil.cs",
               "RelativeDocumentMoniker": "TfgMultiplataforma\\Paginas\\Usuarios\\perfil.cs",
               "ToolTip": "C:\\Users\\paula\\Documents\\GitHub\\tfg\\TfgMultiplataforma\\TfgMultiplataforma\\Paginas\\Usuarios\\perfil.cs",
               "RelativeToolTip": "TfgMultiplataforma\\Paginas\\Usuarios\\perfil.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAuwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAAwPUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T14:56:31.945Z",
               "IsPinned": true,
