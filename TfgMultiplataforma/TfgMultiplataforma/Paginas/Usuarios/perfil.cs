@@ -27,6 +27,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         {
             CargarDatosCliente(idCliente);
             CargarHistorialPartidas(idCliente);  // Cargar el historial de partidas
+            CargarEstadisticasCliente(idCliente);
         }
 
         // Método para cargar los datos del cliente
@@ -268,6 +269,67 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         private void button_volver_historial_perfil_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CargarEstadisticasCliente(int idCliente)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT partidas_jugadas, partidas_ganadas, partidas_perdidas, partidas_empatadas 
+                         FROM estadisticas 
+                         WHERE id_cliente = @idCliente";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int jugadas = Convert.ToInt32(reader["partidas_jugadas"]);
+                            int ganadas = Convert.ToInt32(reader["partidas_ganadas"]);
+                            int perdidas = Convert.ToInt32(reader["partidas_perdidas"]);
+                            int empatadas = Convert.ToInt32(reader["partidas_empatadas"]);
+
+                            label_partidas_jugadas.Text = $"Partidas jugadas: {jugadas}";
+                            label_partidas_ganadas.Text = $"Partidas ganadas: {ganadas}";
+                            label_partidas_perdidas.Text = $"Partidas perdidas: {perdidas}";
+                            label_partidas_empatadas.Text = $"Partidas empatadas: {empatadas}";
+                        }
+                        else
+                        {
+                            label_partidas_jugadas.Text = "Partidas jugadas: 0";
+                            label_partidas_ganadas.Text = "Partidas ganadas: 0";
+                            label_partidas_perdidas.Text = "Partidas perdidas: 0";
+                            label_partidas_empatadas.Text = "Partidas empatadas: 0";
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button_volver_estadisticas_perfil_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_cerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Seguro que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Reinicia completamente la aplicación (cerrando todos los formularios)
+                System.Diagnostics.Process.Start(Application.ExecutablePath); // Relanza la app (volverá a mostrar el login)
+                Application.Exit(); // Cierra completamente la aplicación
+
+            // Mostrar el formulario de login
+            Login loginForm = new Login();
+                loginForm.Show();
+            }
         }
     }
 }

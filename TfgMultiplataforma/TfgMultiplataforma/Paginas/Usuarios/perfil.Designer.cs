@@ -52,9 +52,17 @@
             button_volver_historial_perfil = new Button();
             listBox_partidas_perfil = new ListBox();
             Estadisticas = new TabPage();
+            label_partidas_empatadas = new Label();
+            label_partidas_perdidas = new Label();
+            label_partidas_ganadas = new Label();
+            label_partidas_jugadas = new Label();
+            label_estadisticas_perfil = new Label();
+            button_volver_estadisticas_perfil = new Button();
+            button_cerrarSesion = new Button();
             tabControl_perfil.SuspendLayout();
             tabPage_perfil.SuspendLayout();
             tabPage_historial.SuspendLayout();
+            Estadisticas.SuspendLayout();
             SuspendLayout();
             // 
             // button_editar_perfil
@@ -101,10 +109,10 @@
             tabControl_perfil.Controls.Add(tabPage_perfil);
             tabControl_perfil.Controls.Add(tabPage_historial);
             tabControl_perfil.Controls.Add(Estadisticas);
-            tabControl_perfil.Location = new Point(12, 12);
+            tabControl_perfil.Location = new Point(12, 28);
             tabControl_perfil.Name = "tabControl_perfil";
             tabControl_perfil.SelectedIndex = 0;
-            tabControl_perfil.Size = new Size(900, 633);
+            tabControl_perfil.Size = new Size(900, 617);
             tabControl_perfil.TabIndex = 21;
             // 
             // tabPage_perfil
@@ -129,7 +137,7 @@
             tabPage_perfil.Location = new Point(4, 29);
             tabPage_perfil.Name = "tabPage_perfil";
             tabPage_perfil.Padding = new Padding(3);
-            tabPage_perfil.Size = new Size(892, 600);
+            tabPage_perfil.Size = new Size(892, 584);
             tabPage_perfil.TabIndex = 0;
             tabPage_perfil.Text = "Perfil";
             tabPage_perfil.UseVisualStyleBackColor = true;
@@ -295,19 +303,99 @@
             // 
             // Estadisticas
             // 
+            Estadisticas.Controls.Add(label_partidas_empatadas);
+            Estadisticas.Controls.Add(label_partidas_perdidas);
+            Estadisticas.Controls.Add(label_partidas_ganadas);
+            Estadisticas.Controls.Add(label_partidas_jugadas);
+            Estadisticas.Controls.Add(label_estadisticas_perfil);
+            Estadisticas.Controls.Add(button_volver_estadisticas_perfil);
             Estadisticas.Location = new Point(4, 29);
             Estadisticas.Name = "Estadisticas";
             Estadisticas.Padding = new Padding(3);
-            Estadisticas.Size = new Size(892, 600);
+            Estadisticas.Size = new Size(892, 584);
             Estadisticas.TabIndex = 2;
             Estadisticas.Text = "Estadísticas";
             Estadisticas.UseVisualStyleBackColor = true;
+            // 
+            // label_partidas_empatadas
+            // 
+            label_partidas_empatadas.AutoSize = true;
+            label_partidas_empatadas.Font = new Font("Segoe UI", 12F);
+            label_partidas_empatadas.Location = new Point(101, 323);
+            label_partidas_empatadas.Name = "label_partidas_empatadas";
+            label_partidas_empatadas.Size = new Size(65, 28);
+            label_partidas_empatadas.TabIndex = 24;
+            label_partidas_empatadas.Text = "label4";
+            // 
+            // label_partidas_perdidas
+            // 
+            label_partidas_perdidas.AutoSize = true;
+            label_partidas_perdidas.Font = new Font("Segoe UI", 12F);
+            label_partidas_perdidas.Location = new Point(101, 248);
+            label_partidas_perdidas.Name = "label_partidas_perdidas";
+            label_partidas_perdidas.Size = new Size(65, 28);
+            label_partidas_perdidas.TabIndex = 23;
+            label_partidas_perdidas.Text = "label3";
+            // 
+            // label_partidas_ganadas
+            // 
+            label_partidas_ganadas.AutoSize = true;
+            label_partidas_ganadas.Font = new Font("Segoe UI", 12F);
+            label_partidas_ganadas.Location = new Point(101, 167);
+            label_partidas_ganadas.Name = "label_partidas_ganadas";
+            label_partidas_ganadas.Size = new Size(65, 28);
+            label_partidas_ganadas.TabIndex = 22;
+            label_partidas_ganadas.Text = "label2";
+            // 
+            // label_partidas_jugadas
+            // 
+            label_partidas_jugadas.AutoSize = true;
+            label_partidas_jugadas.Font = new Font("Segoe UI", 12F);
+            label_partidas_jugadas.Location = new Point(101, 96);
+            label_partidas_jugadas.Name = "label_partidas_jugadas";
+            label_partidas_jugadas.Size = new Size(65, 28);
+            label_partidas_jugadas.TabIndex = 21;
+            label_partidas_jugadas.Text = "label1";
+            // 
+            // label_estadisticas_perfil
+            // 
+            label_estadisticas_perfil.AutoSize = true;
+            label_estadisticas_perfil.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label_estadisticas_perfil.Location = new Point(303, 17);
+            label_estadisticas_perfil.Name = "label_estadisticas_perfil";
+            label_estadisticas_perfil.Size = new Size(202, 46);
+            label_estadisticas_perfil.TabIndex = 20;
+            label_estadisticas_perfil.Text = "Estadísticas";
+            label_estadisticas_perfil.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_volver_estadisticas_perfil
+            // 
+            button_volver_estadisticas_perfil.Font = new Font("Segoe UI", 12F);
+            button_volver_estadisticas_perfil.Location = new Point(303, 420);
+            button_volver_estadisticas_perfil.Name = "button_volver_estadisticas_perfil";
+            button_volver_estadisticas_perfil.Size = new Size(195, 47);
+            button_volver_estadisticas_perfil.TabIndex = 19;
+            button_volver_estadisticas_perfil.Text = "Volver";
+            button_volver_estadisticas_perfil.UseVisualStyleBackColor = true;
+            button_volver_estadisticas_perfil.Click += button_volver_estadisticas_perfil_Click;
+            // 
+            // button_cerrarSesion
+            // 
+            button_cerrarSesion.Font = new Font("Segoe UI", 12F);
+            button_cerrarSesion.Location = new Point(763, 9);
+            button_cerrarSesion.Name = "button_cerrarSesion";
+            button_cerrarSesion.Size = new Size(145, 42);
+            button_cerrarSesion.TabIndex = 25;
+            button_cerrarSesion.Text = "Cerrar Sesión";
+            button_cerrarSesion.UseVisualStyleBackColor = true;
+            button_cerrarSesion.Click += button_cerrarSesion_Click;
             // 
             // perfil
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(924, 657);
+            Controls.Add(button_cerrarSesion);
             Controls.Add(tabControl_perfil);
             Name = "perfil";
             StartPosition = FormStartPosition.CenterScreen;
@@ -318,6 +406,8 @@
             tabPage_perfil.PerformLayout();
             tabPage_historial.ResumeLayout(false);
             tabPage_historial.PerformLayout();
+            Estadisticas.ResumeLayout(false);
+            Estadisticas.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -347,5 +437,12 @@
         private Button button_volver_perfil;
         private TabPage Estadisticas;
         private Label label_historial_perfil;
+        private Label label_estadisticas_perfil;
+        private Button button_volver_estadisticas_perfil;
+        private Label label_partidas_empatadas;
+        private Label label_partidas_perdidas;
+        private Label label_partidas_ganadas;
+        private Label label_partidas_jugadas;
+        private Button button_cerrarSesion;
     }
 }
