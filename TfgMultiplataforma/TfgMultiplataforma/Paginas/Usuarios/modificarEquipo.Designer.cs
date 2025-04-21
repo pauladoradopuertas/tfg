@@ -91,6 +91,7 @@
             // 
             // comboBox_visible
             // 
+            comboBox_visible.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_visible.FormattingEnabled = true;
             comboBox_visible.Location = new Point(396, 405);
             comboBox_visible.Name = "comboBox_visible";

@@ -216,6 +216,7 @@
             // 
             // comboBox_eventos
             // 
+            comboBox_eventos.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_eventos.Font = new Font("Segoe UI", 12F);
             comboBox_eventos.FormattingEnabled = true;
             comboBox_eventos.Location = new Point(144, 66);

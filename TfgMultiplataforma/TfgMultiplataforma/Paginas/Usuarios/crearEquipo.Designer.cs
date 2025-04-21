@@ -72,6 +72,7 @@
             // 
             // comboBox_visible_crear
             // 
+            comboBox_visible_crear.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_visible_crear.FormattingEnabled = true;
             comboBox_visible_crear.Location = new Point(398, 387);
             comboBox_visible_crear.Name = "comboBox_visible_crear";

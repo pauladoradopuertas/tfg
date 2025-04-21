@@ -79,6 +79,7 @@
             // 
             // comboBox_torneos
             // 
+            comboBox_torneos.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_torneos.Font = new Font("Segoe UI", 12F);
             comboBox_torneos.FormattingEnabled = true;
             comboBox_torneos.Location = new Point(158, 96);

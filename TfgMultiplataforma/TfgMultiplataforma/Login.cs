@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TfgMultiplataforma.Paginas.Aministrador;
 using TfgMultiplataforma.Paginas.Usuarios;
 
 namespace TfgMultiplataforma
@@ -44,27 +45,42 @@ namespace TfgMultiplataforma
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT id_cliente FROM clientes WHERE usuario = @usuario AND contrasena = @contrasena";
+                    string consulta = @"
+                        SELECT id_cliente, id_rol_usuario 
+                        FROM clientes 
+                        WHERE usuario = @usuario AND contrasena = @contrasena";
+
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@usuario", usuario);
                         comando.Parameters.AddWithValue("@contrasena", contrasena);
 
-                        object resultado = comando.ExecuteScalar();
-
-                        if (resultado != null)
+                        using (MySqlDataReader reader = comando.ExecuteReader())
                         {
-                            int idCliente = Convert.ToInt32(resultado);
+                            if (reader.Read())
+                            {
+                                int idCliente = Convert.ToInt32(reader["id_cliente"]);
+                                int idRolUsuario = Convert.ToInt32(reader["id_rol_usuario"]);
 
-                            // Abre UsuariosForm y pasa el ID del usuario
-                            UsuariosForm usuariosForm = new UsuariosForm(idCliente);
-                            usuariosForm.Show();
+                                this.Hide(); // Ocultamos el login
 
-                           
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuario o Contraseña Incorrecta");
+                                if (idRolUsuario == 3) // Admin
+                                {
+                                    AdminForm adminForm = new AdminForm();
+                                    adminForm.FormClosed += (s, args) => this.Show(); // Para volver al login al cerrar
+                                    adminForm.Show();
+                                }
+                                else // Capitán o miembro
+                                {
+                                    UsuariosForm usuariosForm = new UsuariosForm(idCliente);
+                                    usuariosForm.FormClosed += (s, args) => this.Show();
+                                    usuariosForm.Show();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario o Contraseña Incorrecta");
+                            }
                         }
                     }
                 }

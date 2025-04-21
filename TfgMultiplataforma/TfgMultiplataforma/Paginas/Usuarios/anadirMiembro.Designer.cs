@@ -45,6 +45,7 @@
             // 
             // comboBox_rol_anadir
             // 
+            comboBox_rol_anadir.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_rol_anadir.FormattingEnabled = true;
             comboBox_rol_anadir.Location = new Point(142, 123);
             comboBox_rol_anadir.Name = "comboBox_rol_anadir";
