@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
     public partial class AdminForm : Form
     {
         private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private Dictionary<string, int> equiposDict = new Dictionary<string, int>();
 
         public AdminForm()
         {
@@ -23,6 +25,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         private void AdminForm_Load(object sender, EventArgs e)
         {
             CargarEstadosUsuario();
+            CargarEquipos("");
         }
 
         private void CargarEstadosUsuario()
@@ -194,6 +197,114 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 MessageBox.Show("Selecciona un usuario para ver su información.");
             }
+        }
+
+        private void CargarEquipos(string filtro)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = "SELECT id_equipo, nombre FROM equipos WHERE nombre LIKE @filtro";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listBox_equipos_admin.Items.Clear();
+                        equiposDict.Clear();
+
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32("id_equipo");
+                            string nombre = reader.GetString("nombre");
+
+                            listBox_equipos_admin.Items.Add(nombre);
+                            equiposDict[nombre] = id;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button_buscar_equipo_admin_Click(object sender, EventArgs e)
+        {
+            string filtro = textBox_buscar_equipo_admin.Text.Trim();
+            CargarEquipos(filtro);
+        }
+
+        private void button_borrar_equipo_admin_Click(object sender, EventArgs e)
+        {
+            if (listBox_equipos_admin.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un equipo para borrar.");
+                return;
+            }
+
+            string nombreEquipo = listBox_equipos_admin.SelectedItem.ToString();
+
+            if (!equiposDict.ContainsKey(nombreEquipo))
+            {
+                MessageBox.Show("No se encontró el ID del equipo seleccionado.");
+                return;
+            }
+
+            int idEquipo = equiposDict[nombreEquipo];
+
+            DialogResult confirmacion = MessageBox.Show(
+                $"¿Estás seguro de que quieres borrar el equipo '{nombreEquipo}'?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                BorrarEquipo(idEquipo);
+                CargarEquipos("");
+            }
+        }
+
+        private void BorrarEquipo(int idEquipo)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = "DELETE FROM equipos WHERE id_equipo = @id";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idEquipo);
+
+                    int filas = cmd.ExecuteNonQuery();
+                    if (filas > 0)
+                        MessageBox.Show("Equipo borrado correctamente.");
+                    else
+                        MessageBox.Show("No se pudo borrar el equipo.");
+                }
+            }
+        }
+
+        private void button_info_equipo_admin_Click(object sender, EventArgs e)
+        {
+            if (listBox_equipos_admin.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un equipo para ver su información.");
+                return;
+            }
+
+            string nombreEquipo = listBox_equipos_admin.SelectedItem.ToString();
+
+            if (!equiposDict.ContainsKey(nombreEquipo))
+            {
+                MessageBox.Show("No se encontró el ID del equipo seleccionado.");
+                return;
+            }
+
+            int idEquipo = equiposDict[nombreEquipo];
+            InfoEquipo infoEquipoForm = new InfoEquipo(idEquipo);
+            infoEquipoForm.ShowDialog();
         }
     }
 }

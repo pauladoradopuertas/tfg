@@ -54,7 +54,7 @@
             label_juegos_estadisticas = new Label();
             listBox_estadisticas_estadisticas = new ListBox();
             comboBox_juegos_estadisticas = new ComboBox();
-            label1 = new Label();
+            label_estadisticas_admin = new Label();
             tabPage_torneos_admin = new TabPage();
             listBox_torneos_torneos = new ListBox();
             label2 = new Label();
@@ -301,7 +301,7 @@
             tabPage_estadisticas_admin.Controls.Add(label_juegos_estadisticas);
             tabPage_estadisticas_admin.Controls.Add(listBox_estadisticas_estadisticas);
             tabPage_estadisticas_admin.Controls.Add(comboBox_juegos_estadisticas);
-            tabPage_estadisticas_admin.Controls.Add(label1);
+            tabPage_estadisticas_admin.Controls.Add(label_estadisticas_admin);
             tabPage_estadisticas_admin.Location = new Point(4, 29);
             tabPage_estadisticas_admin.Name = "tabPage_estadisticas_admin";
             tabPage_estadisticas_admin.Padding = new Padding(3);
@@ -342,15 +342,15 @@
             comboBox_juegos_estadisticas.TabIndex = 49;
             comboBox_juegos_estadisticas.SelectedIndexChanged += comboBox_juegos_estadisticas_SelectedIndexChanged;
             // 
-            // label1
+            // label_estadisticas_admin
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.Location = new Point(299, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(205, 35);
-            label1.TabIndex = 1;
-            label1.Text = "Lista de Torneos";
+            label_estadisticas_admin.AutoSize = true;
+            label_estadisticas_admin.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label_estadisticas_admin.Location = new Point(299, 21);
+            label_estadisticas_admin.Name = "label_estadisticas_admin";
+            label_estadisticas_admin.Size = new Size(148, 35);
+            label_estadisticas_admin.TabIndex = 1;
+            label_estadisticas_admin.Text = "Estadísticas";
             // 
             // tabPage_torneos_admin
             // 
@@ -429,7 +429,7 @@
         private ComboBox comboBox_juegos_historial;
         private Label label_historial_admin;
         private TabPage tabPage_estadisticas_admin;
-        private Label label1;
+        private Label label_estadisticas_admin;
         private TabPage tabPage_torneos_admin;
         private Button button_volver_perfil;
         private TextBox textBox_info_email_admin;
