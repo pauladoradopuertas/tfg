@@ -46,7 +46,14 @@
             listBox_equipos_admin = new ListBox();
             label_equipos_admin = new Label();
             tabPage_torneo_admin = new TabPage();
-            label1 = new Label();
+            button_crear_torneo_admin = new Button();
+            button_editar_torneo_admin = new Button();
+            button_borrar_torneo_admin = new Button();
+            label_estado_torneo_admin = new Label();
+            button_info_torneo_admin = new Button();
+            listBox_torneo_admin = new ListBox();
+            comboBox_estado_torneo_admin = new ComboBox();
+            label_torneo_admin = new Label();
             tabPage_crear_admin = new TabPage();
             label2 = new Label();
             tabControl_usuario.SuspendLayout();
@@ -244,7 +251,14 @@
             // 
             // tabPage_torneo_admin
             // 
-            tabPage_torneo_admin.Controls.Add(label1);
+            tabPage_torneo_admin.Controls.Add(button_crear_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(button_editar_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(button_borrar_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(label_estado_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(button_info_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(listBox_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(comboBox_estado_torneo_admin);
+            tabPage_torneo_admin.Controls.Add(label_torneo_admin);
             tabPage_torneo_admin.Location = new Point(4, 29);
             tabPage_torneo_admin.Name = "tabPage_torneo_admin";
             tabPage_torneo_admin.Padding = new Padding(3);
@@ -253,15 +267,84 @@
             tabPage_torneo_admin.Text = "Torneos";
             tabPage_torneo_admin.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button_crear_torneo_admin
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.Location = new Point(261, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(205, 35);
-            label1.TabIndex = 1;
-            label1.Text = "Lista de Torneos";
+            button_crear_torneo_admin.Location = new Point(38, 329);
+            button_crear_torneo_admin.Name = "button_crear_torneo_admin";
+            button_crear_torneo_admin.Size = new Size(103, 52);
+            button_crear_torneo_admin.TabIndex = 60;
+            button_crear_torneo_admin.Text = "Crear torneo";
+            button_crear_torneo_admin.UseVisualStyleBackColor = true;
+            // 
+            // button_editar_torneo_admin
+            // 
+            button_editar_torneo_admin.Location = new Point(487, 329);
+            button_editar_torneo_admin.Name = "button_editar_torneo_admin";
+            button_editar_torneo_admin.Size = new Size(103, 52);
+            button_editar_torneo_admin.TabIndex = 59;
+            button_editar_torneo_admin.Text = "Editar torneo";
+            button_editar_torneo_admin.UseVisualStyleBackColor = true;
+            // 
+            // button_borrar_torneo_admin
+            // 
+            button_borrar_torneo_admin.Location = new Point(334, 329);
+            button_borrar_torneo_admin.Name = "button_borrar_torneo_admin";
+            button_borrar_torneo_admin.Size = new Size(103, 52);
+            button_borrar_torneo_admin.TabIndex = 58;
+            button_borrar_torneo_admin.Text = "Borrar";
+            button_borrar_torneo_admin.UseVisualStyleBackColor = true;
+            button_borrar_torneo_admin.Click += button_borrar_torneo_admin_Click;
+            // 
+            // label_estado_torneo_admin
+            // 
+            label_estado_torneo_admin.AutoSize = true;
+            label_estado_torneo_admin.Font = new Font("Segoe UI", 15F);
+            label_estado_torneo_admin.Location = new Point(27, 79);
+            label_estado_torneo_admin.Name = "label_estado_torneo_admin";
+            label_estado_torneo_admin.Size = new Size(90, 35);
+            label_estado_torneo_admin.TabIndex = 57;
+            label_estado_torneo_admin.Text = "Estado";
+            // 
+            // button_info_torneo_admin
+            // 
+            button_info_torneo_admin.Location = new Point(653, 329);
+            button_info_torneo_admin.Name = "button_info_torneo_admin";
+            button_info_torneo_admin.Size = new Size(103, 52);
+            button_info_torneo_admin.TabIndex = 56;
+            button_info_torneo_admin.Text = "Ver Información";
+            button_info_torneo_admin.UseVisualStyleBackColor = true;
+            // 
+            // listBox_torneo_admin
+            // 
+            listBox_torneo_admin.Font = new Font("Segoe UI", 10F);
+            listBox_torneo_admin.FormattingEnabled = true;
+            listBox_torneo_admin.HorizontalScrollbar = true;
+            listBox_torneo_admin.ItemHeight = 23;
+            listBox_torneo_admin.Location = new Point(38, 148);
+            listBox_torneo_admin.Name = "listBox_torneo_admin";
+            listBox_torneo_admin.Size = new Size(718, 165);
+            listBox_torneo_admin.TabIndex = 55;
+            // 
+            // comboBox_estado_torneo_admin
+            // 
+            comboBox_estado_torneo_admin.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_estado_torneo_admin.Font = new Font("Segoe UI", 12F);
+            comboBox_estado_torneo_admin.FormattingEnabled = true;
+            comboBox_estado_torneo_admin.Location = new Point(149, 79);
+            comboBox_estado_torneo_admin.Name = "comboBox_estado_torneo_admin";
+            comboBox_estado_torneo_admin.Size = new Size(578, 36);
+            comboBox_estado_torneo_admin.TabIndex = 54;
+            comboBox_estado_torneo_admin.SelectedIndexChanged += comboBox_estado_torneo_admin_SelectedIndexChanged;
+            // 
+            // label_torneo_admin
+            // 
+            label_torneo_admin.AutoSize = true;
+            label_torneo_admin.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label_torneo_admin.Location = new Point(261, 23);
+            label_torneo_admin.Name = "label_torneo_admin";
+            label_torneo_admin.Size = new Size(205, 35);
+            label_torneo_admin.TabIndex = 1;
+            label_torneo_admin.Text = "Lista de Torneos";
             // 
             // tabPage_crear_admin
             // 
@@ -319,9 +402,9 @@
         private Label label_equipos_admin;
         private TabPage tabPage_torneo_admin;
         private TabPage tabPage_crear_admin;
-        private Label label1;
+        private Label label_torneo_admin;
         private Label label2;
-        private Button button1;
+        private Button button_editar_torneo_admin;
         private Label label_estado_admin;
         private Button button_info_usuario_admin;
         private ListBox listBox_usuarios_admin;
@@ -330,5 +413,11 @@
         private Button button_buscar_equipo_admin;
         private Label label_buscar_equipo_admin;
         private TextBox textBox_buscar_equipo_admin;
+        private Button button_borrar_torneo_admin;
+        private Label label_estado_torneo_admin;
+        private Button button_info_torneo_admin;
+        private ListBox listBox_torneo_admin;
+        private ComboBox comboBox_estado_torneo_admin;
+        private Button button_crear_torneo_admin;
     }
 }

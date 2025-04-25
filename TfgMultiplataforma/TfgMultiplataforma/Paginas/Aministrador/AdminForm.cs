@@ -26,6 +26,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         {
             CargarEstadosUsuario();
             CargarEquipos("");
+            CargarEstadosTorneo();
         }
 
         private void CargarEstadosUsuario()
@@ -57,7 +58,6 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             // Cargar usuarios activos al inicio
             CargarUsuariosPorEstado(1);
         }
-
 
 
         private void comboBox_estado_admin_SelectedIndexChanged(object sender, EventArgs e)
@@ -305,6 +305,121 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             int idEquipo = equiposDict[nombreEquipo];
             InfoEquipo infoEquipoForm = new InfoEquipo(idEquipo);
             infoEquipoForm.ShowDialog();
+        }
+
+        private void CargarEstadosTorneo()
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = "SELECT id_estado, nombre FROM estados";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable estados = new DataTable();
+                    estados.Load(reader);
+
+                    comboBox_estado_torneo_admin.DisplayMember = "nombre";
+                    comboBox_estado_torneo_admin.ValueMember = "id_estado";
+                    comboBox_estado_torneo_admin.DataSource = estados;
+                }
+            }
+
+        }
+
+
+        private void CargarTorneosPorEstado(int idEstado)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = "SELECT nombre FROM torneos WHERE id_estado = @estado";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@estado", idEstado);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listBox_torneo_admin.Items.Clear();
+                        bool hayTorneos = false;
+
+
+                        while (reader.Read())
+                        {
+                            hayTorneos = true;
+                            string nombreTorneo = reader["nombre"].ToString();
+                            listBox_torneo_admin.Items.Add(nombreTorneo);
+                        }
+
+                        if (!hayTorneos)
+                        {
+                            listBox_torneo_admin.Items.Add("No hay ningún torneo");
+                        }
+                    }
+                }
+            }
+        }
+
+        private void comboBox_estado_torneo_admin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_estado_torneo_admin.SelectedValue is int idEstado)
+            {
+                CargarTorneosPorEstado(idEstado);
+            }
+        }
+
+        private void button_borrar_torneo_admin_Click(object sender, EventArgs e)
+        {
+            if (listBox_torneo_admin.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un torneo para borrar.");
+                return;
+            }
+
+            string nombreTorneo = listBox_torneo_admin.SelectedItem.ToString();
+
+            DialogResult confirmacion = MessageBox.Show(
+                $"¿Estás seguro de que quieres borrar el torneo '{nombreTorneo}'?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                BorrarTorneo(nombreTorneo);
+
+                // Volver a cargar la lista de torneos del estado actual
+                if (comboBox_estado_torneo_admin.SelectedValue is int idEstado)
+                {
+                    CargarTorneosPorEstado(idEstado);
+                }
+            }
+        }
+
+        private void BorrarTorneo(string nombreTorneo)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                string query = "DELETE FROM torneos WHERE nombre = @nombre";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombreTorneo);
+                    int filas = cmd.ExecuteNonQuery();
+
+                    if (filas > 0)
+                        MessageBox.Show("Torneo borrado correctamente.");
+                    else
+                        MessageBox.Show("No se pudo borrar el torneo.");
+                }
+            }
         }
     }
 }
