@@ -7,10 +7,16 @@
     <Compile Update="Paginas\Aministrador\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\Aministrador\CrearTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Paginas\Aministrador\EditarTorneo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Paginas\Aministrador\InfoEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\Aministrador\InfoTorneo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Paginas\Aministrador\InfoUsuario.cs">

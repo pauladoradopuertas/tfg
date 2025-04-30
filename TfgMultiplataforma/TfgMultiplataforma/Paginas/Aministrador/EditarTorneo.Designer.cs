@@ -262,7 +262,7 @@
             Controls.Add(label_nombre_editar_torneo);
             Name = "EditarTorneo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EditarTorneo";
+            Text = "Editar Torneo";
             Load += EditarTorneo_Load;
             ResumeLayout(false);
             PerformLayout();

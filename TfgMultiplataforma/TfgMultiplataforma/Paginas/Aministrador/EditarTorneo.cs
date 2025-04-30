@@ -297,5 +297,9 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             }
         }
 
+        private void textBox_cant_equipos_editar_torneo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

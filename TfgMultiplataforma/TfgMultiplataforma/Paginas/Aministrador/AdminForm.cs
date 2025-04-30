@@ -439,5 +439,49 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             EditarTorneo editarTorneoForm = new EditarTorneo(nombreTorneo, this);
             editarTorneoForm.ShowDialog(); // Utiliza ShowDialog si deseas que sea modal (espera hasta que se cierre)
         }
+
+        private void button_crear_torneo_admin_Click(object sender, EventArgs e)
+        {
+            CrearTorneo crearTorneoForm = new CrearTorneo();
+            crearTorneoForm.ShowDialog(); // ShowDialog si quieres que sea modal
+        }
+
+        private int ObtenerIdTorneoSeleccionado()
+        {
+            if (listBox_torneo_admin.SelectedItem == null || listBox_torneo_admin.SelectedItem.ToString() == "No hay ningún torneo")
+            {
+                MessageBox.Show("Selecciona un torneo válido.");
+                return -1;
+            }
+
+            string nombreTorneo = listBox_torneo_admin.SelectedItem.ToString();
+
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+                string query = "SELECT id_torneo FROM torneos WHERE nombre = @nombre";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombreTorneo);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                        return Convert.ToInt32(result);
+                }
+            }
+
+            MessageBox.Show("No se encontró el ID del torneo.");
+            return -1;
+        }
+
+
+        private void button_info_torneo_admin_Click(object sender, EventArgs e)
+        {
+            int idTorneoSeleccionado = ObtenerIdTorneoSeleccionado(); // Método que tú tengas para obtener el ID
+            if (idTorneoSeleccionado > 0)
+            {
+                InfoTorneo infoForm = new InfoTorneo(idTorneoSeleccionado);
+                infoForm.ShowDialog();
+            }
+        }
     }
 }

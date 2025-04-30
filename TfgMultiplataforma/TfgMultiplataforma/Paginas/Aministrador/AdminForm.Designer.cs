@@ -275,6 +275,7 @@
             button_crear_torneo_admin.TabIndex = 60;
             button_crear_torneo_admin.Text = "Crear torneo";
             button_crear_torneo_admin.UseVisualStyleBackColor = true;
+            button_crear_torneo_admin.Click += button_crear_torneo_admin_Click;
             // 
             // button_editar_torneo_admin
             // 
@@ -314,6 +315,7 @@
             button_info_torneo_admin.TabIndex = 56;
             button_info_torneo_admin.Text = "Ver Información";
             button_info_torneo_admin.UseVisualStyleBackColor = true;
+            button_info_torneo_admin.Click += button_info_torneo_admin_Click;
             // 
             // listBox_torneo_admin
             // 
