@@ -341,5 +341,15 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 }
             }
         }
+
+        private void listBox_equipo_torneos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_nombre_equipo_admin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

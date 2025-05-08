@@ -419,5 +419,10 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 modal.ShowDialog();
             }
         }
+
+        private void label_estado_info_torneo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

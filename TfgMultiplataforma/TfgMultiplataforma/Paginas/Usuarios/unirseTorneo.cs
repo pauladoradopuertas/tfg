@@ -205,5 +205,10 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 CargarTorneosDisponibles(juegoSeleccionado.Id);
             }
         }
+
+        private void label_juegos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

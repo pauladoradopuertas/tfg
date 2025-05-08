@@ -85,19 +85,23 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             //Crear y mostrar el texto que indica que no pertenece a ningún equipo
             Label mensaje = new Label();
             mensaje.Text = "No perteneces a ningún equipo";
-            mensaje.Font = new Font("Arial", 16);
+            mensaje.Font = new Font("Segoe UI", 20);
             mensaje.AutoSize = true; 
             mensaje.Location = new Point((this.ClientSize.Width - mensaje.Width) / 2 - 150, 50);
+            mensaje.Anchor = AnchorStyles.Top;
             this.Controls.Add(mensaje);
 
             //Crear el botón para crear equipo
             Button buttonCrearEquipo = new Button();
             buttonCrearEquipo.Text = "Crear equipo";
             buttonCrearEquipo.Size = new Size(200, 40);
+            buttonCrearEquipo.Font = new Font("Segoe UI", 12);
+            buttonCrearEquipo.Cursor = Cursors.Hand;
             buttonCrearEquipo.Location = new Point((this.ClientSize.Width - buttonCrearEquipo.Width) / 2, mensaje.Bottom + 20);
             buttonCrearEquipo.Click += ButtonCrearEquipo_Click;
             buttonCrearEquipo.BackColor = Color.DodgerBlue;
             buttonCrearEquipo.ForeColor = Color.Black;
+            buttonCrearEquipo.Anchor = AnchorStyles.Top;
             this.Controls.Add(buttonCrearEquipo);
 
             //Crear el botón para unirse a un equipo
@@ -108,6 +112,8 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             buttonUnirseEquipo.Click += ButtonUnirseEquipo_Click;
             buttonUnirseEquipo.BackColor= Color.DodgerBlue;
             buttonUnirseEquipo.ForeColor= Color.Black;
+            buttonUnirseEquipo.Anchor= AnchorStyles.Top;
+            buttonUnirseEquipo.Cursor = Cursors.Hand;
             this.Controls.Add(buttonUnirseEquipo);
         }
 

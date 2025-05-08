@@ -370,5 +370,15 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 }
             }
         }
+
+        private void textBox_info_usuario_admin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_juegos_historial_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

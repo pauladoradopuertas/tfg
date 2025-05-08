@@ -43,20 +43,25 @@
             // 
             // textBox_nombre_crear
             // 
+            textBox_nombre_crear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_nombre_crear.BackColor = Color.White;
             textBox_nombre_crear.BorderStyle = BorderStyle.FixedSingle;
-            textBox_nombre_crear.Location = new Point(181, 74);
+            textBox_nombre_crear.Cursor = Cursors.IBeam;
+            textBox_nombre_crear.Font = new Font("Segoe UI", 15F);
+            textBox_nombre_crear.Location = new Point(205, 142);
             textBox_nombre_crear.Name = "textBox_nombre_crear";
-            textBox_nombre_crear.Size = new Size(716, 27);
+            textBox_nombre_crear.Size = new Size(777, 41);
             textBox_nombre_crear.TabIndex = 42;
             // 
             // button_cancelar_crear
             // 
+            button_cancelar_crear.Anchor = AnchorStyles.Top;
             button_cancelar_crear.BackColor = Color.FromArgb(255, 0, 127);
-            button_cancelar_crear.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_cancelar_crear.Location = new Point(186, 522);
+            button_cancelar_crear.Cursor = Cursors.Hand;
+            button_cancelar_crear.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_cancelar_crear.Location = new Point(205, 605);
             button_cancelar_crear.Name = "button_cancelar_crear";
-            button_cancelar_crear.Size = new Size(162, 59);
+            button_cancelar_crear.Size = new Size(162, 72);
             button_cancelar_crear.TabIndex = 41;
             button_cancelar_crear.Text = "Cancelar";
             button_cancelar_crear.UseVisualStyleBackColor = false;
@@ -64,11 +69,13 @@
             // 
             // button_editar_crear
             // 
+            button_editar_crear.Anchor = AnchorStyles.Top;
             button_editar_crear.BackColor = Color.DodgerBlue;
-            button_editar_crear.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_editar_crear.Location = new Point(645, 522);
+            button_editar_crear.Cursor = Cursors.Hand;
+            button_editar_crear.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_editar_crear.Location = new Point(672, 605);
             button_editar_crear.Name = "button_editar_crear";
-            button_editar_crear.Size = new Size(162, 59);
+            button_editar_crear.Size = new Size(164, 72);
             button_editar_crear.TabIndex = 40;
             button_editar_crear.Text = "Editar equipo";
             button_editar_crear.UseVisualStyleBackColor = false;
@@ -76,32 +83,37 @@
             // 
             // comboBox_visible_crear
             // 
+            comboBox_visible_crear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_visible_crear.BackColor = Color.White;
             comboBox_visible_crear.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_visible_crear.Font = new Font("Segoe UI", 15F);
             comboBox_visible_crear.FormattingEnabled = true;
-            comboBox_visible_crear.Location = new Point(398, 387);
+            comboBox_visible_crear.Location = new Point(476, 502);
             comboBox_visible_crear.Name = "comboBox_visible_crear";
-            comboBox_visible_crear.Size = new Size(282, 28);
+            comboBox_visible_crear.Size = new Size(506, 43);
             comboBox_visible_crear.TabIndex = 39;
             // 
             // label_visible_crear
             // 
+            label_visible_crear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_visible_crear.AutoSize = true;
-            label_visible_crear.Font = new Font("Segoe UI", 15F);
+            label_visible_crear.Font = new Font("Segoe UI", 20F);
             label_visible_crear.ForeColor = Color.FromArgb(51, 51, 51);
-            label_visible_crear.Location = new Point(21, 378);
+            label_visible_crear.Location = new Point(26, 497);
             label_visible_crear.Name = "label_visible_crear";
-            label_visible_crear.Size = new Size(328, 35);
+            label_visible_crear.Size = new Size(436, 46);
             label_visible_crear.TabIndex = 38;
             label_visible_crear.Text = "Visible para otros jugadores";
             // 
             // button_anadir_crear
             // 
+            button_anadir_crear.Anchor = AnchorStyles.Top;
             button_anadir_crear.BackColor = Color.Orange;
-            button_anadir_crear.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_anadir_crear.Location = new Point(452, 315);
+            button_anadir_crear.Cursor = Cursors.Hand;
+            button_anadir_crear.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_anadir_crear.Location = new Point(476, 389);
             button_anadir_crear.Name = "button_anadir_crear";
-            button_anadir_crear.Size = new Size(151, 42);
+            button_anadir_crear.Size = new Size(137, 71);
             button_anadir_crear.TabIndex = 37;
             button_anadir_crear.Text = "Añadir miembro";
             button_anadir_crear.UseVisualStyleBackColor = false;
@@ -119,44 +131,50 @@
             // 
             // listBox_miembros_crear
             // 
+            listBox_miembros_crear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_miembros_crear.BackColor = Color.White;
             listBox_miembros_crear.BorderStyle = BorderStyle.FixedSingle;
+            listBox_miembros_crear.Font = new Font("Segoe UI", 15F);
             listBox_miembros_crear.FormattingEnabled = true;
-            listBox_miembros_crear.Location = new Point(181, 151);
+            listBox_miembros_crear.ItemHeight = 35;
+            listBox_miembros_crear.Location = new Point(205, 231);
             listBox_miembros_crear.Name = "listBox_miembros_crear";
-            listBox_miembros_crear.Size = new Size(716, 142);
+            listBox_miembros_crear.Size = new Size(777, 142);
             listBox_miembros_crear.TabIndex = 35;
             // 
             // label_miembros_crear
             // 
+            label_miembros_crear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_miembros_crear.AutoSize = true;
-            label_miembros_crear.Font = new Font("Segoe UI", 15F);
+            label_miembros_crear.Font = new Font("Segoe UI", 20F);
             label_miembros_crear.ForeColor = Color.FromArgb(51, 51, 51);
-            label_miembros_crear.Location = new Point(21, 151);
+            label_miembros_crear.Location = new Point(26, 231);
             label_miembros_crear.Name = "label_miembros_crear";
-            label_miembros_crear.Size = new Size(128, 35);
+            label_miembros_crear.Size = new Size(172, 46);
             label_miembros_crear.TabIndex = 34;
             label_miembros_crear.Text = "Miembros";
             // 
             // label_nombre_crear
             // 
+            label_nombre_crear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_nombre_crear.AutoSize = true;
-            label_nombre_crear.Font = new Font("Segoe UI", 15F);
+            label_nombre_crear.Font = new Font("Segoe UI", 20F);
             label_nombre_crear.ForeColor = Color.FromArgb(51, 51, 51);
-            label_nombre_crear.Location = new Point(21, 74);
+            label_nombre_crear.Location = new Point(26, 136);
             label_nombre_crear.Name = "label_nombre_crear";
-            label_nombre_crear.Size = new Size(108, 35);
+            label_nombre_crear.Size = new Size(144, 46);
             label_nombre_crear.TabIndex = 33;
             label_nombre_crear.Text = "Nombre";
             // 
             // label_titulo_crear
             // 
+            label_titulo_crear.Anchor = AnchorStyles.Top;
             label_titulo_crear.AutoSize = true;
-            label_titulo_crear.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_titulo_crear.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_titulo_crear.ForeColor = Color.OliveDrab;
-            label_titulo_crear.Location = new Point(398, 9);
+            label_titulo_crear.Location = new Point(331, 9);
             label_titulo_crear.Name = "label_titulo_crear";
-            label_titulo_crear.Size = new Size(219, 46);
+            label_titulo_crear.Size = new Size(323, 67);
             label_titulo_crear.TabIndex = 43;
             label_titulo_crear.Text = "Crear Equipo";
             // 
@@ -165,7 +183,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(950, 597);
+            ClientSize = new Size(1011, 701);
             Controls.Add(label_titulo_crear);
             Controls.Add(textBox_nombre_crear);
             Controls.Add(button_cancelar_crear);

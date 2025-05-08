@@ -38,52 +38,60 @@
             // 
             // textBox_usuario_anadir
             // 
+            textBox_usuario_anadir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_usuario_anadir.BackColor = Color.White;
             textBox_usuario_anadir.BorderStyle = BorderStyle.FixedSingle;
-            textBox_usuario_anadir.Location = new Point(142, 61);
+            textBox_usuario_anadir.Cursor = Cursors.IBeam;
+            textBox_usuario_anadir.Font = new Font("Segoe UI", 15F);
+            textBox_usuario_anadir.Location = new Point(160, 61);
             textBox_usuario_anadir.Name = "textBox_usuario_anadir";
-            textBox_usuario_anadir.Size = new Size(499, 27);
+            textBox_usuario_anadir.Size = new Size(596, 41);
             textBox_usuario_anadir.TabIndex = 36;
             // 
             // comboBox_rol_anadir
             // 
+            comboBox_rol_anadir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_rol_anadir.BackColor = Color.White;
             comboBox_rol_anadir.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_rol_anadir.Font = new Font("Segoe UI", 15F);
             comboBox_rol_anadir.FormattingEnabled = true;
-            comboBox_rol_anadir.Location = new Point(142, 123);
+            comboBox_rol_anadir.Location = new Point(160, 187);
             comboBox_rol_anadir.Name = "comboBox_rol_anadir";
-            comboBox_rol_anadir.Size = new Size(499, 28);
+            comboBox_rol_anadir.Size = new Size(596, 43);
             comboBox_rol_anadir.TabIndex = 35;
             // 
             // label_rol_anadir
             // 
+            label_rol_anadir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_rol_anadir.AutoSize = true;
-            label_rol_anadir.Font = new Font("Segoe UI", 15F);
+            label_rol_anadir.Font = new Font("Segoe UI", 20F);
             label_rol_anadir.ForeColor = Color.FromArgb(51, 51, 51);
-            label_rol_anadir.Location = new Point(12, 123);
+            label_rol_anadir.Location = new Point(12, 187);
             label_rol_anadir.Name = "label_rol_anadir";
-            label_rol_anadir.Size = new Size(50, 35);
+            label_rol_anadir.Size = new Size(67, 46);
             label_rol_anadir.TabIndex = 34;
             label_rol_anadir.Text = "Rol";
             // 
             // label_usuario_anadir
             // 
+            label_usuario_anadir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_usuario_anadir.AutoSize = true;
-            label_usuario_anadir.Font = new Font("Segoe UI", 15F);
+            label_usuario_anadir.Font = new Font("Segoe UI", 20F);
             label_usuario_anadir.ForeColor = Color.FromArgb(51, 51, 51);
             label_usuario_anadir.Location = new Point(12, 55);
             label_usuario_anadir.Name = "label_usuario_anadir";
-            label_usuario_anadir.Size = new Size(100, 35);
+            label_usuario_anadir.Size = new Size(133, 46);
             label_usuario_anadir.TabIndex = 33;
             label_usuario_anadir.Text = "Usuario";
             // 
             // button_cancelar_anadir
             // 
+            button_cancelar_anadir.Anchor = AnchorStyles.Top;
             button_cancelar_anadir.BackColor = Color.FromArgb(255, 0, 127);
-            button_cancelar_anadir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_cancelar_anadir.Location = new Point(135, 225);
+            button_cancelar_anadir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_cancelar_anadir.Location = new Point(189, 287);
             button_cancelar_anadir.Name = "button_cancelar_anadir";
-            button_cancelar_anadir.Size = new Size(151, 58);
+            button_cancelar_anadir.Size = new Size(151, 74);
             button_cancelar_anadir.TabIndex = 38;
             button_cancelar_anadir.Text = "Cancelar";
             button_cancelar_anadir.UseVisualStyleBackColor = false;
@@ -91,11 +99,12 @@
             // 
             // button_anadir
             // 
+            button_anadir.Anchor = AnchorStyles.Top;
             button_anadir.BackColor = Color.DodgerBlue;
-            button_anadir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_anadir.Location = new Point(441, 225);
+            button_anadir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_anadir.Location = new Point(495, 287);
             button_anadir.Name = "button_anadir";
-            button_anadir.Size = new Size(151, 58);
+            button_anadir.Size = new Size(151, 74);
             button_anadir.TabIndex = 37;
             button_anadir.Text = "Añadir miembro";
             button_anadir.UseVisualStyleBackColor = false;
@@ -106,13 +115,15 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(709, 322);
+            ClientSize = new Size(824, 424);
             Controls.Add(button_cancelar_anadir);
             Controls.Add(button_anadir);
             Controls.Add(textBox_usuario_anadir);
             Controls.Add(comboBox_rol_anadir);
             Controls.Add(label_rol_anadir);
             Controls.Add(label_usuario_anadir);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "anadirMiembro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Añadir Miembro";

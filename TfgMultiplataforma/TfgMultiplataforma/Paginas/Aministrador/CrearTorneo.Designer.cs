@@ -50,6 +50,7 @@
             // 
             // comboBox_partida_crear_torneo
             // 
+            comboBox_partida_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_partida_crear_torneo.BackColor = Color.White;
             comboBox_partida_crear_torneo.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_partida_crear_torneo.FormattingEnabled = true;
@@ -60,6 +61,7 @@
             // 
             // comboBox_juego_crear_torneo
             // 
+            comboBox_juego_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_juego_crear_torneo.BackColor = Color.White;
             comboBox_juego_crear_torneo.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_juego_crear_torneo.FormattingEnabled = true;
@@ -70,6 +72,7 @@
             // 
             // button_cancelar_crear_torneo
             // 
+            button_cancelar_crear_torneo.Anchor = AnchorStyles.Top;
             button_cancelar_crear_torneo.BackColor = Color.FromArgb(255, 0, 127);
             button_cancelar_crear_torneo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             button_cancelar_crear_torneo.Location = new Point(93, 561);
@@ -82,6 +85,7 @@
             // 
             // button_crear_torneo
             // 
+            button_crear_torneo.Anchor = AnchorStyles.Top;
             button_crear_torneo.BackColor = Color.DodgerBlue;
             button_crear_torneo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             button_crear_torneo.Location = new Point(552, 561);
@@ -94,6 +98,7 @@
             // 
             // textBox_estado_crear_torneo
             // 
+            textBox_estado_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_estado_crear_torneo.BackColor = Color.White;
             textBox_estado_crear_torneo.BorderStyle = BorderStyle.FixedSingle;
             textBox_estado_crear_torneo.Location = new Point(250, 496);
@@ -104,6 +109,7 @@
             // 
             // label_estado_crear_torneo
             // 
+            label_estado_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_estado_crear_torneo.AutoSize = true;
             label_estado_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_estado_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -115,6 +121,7 @@
             // 
             // label_partida_crear_torneo
             // 
+            label_partida_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_partida_crear_torneo.AutoSize = true;
             label_partida_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_partida_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -126,6 +133,7 @@
             // 
             // label_juego_crear_torneo
             // 
+            label_juego_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_juego_crear_torneo.AutoSize = true;
             label_juego_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_juego_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -137,6 +145,7 @@
             // 
             // textBox_cant_equipos_crear_torneo
             // 
+            textBox_cant_equipos_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_cant_equipos_crear_torneo.BackColor = Color.White;
             textBox_cant_equipos_crear_torneo.BorderStyle = BorderStyle.FixedSingle;
             textBox_cant_equipos_crear_torneo.Location = new Point(250, 289);
@@ -146,6 +155,7 @@
             // 
             // label_cant_equipos_crear_torneo
             // 
+            label_cant_equipos_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_cant_equipos_crear_torneo.AutoSize = true;
             label_cant_equipos_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_cant_equipos_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -157,6 +167,7 @@
             // 
             // label_fecha_fin_crear_torneo
             // 
+            label_fecha_fin_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_fecha_fin_crear_torneo.AutoSize = true;
             label_fecha_fin_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_fecha_fin_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -168,6 +179,7 @@
             // 
             // label_fecha_inicio_crear_torneo
             // 
+            label_fecha_inicio_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_fecha_inicio_crear_torneo.AutoSize = true;
             label_fecha_inicio_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_fecha_inicio_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -179,6 +191,7 @@
             // 
             // label_crear_torneo
             // 
+            label_crear_torneo.Anchor = AnchorStyles.Top;
             label_crear_torneo.AutoSize = true;
             label_crear_torneo.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_crear_torneo.ForeColor = Color.OliveDrab;
@@ -190,6 +203,7 @@
             // 
             // textBox_nombre_crear_torneo
             // 
+            textBox_nombre_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_nombre_crear_torneo.BackColor = Color.White;
             textBox_nombre_crear_torneo.BorderStyle = BorderStyle.FixedSingle;
             textBox_nombre_crear_torneo.Location = new Point(250, 75);
@@ -199,6 +213,7 @@
             // 
             // label_nombre_crear_torneo
             // 
+            label_nombre_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_nombre_crear_torneo.AutoSize = true;
             label_nombre_crear_torneo.Font = new Font("Segoe UI", 15F);
             label_nombre_crear_torneo.ForeColor = Color.FromArgb(51, 51, 51);
@@ -210,6 +225,7 @@
             // 
             // dateTimePicker_fechaIn_crear_torneo
             // 
+            dateTimePicker_fechaIn_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateTimePicker_fechaIn_crear_torneo.Location = new Point(249, 149);
             dateTimePicker_fechaIn_crear_torneo.Name = "dateTimePicker_fechaIn_crear_torneo";
             dateTimePicker_fechaIn_crear_torneo.Size = new Size(534, 27);
@@ -217,6 +233,7 @@
             // 
             // dateTimePicker_fechaFin_crear_torneo
             // 
+            dateTimePicker_fechaFin_crear_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dateTimePicker_fechaFin_crear_torneo.Location = new Point(249, 219);
             dateTimePicker_fechaFin_crear_torneo.Name = "dateTimePicker_fechaFin_crear_torneo";
             dateTimePicker_fechaFin_crear_torneo.Size = new Size(534, 27);
@@ -224,6 +241,7 @@
             // 
             // button_anadir_juego
             // 
+            button_anadir_juego.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button_anadir_juego.BackColor = Color.Orange;
             button_anadir_juego.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             button_anadir_juego.Location = new Point(803, 338);

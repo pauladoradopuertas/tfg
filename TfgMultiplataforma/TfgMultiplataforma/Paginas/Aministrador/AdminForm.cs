@@ -608,5 +608,10 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         {
             this.Close();
         }
+
+        private void textBox_usuario_admin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

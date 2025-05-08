@@ -38,11 +38,13 @@
             // 
             // button_unir
             // 
+            button_unir.Anchor = AnchorStyles.Top;
             button_unir.BackColor = Color.DodgerBlue;
-            button_unir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_unir.Location = new Point(227, 353);
+            button_unir.Cursor = Cursors.Hand;
+            button_unir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_unir.Location = new Point(224, 529);
             button_unir.Name = "button_unir";
-            button_unir.Size = new Size(123, 61);
+            button_unir.Size = new Size(134, 76);
             button_unir.TabIndex = 54;
             button_unir.Text = "Unirme al torneo";
             button_unir.UseVisualStyleBackColor = false;
@@ -50,22 +52,26 @@
             // 
             // label_juegos
             // 
+            label_juegos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_juegos.AutoSize = true;
-            label_juegos.Font = new Font("Segoe UI", 15F);
+            label_juegos.Font = new Font("Segoe UI", 20F);
             label_juegos.ForeColor = Color.FromArgb(51, 51, 51);
-            label_juegos.Location = new Point(36, 96);
+            label_juegos.Location = new Point(36, 152);
             label_juegos.Name = "label_juegos";
-            label_juegos.Size = new Size(92, 35);
+            label_juegos.Size = new Size(123, 46);
             label_juegos.TabIndex = 53;
             label_juegos.Text = "Juegos";
+            label_juegos.Click += label_juegos_Click;
             // 
             // button_volver_torneo
             // 
+            button_volver_torneo.Anchor = AnchorStyles.Top;
             button_volver_torneo.BackColor = Color.DodgerBlue;
-            button_volver_torneo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            button_volver_torneo.Location = new Point(494, 353);
+            button_volver_torneo.Cursor = Cursors.Hand;
+            button_volver_torneo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_volver_torneo.Location = new Point(621, 529);
             button_volver_torneo.Name = "button_volver_torneo";
-            button_volver_torneo.Size = new Size(123, 61);
+            button_volver_torneo.Size = new Size(134, 76);
             button_volver_torneo.TabIndex = 52;
             button_volver_torneo.Text = "Volver";
             button_volver_torneo.UseVisualStyleBackColor = false;
@@ -73,37 +79,41 @@
             // 
             // listBox_torneos_unir
             // 
+            listBox_torneos_unir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_torneos_unir.BackColor = Color.White;
             listBox_torneos_unir.BorderStyle = BorderStyle.FixedSingle;
-            listBox_torneos_unir.Font = new Font("Segoe UI", 10F);
+            listBox_torneos_unir.Cursor = Cursors.Hand;
+            listBox_torneos_unir.Font = new Font("Segoe UI", 15F);
             listBox_torneos_unir.FormattingEnabled = true;
             listBox_torneos_unir.HorizontalScrollbar = true;
-            listBox_torneos_unir.ItemHeight = 23;
-            listBox_torneos_unir.Location = new Point(47, 165);
+            listBox_torneos_unir.ItemHeight = 35;
+            listBox_torneos_unir.Location = new Point(46, 251);
             listBox_torneos_unir.Name = "listBox_torneos_unir";
-            listBox_torneos_unir.Size = new Size(718, 163);
+            listBox_torneos_unir.Size = new Size(862, 212);
             listBox_torneos_unir.TabIndex = 51;
             // 
             // comboBox_torneos
             // 
+            comboBox_torneos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_torneos.BackColor = Color.White;
             comboBox_torneos.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_torneos.Font = new Font("Segoe UI", 12F);
+            comboBox_torneos.Font = new Font("Segoe UI", 15F);
             comboBox_torneos.FormattingEnabled = true;
-            comboBox_torneos.Location = new Point(158, 96);
+            comboBox_torneos.Location = new Point(186, 157);
             comboBox_torneos.Name = "comboBox_torneos";
-            comboBox_torneos.Size = new Size(578, 36);
+            comboBox_torneos.Size = new Size(722, 43);
             comboBox_torneos.TabIndex = 50;
             comboBox_torneos.SelectedIndexChanged += comboBox_torneos_SelectedIndexChanged;
             // 
             // label_unir_torneo
             // 
+            label_unir_torneo.Anchor = AnchorStyles.Top;
             label_unir_torneo.AutoSize = true;
-            label_unir_torneo.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_unir_torneo.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_unir_torneo.ForeColor = Color.OliveDrab;
-            label_unir_torneo.Location = new Point(333, 21);
+            label_unir_torneo.Location = new Point(341, 26);
             label_unir_torneo.Name = "label_unir_torneo";
-            label_unir_torneo.Size = new Size(142, 46);
+            label_unir_torneo.Size = new Size(209, 67);
             label_unir_torneo.TabIndex = 49;
             label_unir_torneo.Text = "Torneos";
             // 
@@ -112,7 +122,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(944, 629);
             Controls.Add(button_unir);
             Controls.Add(label_juegos);
             Controls.Add(button_volver_torneo);
