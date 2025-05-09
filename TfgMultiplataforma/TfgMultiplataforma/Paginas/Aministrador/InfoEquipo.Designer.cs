@@ -67,6 +67,7 @@
             tabControl_info_equipo_admin.Controls.Add(tabPage_equipo_historial_admin);
             tabControl_info_equipo_admin.Controls.Add(tabPage_equipo_estadisticas_admin);
             tabControl_info_equipo_admin.Controls.Add(tabPage_equipo_torneo_admin);
+            tabControl_info_equipo_admin.Font = new Font("Segoe UI", 12F);
             tabControl_info_equipo_admin.Location = new Point(2, 11);
             tabControl_info_equipo_admin.Name = "tabControl_info_equipo_admin";
             tabControl_info_equipo_admin.SelectedIndex = 0;
@@ -332,10 +333,10 @@
             tabPage_equipo_torneo_admin.BackColor = Color.White;
             tabPage_equipo_torneo_admin.Controls.Add(listBox_equipo_torneos);
             tabPage_equipo_torneo_admin.Controls.Add(label_equipo_torneo_admin);
-            tabPage_equipo_torneo_admin.Location = new Point(4, 29);
+            tabPage_equipo_torneo_admin.Location = new Point(4, 37);
             tabPage_equipo_torneo_admin.Name = "tabPage_equipo_torneo_admin";
             tabPage_equipo_torneo_admin.Padding = new Padding(3);
-            tabPage_equipo_torneo_admin.Size = new Size(1004, 837);
+            tabPage_equipo_torneo_admin.Size = new Size(1004, 829);
             tabPage_equipo_torneo_admin.TabIndex = 3;
             tabPage_equipo_torneo_admin.Text = "Torneos";
             // 

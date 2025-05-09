@@ -73,6 +73,7 @@
             tabControl_usuario.Controls.Add(tabPage_historial_admin);
             tabControl_usuario.Controls.Add(tabPage_estadisticas_admin);
             tabControl_usuario.Controls.Add(tabPage_torneos_admin);
+            tabControl_usuario.Font = new Font("Segoe UI", 12F);
             tabControl_usuario.Location = new Point(2, 11);
             tabControl_usuario.Name = "tabControl_usuario";
             tabControl_usuario.SelectedIndex = 0;
@@ -424,10 +425,10 @@
             // 
             tabPage_torneos_admin.Controls.Add(listBox_torneos_torneos);
             tabPage_torneos_admin.Controls.Add(label2);
-            tabPage_torneos_admin.Location = new Point(4, 29);
+            tabPage_torneos_admin.Location = new Point(4, 37);
             tabPage_torneos_admin.Name = "tabPage_torneos_admin";
             tabPage_torneos_admin.Padding = new Padding(3);
-            tabPage_torneos_admin.Size = new Size(981, 811);
+            tabPage_torneos_admin.Size = new Size(981, 803);
             tabPage_torneos_admin.TabIndex = 3;
             tabPage_torneos_admin.Text = "Torneos";
             tabPage_torneos_admin.UseVisualStyleBackColor = true;

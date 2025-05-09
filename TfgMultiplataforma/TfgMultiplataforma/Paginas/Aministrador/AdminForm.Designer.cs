@@ -88,6 +88,7 @@
             tabControl_usuario.Controls.Add(tabPage_torneo_admin);
             tabControl_usuario.Controls.Add(tabPage_crear_admin);
             tabControl_usuario.Cursor = Cursors.Hand;
+            tabControl_usuario.Font = new Font("Segoe UI", 12F);
             tabControl_usuario.Location = new Point(12, 39);
             tabControl_usuario.Name = "tabControl_usuario";
             tabControl_usuario.SelectedIndex = 0;
@@ -198,10 +199,10 @@
             tabPage_equipo_admin.Controls.Add(button_info_equipo_admin);
             tabPage_equipo_admin.Controls.Add(listBox_equipos_admin);
             tabPage_equipo_admin.Controls.Add(label_equipos_admin);
-            tabPage_equipo_admin.Location = new Point(4, 29);
+            tabPage_equipo_admin.Location = new Point(4, 37);
             tabPage_equipo_admin.Name = "tabPage_equipo_admin";
             tabPage_equipo_admin.Padding = new Padding(3);
-            tabPage_equipo_admin.Size = new Size(968, 917);
+            tabPage_equipo_admin.Size = new Size(968, 909);
             tabPage_equipo_admin.TabIndex = 1;
             tabPage_equipo_admin.Text = "Equipos";
             tabPage_equipo_admin.UseVisualStyleBackColor = true;
@@ -320,10 +321,10 @@
             tabPage_torneo_admin.Controls.Add(listBox_torneo_admin);
             tabPage_torneo_admin.Controls.Add(comboBox_estado_torneo_admin);
             tabPage_torneo_admin.Controls.Add(label_torneo_admin);
-            tabPage_torneo_admin.Location = new Point(4, 29);
+            tabPage_torneo_admin.Location = new Point(4, 37);
             tabPage_torneo_admin.Name = "tabPage_torneo_admin";
             tabPage_torneo_admin.Padding = new Padding(3);
-            tabPage_torneo_admin.Size = new Size(968, 917);
+            tabPage_torneo_admin.Size = new Size(968, 909);
             tabPage_torneo_admin.TabIndex = 2;
             tabPage_torneo_admin.Text = "Torneos";
             tabPage_torneo_admin.UseVisualStyleBackColor = true;
@@ -373,7 +374,6 @@
             // 
             label_estado_torneo_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_estado_torneo_admin.AutoSize = true;
-            label_estado_torneo_admin.Cursor = Cursors.Default;
             label_estado_torneo_admin.Font = new Font("Segoe UI", 20F);
             label_estado_torneo_admin.ForeColor = Color.FromArgb(51, 51, 51);
             label_estado_torneo_admin.Location = new Point(39, 144);
@@ -427,7 +427,6 @@
             // 
             label_torneo_admin.Anchor = AnchorStyles.Top;
             label_torneo_admin.AutoSize = true;
-            label_torneo_admin.Cursor = Cursors.Default;
             label_torneo_admin.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_torneo_admin.ForeColor = Color.OliveDrab;
             label_torneo_admin.Location = new Point(267, 16);
@@ -454,10 +453,10 @@
             tabPage_crear_admin.Controls.Add(textBox_usuario_admin);
             tabPage_crear_admin.Controls.Add(label_usuario_admin);
             tabPage_crear_admin.Controls.Add(label_crear_administrador);
-            tabPage_crear_admin.Location = new Point(4, 29);
+            tabPage_crear_admin.Location = new Point(4, 37);
             tabPage_crear_admin.Name = "tabPage_crear_admin";
             tabPage_crear_admin.Padding = new Padding(3);
-            tabPage_crear_admin.Size = new Size(968, 917);
+            tabPage_crear_admin.Size = new Size(968, 909);
             tabPage_crear_admin.TabIndex = 3;
             tabPage_crear_admin.Text = "Crear cuenta admin";
             tabPage_crear_admin.UseVisualStyleBackColor = true;
@@ -492,7 +491,7 @@
             button_crear_admin.BackColor = Color.DodgerBlue;
             button_crear_admin.Cursor = Cursors.Hand;
             button_crear_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_crear_admin.Location = new Point(404, 838);
+            button_crear_admin.Location = new Point(400, 821);
             button_crear_admin.Name = "button_crear_admin";
             button_crear_admin.Size = new Size(180, 73);
             button_crear_admin.TabIndex = 21;
