@@ -85,7 +85,7 @@
             listBox_miembros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_miembros.BackColor = Color.White;
             listBox_miembros.BorderStyle = BorderStyle.FixedSingle;
-            listBox_miembros.Cursor = Cursors.IBeam;
+            listBox_miembros.Cursor = Cursors.Hand;
             listBox_miembros.Font = new Font("Segoe UI", 15F);
             listBox_miembros.FormattingEnabled = true;
             listBox_miembros.ItemHeight = 35;

@@ -386,7 +386,7 @@
             // 
             // label_partidas_empatadas
             // 
-            label_partidas_empatadas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_partidas_empatadas.Anchor = AnchorStyles.Top;
             label_partidas_empatadas.AutoSize = true;
             label_partidas_empatadas.Font = new Font("Segoe UI", 20F);
             label_partidas_empatadas.ForeColor = Color.FromArgb(51, 51, 51);
@@ -398,7 +398,7 @@
             // 
             // label_partidas_perdidas
             // 
-            label_partidas_perdidas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_partidas_perdidas.Anchor = AnchorStyles.Top;
             label_partidas_perdidas.AutoSize = true;
             label_partidas_perdidas.Font = new Font("Segoe UI", 20F);
             label_partidas_perdidas.ForeColor = Color.FromArgb(51, 51, 51);
@@ -410,7 +410,7 @@
             // 
             // label_partidas_ganadas
             // 
-            label_partidas_ganadas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label_partidas_ganadas.Anchor = AnchorStyles.Top;
             label_partidas_ganadas.AutoSize = true;
             label_partidas_ganadas.Font = new Font("Segoe UI", 20F);
             label_partidas_ganadas.ForeColor = Color.FromArgb(51, 51, 51);
@@ -422,6 +422,7 @@
             // 
             // label_partidas_jugadas
             // 
+            label_partidas_jugadas.Anchor = AnchorStyles.Top;
             label_partidas_jugadas.AutoSize = true;
             label_partidas_jugadas.Font = new Font("Segoe UI", 20F);
             label_partidas_jugadas.ForeColor = Color.FromArgb(51, 51, 51);

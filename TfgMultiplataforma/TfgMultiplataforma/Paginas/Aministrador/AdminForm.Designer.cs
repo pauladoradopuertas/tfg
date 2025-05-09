@@ -104,10 +104,10 @@
             tabPage_usuario_admin.Controls.Add(listBox_usuarios_admin);
             tabPage_usuario_admin.Controls.Add(comboBox_estado_admin);
             tabPage_usuario_admin.Controls.Add(label_usuario_nombre_equipo);
-            tabPage_usuario_admin.Location = new Point(4, 29);
+            tabPage_usuario_admin.Location = new Point(4, 37);
             tabPage_usuario_admin.Name = "tabPage_usuario_admin";
             tabPage_usuario_admin.Padding = new Padding(3);
-            tabPage_usuario_admin.Size = new Size(968, 917);
+            tabPage_usuario_admin.Size = new Size(968, 909);
             tabPage_usuario_admin.TabIndex = 0;
             tabPage_usuario_admin.Text = "Usuarios";
             // 
@@ -209,7 +209,7 @@
             // 
             // button_buscar_equipo_admin
             // 
-            button_buscar_equipo_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button_buscar_equipo_admin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button_buscar_equipo_admin.BackColor = Color.DodgerBlue;
             button_buscar_equipo_admin.BackgroundImage = (Image)resources.GetObject("button_buscar_equipo_admin.BackgroundImage");
             button_buscar_equipo_admin.BackgroundImageLayout = ImageLayout.Stretch;
@@ -658,6 +658,7 @@
             // 
             // button_cerrar_sesion
             // 
+            button_cerrar_sesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button_cerrar_sesion.BackColor = Color.Orange;
             button_cerrar_sesion.Cursor = Cursors.Hand;
             button_cerrar_sesion.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
