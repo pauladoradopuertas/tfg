@@ -301,54 +301,58 @@
             tabPage_historial_admin.Location = new Point(4, 29);
             tabPage_historial_admin.Name = "tabPage_historial_admin";
             tabPage_historial_admin.Padding = new Padding(3);
-            tabPage_historial_admin.Size = new Size(924, 722);
+            tabPage_historial_admin.Size = new Size(981, 811);
             tabPage_historial_admin.TabIndex = 1;
             tabPage_historial_admin.Text = "Historial de partidas";
             tabPage_historial_admin.UseVisualStyleBackColor = true;
             // 
             // label_juegos_historial
             // 
+            label_juegos_historial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_juegos_historial.AutoSize = true;
-            label_juegos_historial.Font = new Font("Segoe UI", 15F);
+            label_juegos_historial.Font = new Font("Segoe UI", 20F);
             label_juegos_historial.ForeColor = Color.FromArgb(51, 51, 51);
-            label_juegos_historial.Location = new Point(28, 107);
+            label_juegos_historial.Location = new Point(49, 158);
             label_juegos_historial.Name = "label_juegos_historial";
-            label_juegos_historial.Size = new Size(92, 35);
+            label_juegos_historial.Size = new Size(123, 46);
             label_juegos_historial.TabIndex = 47;
             label_juegos_historial.Text = "Juegos";
             // 
             // listBox_partidas_historial
             // 
+            listBox_partidas_historial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_partidas_historial.BackColor = Color.White;
             listBox_partidas_historial.BorderStyle = BorderStyle.FixedSingle;
-            listBox_partidas_historial.Font = new Font("Segoe UI", 10F);
+            listBox_partidas_historial.Font = new Font("Segoe UI", 15F);
             listBox_partidas_historial.FormattingEnabled = true;
             listBox_partidas_historial.HorizontalScrollbar = true;
-            listBox_partidas_historial.ItemHeight = 23;
-            listBox_partidas_historial.Location = new Point(28, 272);
+            listBox_partidas_historial.ItemHeight = 35;
+            listBox_partidas_historial.Location = new Point(49, 322);
             listBox_partidas_historial.Name = "listBox_partidas_historial";
-            listBox_partidas_historial.Size = new Size(788, 232);
+            listBox_partidas_historial.Size = new Size(880, 387);
             listBox_partidas_historial.TabIndex = 3;
             // 
             // comboBox_juegos_historial
             // 
+            comboBox_juegos_historial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_juegos_historial.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_juegos_historial.Font = new Font("Segoe UI", 12F);
+            comboBox_juegos_historial.Font = new Font("Segoe UI", 15F);
             comboBox_juegos_historial.FormattingEnabled = true;
-            comboBox_juegos_historial.Location = new Point(126, 109);
+            comboBox_juegos_historial.Location = new Point(178, 158);
             comboBox_juegos_historial.Name = "comboBox_juegos_historial";
-            comboBox_juegos_historial.Size = new Size(690, 36);
+            comboBox_juegos_historial.Size = new Size(690, 43);
             comboBox_juegos_historial.TabIndex = 2;
             comboBox_juegos_historial.SelectedIndexChanged += comboBox_juegos_historial_SelectedIndexChanged;
             // 
             // label_historial_admin
             // 
+            label_historial_admin.Anchor = AnchorStyles.Top;
             label_historial_admin.AutoSize = true;
-            label_historial_admin.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_historial_admin.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_historial_admin.ForeColor = Color.OliveDrab;
-            label_historial_admin.Location = new Point(290, 24);
+            label_historial_admin.Location = new Point(239, 24);
             label_historial_admin.Name = "label_historial_admin";
-            label_historial_admin.Size = new Size(331, 46);
+            label_historial_admin.Size = new Size(488, 67);
             label_historial_admin.TabIndex = 1;
             label_historial_admin.Text = "Historial de Partidas";
             // 
@@ -361,54 +365,58 @@
             tabPage_estadisticas_admin.Location = new Point(4, 29);
             tabPage_estadisticas_admin.Name = "tabPage_estadisticas_admin";
             tabPage_estadisticas_admin.Padding = new Padding(3);
-            tabPage_estadisticas_admin.Size = new Size(924, 722);
+            tabPage_estadisticas_admin.Size = new Size(981, 811);
             tabPage_estadisticas_admin.TabIndex = 2;
             tabPage_estadisticas_admin.Text = "Estadísticas";
             tabPage_estadisticas_admin.UseVisualStyleBackColor = true;
             // 
             // label_juegos_estadisticas
             // 
+            label_juegos_estadisticas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label_juegos_estadisticas.AutoSize = true;
-            label_juegos_estadisticas.Font = new Font("Segoe UI", 15F);
+            label_juegos_estadisticas.Font = new Font("Segoe UI", 20F);
             label_juegos_estadisticas.ForeColor = Color.FromArgb(51, 51, 51);
-            label_juegos_estadisticas.Location = new Point(32, 109);
+            label_juegos_estadisticas.Location = new Point(48, 158);
             label_juegos_estadisticas.Name = "label_juegos_estadisticas";
-            label_juegos_estadisticas.Size = new Size(92, 35);
+            label_juegos_estadisticas.Size = new Size(123, 46);
             label_juegos_estadisticas.TabIndex = 51;
             label_juegos_estadisticas.Text = "Juegos";
             // 
             // listBox_estadisticas_estadisticas
             // 
+            listBox_estadisticas_estadisticas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_estadisticas_estadisticas.BackColor = Color.White;
             listBox_estadisticas_estadisticas.BorderStyle = BorderStyle.FixedSingle;
-            listBox_estadisticas_estadisticas.Font = new Font("Segoe UI", 10F);
+            listBox_estadisticas_estadisticas.Font = new Font("Segoe UI", 15F);
             listBox_estadisticas_estadisticas.FormattingEnabled = true;
             listBox_estadisticas_estadisticas.HorizontalScrollbar = true;
-            listBox_estadisticas_estadisticas.ItemHeight = 23;
-            listBox_estadisticas_estadisticas.Location = new Point(32, 274);
+            listBox_estadisticas_estadisticas.ItemHeight = 35;
+            listBox_estadisticas_estadisticas.Location = new Point(50, 323);
             listBox_estadisticas_estadisticas.Name = "listBox_estadisticas_estadisticas";
-            listBox_estadisticas_estadisticas.Size = new Size(788, 232);
+            listBox_estadisticas_estadisticas.Size = new Size(877, 387);
             listBox_estadisticas_estadisticas.TabIndex = 50;
             // 
             // comboBox_juegos_estadisticas
             // 
+            comboBox_juegos_estadisticas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_juegos_estadisticas.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_juegos_estadisticas.Font = new Font("Segoe UI", 12F);
+            comboBox_juegos_estadisticas.Font = new Font("Segoe UI", 15F);
             comboBox_juegos_estadisticas.FormattingEnabled = true;
-            comboBox_juegos_estadisticas.Location = new Point(130, 111);
+            comboBox_juegos_estadisticas.Location = new Point(177, 158);
             comboBox_juegos_estadisticas.Name = "comboBox_juegos_estadisticas";
-            comboBox_juegos_estadisticas.Size = new Size(690, 36);
+            comboBox_juegos_estadisticas.Size = new Size(690, 43);
             comboBox_juegos_estadisticas.TabIndex = 49;
             comboBox_juegos_estadisticas.SelectedIndexChanged += comboBox_juegos_estadisticas_SelectedIndexChanged;
             // 
             // label_estadisticas_admin
             // 
+            label_estadisticas_admin.Anchor = AnchorStyles.Top;
             label_estadisticas_admin.AutoSize = true;
-            label_estadisticas_admin.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_estadisticas_admin.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_estadisticas_admin.ForeColor = Color.OliveDrab;
-            label_estadisticas_admin.Location = new Point(299, 21);
+            label_estadisticas_admin.Location = new Point(316, 23);
             label_estadisticas_admin.Name = "label_estadisticas_admin";
-            label_estadisticas_admin.Size = new Size(197, 46);
+            label_estadisticas_admin.Size = new Size(289, 67);
             label_estadisticas_admin.TabIndex = 1;
             label_estadisticas_admin.Text = "Estadísticas";
             // 
@@ -419,32 +427,34 @@
             tabPage_torneos_admin.Location = new Point(4, 29);
             tabPage_torneos_admin.Name = "tabPage_torneos_admin";
             tabPage_torneos_admin.Padding = new Padding(3);
-            tabPage_torneos_admin.Size = new Size(924, 722);
+            tabPage_torneos_admin.Size = new Size(981, 811);
             tabPage_torneos_admin.TabIndex = 3;
             tabPage_torneos_admin.Text = "Torneos";
             tabPage_torneos_admin.UseVisualStyleBackColor = true;
             // 
             // listBox_torneos_torneos
             // 
+            listBox_torneos_torneos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_torneos_torneos.BackColor = Color.White;
             listBox_torneos_torneos.BorderStyle = BorderStyle.FixedSingle;
-            listBox_torneos_torneos.Font = new Font("Segoe UI", 10F);
+            listBox_torneos_torneos.Font = new Font("Segoe UI", 15F);
             listBox_torneos_torneos.FormattingEnabled = true;
             listBox_torneos_torneos.HorizontalScrollbar = true;
-            listBox_torneos_torneos.ItemHeight = 23;
-            listBox_torneos_torneos.Location = new Point(37, 78);
+            listBox_torneos_torneos.ItemHeight = 35;
+            listBox_torneos_torneos.Location = new Point(72, 193);
             listBox_torneos_torneos.Name = "listBox_torneos_torneos";
-            listBox_torneos_torneos.Size = new Size(788, 439);
+            listBox_torneos_torneos.Size = new Size(851, 527);
             listBox_torneos_torneos.TabIndex = 52;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.OliveDrab;
-            label2.Location = new Point(299, 24);
+            label2.Location = new Point(290, 26);
             label2.Name = "label2";
-            label2.Size = new Size(269, 46);
+            label2.Size = new Size(397, 67);
             label2.TabIndex = 51;
             label2.Text = "Lista de Torneos";
             // 
