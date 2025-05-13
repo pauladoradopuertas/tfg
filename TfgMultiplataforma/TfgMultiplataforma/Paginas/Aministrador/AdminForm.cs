@@ -87,17 +87,16 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 if (idEstado == 1)
                 {
                     query = @"
-                        SELECT c.nombre, c.apellidos, c.usuario
+                        SELECT DISTINCT c.nombre, c.apellidos, c.usuario
                         FROM clientes c
                         INNER JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
                         WHERE c.id_estado_usuario = @estado 
-                        AND ce.id_equipo IS NOT NULL";
+                        AND ce.fecha_fin IS NULL";
                 }
-                //Inactivo: sin equipo
                 else if (idEstado == 2)
                 {
                     query = @"
-                        SELECT c.nombre, c.apellidos, c.usuario
+                        SELECT DISTINCT c.nombre, c.apellidos, c.usuario
                         FROM clientes c
                         LEFT JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
                         WHERE c.id_estado_usuario = @estado 

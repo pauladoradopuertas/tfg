@@ -82,42 +82,40 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 conn.Open();
 
-                string queryIdEquipo = @"
-                    SELECT ce.id_equipo
-                    FROM `clientes-equipos` ce
-                    INNER JOIN clientes c ON ce.id_cliente = c.id_cliente
-                    WHERE c.usuario = @usuario
-                      AND ce.fecha_fin IS NULL";
-                int idEquipo = -1;
+                string queryEquiposUsuario = @"
+            SELECT ce.id_equipo
+            FROM clientes c
+            JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+            WHERE c.usuario = @usuario";
 
-                using (MySqlCommand cmd = new MySqlCommand(queryIdEquipo, conn))
+                List<int> equiposUsuario = new List<int>();
+
+                using (MySqlCommand cmd = new MySqlCommand(queryEquiposUsuario, conn))
                 {
                     cmd.Parameters.AddWithValue("@usuario", usuario);
-                    object resultado = cmd.ExecuteScalar();
-                    if (resultado != null && resultado != DBNull.Value)
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        idEquipo = Convert.ToInt32(resultado);
+                        while (reader.Read())
+                            equiposUsuario.Add(Convert.ToInt32(reader["id_equipo"]));
                     }
                 }
 
-                if (idEquipo == -1)
+                if (equiposUsuario.Count == 0)
                 {
-                    MessageBox.Show("El usuario no pertenece a ningún equipo.");
+                    MessageBox.Show("El usuario no ha pertenecido a ningún equipo.");
                     return;
                 }
 
-                //Obtener juegos en los que ha participado el equipo
-                string queryJuegos = @"
-                    SELECT DISTINCT juegos.nombre 
-                    FROM torneos 
-                    JOIN juegos ON torneos.id_juego = juegos.id_juego 
-                    JOIN `equipos-torneos` ON torneos.id_torneo = `equipos-torneos`.id_torneo 
-                    WHERE `equipos-torneos`.id_equipo = @id_equipo";
+                // Obtener los juegos de todos los equipos
+                string queryJuegos = $@"
+                    SELECT DISTINCT j.nombre 
+                    FROM torneos t
+                    JOIN juegos j ON t.id_juego = j.id_juego
+                    JOIN `equipos-torneos` et ON t.id_torneo = et.id_torneo
+                    WHERE et.id_equipo IN ({string.Join(",", equiposUsuario)})";
 
                 using (MySqlCommand cmd = new MySqlCommand(queryJuegos, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_equipo", idEquipo);
-
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         comboBox_juegos_historial.Items.Clear();
@@ -144,30 +142,31 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 conn.Open();
 
-                string queryEquipo = @"
-                    SELECT ce.id_equipo 
-                    FROM clientes c
-                    INNER JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
-                    WHERE c.usuario = @usuario
-                    AND ce.fecha_fin IS NULL";
-                int idEquipo = -1;
+                string queryEquiposUsuario = @"
+            SELECT ce.id_equipo
+            FROM clientes c
+            JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+            WHERE c.usuario = @usuario";
 
-                using (MySqlCommand cmd = new MySqlCommand(queryEquipo, conn))
+                List<int> equiposUsuario = new List<int>();
+
+                using (MySqlCommand cmd = new MySqlCommand(queryEquiposUsuario, conn))
                 {
                     cmd.Parameters.AddWithValue("@usuario", usuario);
-                    object result = cmd.ExecuteScalar();
-                    if (result != null && result != DBNull.Value)
-                        idEquipo = Convert.ToInt32(result);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            equiposUsuario.Add(Convert.ToInt32(reader["id_equipo"]));
+                    }
                 }
 
-                if (idEquipo == -1)
+                if (equiposUsuario.Count == 0)
                 {
-                    MessageBox.Show("El usuario no pertenece a ningún equipo.");
+                    MessageBox.Show("El usuario no ha pertenecido a ningún equipo.");
                     return;
                 }
 
-                //Obtener partidas del juego seleccionado en las que ha participado el equipo
-                string queryPartidas = @"
+                string queryPartidas = $@"
                     SELECT p.id_partida, ep1.id_equipo AS equipo1_id, e1.nombre AS equipo1_nombre, ep1.puntos AS equipo1_puntos, ep1.resultado AS equipo1_resultado,
                            ep2.id_equipo AS equipo2_id, e2.nombre AS equipo2_nombre, ep2.puntos AS equipo2_puntos, ep2.resultado AS equipo2_resultado
                     FROM partidas p
@@ -177,14 +176,14 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                     JOIN `equipos-partidas` ep2 ON p.id_partida = ep2.id_partida AND ep1.id_equipo <> ep2.id_equipo
                     JOIN equipos e1 ON ep1.id_equipo = e1.id_equipo
                     JOIN equipos e2 ON ep2.id_equipo = e2.id_equipo
-                    WHERE j.nombre = @nombreJuego AND (ep1.id_equipo = @id_equipo OR ep2.id_equipo = @id_equipo)
+                    WHERE j.nombre = @nombreJuego
+                      AND (ep1.id_equipo IN ({string.Join(",", equiposUsuario)}) OR ep2.id_equipo IN ({string.Join(",", equiposUsuario)}))
                     GROUP BY p.id_partida
                     ORDER BY p.id_partida";
 
                 using (MySqlCommand cmd = new MySqlCommand(queryPartidas, conn))
                 {
                     cmd.Parameters.AddWithValue("@nombreJuego", nombreJuego);
-                    cmd.Parameters.AddWithValue("@id_equipo", idEquipo);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -193,11 +192,20 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                         while (reader.Read())
                         {
+                            int equipo1Id = Convert.ToInt32(reader["equipo1_id"]);
+                            int equipo2Id = Convert.ToInt32(reader["equipo2_id"]);
+
                             string equipo1 = reader["equipo1_nombre"].ToString();
                             string equipo2 = reader["equipo2_nombre"].ToString();
                             string puntos1 = reader["equipo1_puntos"].ToString();
                             string puntos2 = reader["equipo2_puntos"].ToString();
                             string resultado = reader["equipo1_resultado"].ToString();
+
+                            // Marca el equipo del usuario
+                            if (equiposUsuario.Contains(equipo1Id))
+                                equipo1 = $"[MI EQUIPO] {equipo1}";
+                            if (equiposUsuario.Contains(equipo2Id))
+                                equipo2 = $"[MI EQUIPO] {equipo2}";
 
                             string resultadoTexto = (resultado.ToLower() == "victoria") ? "Victoria" : "Derrota";
 
