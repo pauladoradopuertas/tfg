@@ -190,7 +190,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         {
             var info = new InfoTorneo { DiasPartida = new List<DayOfWeek>() };
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
                 string query = "SELECT fecha_inicio, fecha_fin, dia_partida FROM torneos WHERE id_torneo = @idTorneo";
@@ -279,7 +279,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         {
             List<EquipoClasificacion> clasificacion = new List<EquipoClasificacion>();
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
                 string query = @"
@@ -372,7 +372,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 
             try
             {
-                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
                 {
                     conn.Open();
                     string query = @"
@@ -481,7 +481,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         {
             EstadisticasTorneo estadisticas = new EstadisticasTorneo();
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 

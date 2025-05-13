@@ -14,7 +14,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 {
     public partial class AdminForm : Form
     {
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
         //nombre de los equipos
         private Dictionary<string, int> equiposDict = new Dictionary<string, int>();
         //que pestaña mostramos al cargar
@@ -87,19 +87,21 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 if (idEstado == 1)
                 {
                     query = @"
-                        SELECT nombre, apellidos, usuario 
-                        FROM clientes 
-                        WHERE id_estado_usuario = @estado 
-                        AND id_equipo IS NOT NULL";
+                        SELECT c.nombre, c.apellidos, c.usuario
+                        FROM clientes c
+                        INNER JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+                        WHERE c.id_estado_usuario = @estado 
+                        AND ce.id_equipo IS NOT NULL";
                 }
                 //Inactivo: sin equipo
                 else if (idEstado == 2)
                 {
                     query = @"
-                        SELECT nombre, apellidos, usuario 
-                        FROM clientes 
-                        WHERE id_estado_usuario = @estado 
-                        AND id_equipo IS NULL";
+                        SELECT c.nombre, c.apellidos, c.usuario
+                        FROM clientes c
+                        LEFT JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+                        WHERE c.id_estado_usuario = @estado 
+                        AND ce.id_equipo IS NULL";
                 }
                 else
                 {
@@ -576,8 +578,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                 //Añadimos el nuevo administrador a la base de datos
                 string insertarQuery = @"
-                    INSERT INTO clientes (nombre, apellidos, usuario, contrasena, telefono, dni, email, id_estado_usuario, id_rol_usuario, id_equipo)
-                    VALUES (@nombre, @apellidos, @usuario, @contrasena, @telefono, @dni, @email, NULL, 3, NULL)";
+                    INSERT INTO clientes (nombre, apellidos, usuario, contrasena, telefono, dni, email, id_estado_usuario, admin)
+                    VALUES (@nombre, @apellidos, @usuario, @contrasena, @telefono, @dni, @email, NULL, 'si');";
 
                 using (MySqlCommand insertCmd = new MySqlCommand(insertarQuery, conn))
                 {

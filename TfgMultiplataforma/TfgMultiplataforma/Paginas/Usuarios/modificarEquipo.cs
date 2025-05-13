@@ -15,7 +15,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
     {
 
         private int idEquipo;
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
         private UsuariosForm usuariosForm;
 
         public modificarEquipo(int idEquipo, UsuariosForm usuariosForm)
@@ -70,9 +70,11 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 
                 string query = @"
                     SELECT c.id_cliente, c.nombre, r.nombre AS rol 
-                    FROM clientes c
-                    LEFT JOIN roles_usuario r ON c.id_rol_usuario = r.id_rol_usuario
-                    WHERE c.id_equipo = @idEquipo";
+                    FROM `clientes-equipos` ce
+                    INNER JOIN clientes c ON ce.id_cliente = c.id_cliente
+                    LEFT JOIN roles_usuario r ON ce.id_rol = r.id_rol_usuario
+                    WHERE ce.id_equipo = @idEquipo 
+                    AND ce.fecha_fin IS NULL";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
@@ -145,9 +147,13 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 conn.Open();
 
                 string queryEliminar = @"
-                    UPDATE clientes 
-                    SET id_rol_usuario = NULL, id_estado_usuario = 2, id_equipo = NULL 
-                    WHERE id_cliente = @idCliente";
+                    UPDATE `clientes-equipos`
+                    SET fecha_fin = CURRENT_DATE()
+                    WHERE id_cliente = @idCliente AND fecha_fin IS NULL;
+
+                UPDATE clientes
+                SET id_estado_usuario = 2
+                WHERE id_cliente = @idCliente;";
 
                 using (MySqlCommand cmd = new MySqlCommand(queryEliminar, conn))
                 {

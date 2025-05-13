@@ -15,7 +15,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
     {
 
         private int idCliente;
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
 
         public perfil(int idCliente)
         {
@@ -252,7 +252,11 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             {
                 conn.Open();
 
-                string query = "SELECT id_equipo FROM clientes WHERE id_cliente = @idCliente";
+                string query = @"
+                    SELECT id_equipo 
+                    FROM `clientes-equipos` 
+                    WHERE id_cliente = @idCliente 
+                    AND fecha_fin IS NULL";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {

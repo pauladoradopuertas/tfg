@@ -37,7 +37,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Cargamos los datos del torneo
         private void CargarDatosTorneo(string nombreTorneo)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -100,7 +100,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Cargar los juegos desde la base de datos
         private void CargarJuegos()
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -124,7 +124,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Cargar los equipos inscritos en el torneo
         private void CargarEquiposInscritos()
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -162,7 +162,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             int idJuego = (int)comboBox_juego_editar_torneo.SelectedValue;
             string estado = textBox_estado_editar_torneo.Text;
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -263,7 +263,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
         private int ObtenerIdEquipo(string nombreEquipo)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -283,7 +283,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
         private int ObtenerIdTorneo(string nombreTorneo)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 

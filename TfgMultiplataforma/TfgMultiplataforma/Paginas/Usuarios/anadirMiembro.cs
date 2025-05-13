@@ -13,7 +13,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 {
     public partial class anadirMiembro : Form
     {
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
         private int idEquipo;
         private modificarEquipo parentForm;
 
@@ -67,12 +67,21 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 int idCliente = Convert.ToInt32(result);
 
                 //Actualizamos el cliente
-                MySqlCommand actualizarCliente = new MySqlCommand("UPDATE clientes SET id_estado_usuario = @idEstado, id_rol_usuario = @idRol, id_equipo = @idEquipo WHERE id_cliente = @idCliente", conexion);
-                actualizarCliente.Parameters.AddWithValue("@idEstado", idEstadoActivo); //Cambio estado a activo
-                actualizarCliente.Parameters.AddWithValue("@idRol", idRol); //Le asignamos un rol
-                actualizarCliente.Parameters.AddWithValue("@idEquipo", idEquipo); //Le asignamos un equipo
-                actualizarCliente.Parameters.AddWithValue("@idCliente", idCliente);
-                actualizarCliente.ExecuteNonQuery();
+                // 1. Actualiza solo el estado del cliente en la tabla `clientes`
+                MySqlCommand actualizarEstado = new MySqlCommand(
+                    "UPDATE clientes SET id_estado_usuario = @idEstado WHERE id_cliente = @idCliente", conexion);
+                actualizarEstado.Parameters.AddWithValue("@idEstado", idEstadoActivo);
+                actualizarEstado.Parameters.AddWithValue("@idCliente", idCliente);
+                actualizarEstado.ExecuteNonQuery();
+
+                // 2. Inserta la relación cliente-equipo con el rol correspondiente en `clientes-equipos`
+                MySqlCommand insertarRelacion = new MySqlCommand(@"
+                    INSERT INTO `clientes-equipos` (id_cliente, id_equipo, fecha_inicio, id_rol)
+                    VALUES (@idCliente, @idEquipo, NOW(), @idRol)", conexion);
+                insertarRelacion.Parameters.AddWithValue("@idCliente", idCliente);
+                insertarRelacion.Parameters.AddWithValue("@idEquipo", idEquipo);
+                insertarRelacion.Parameters.AddWithValue("@idRol", idRol);
+                insertarRelacion.ExecuteNonQuery();
 
                 MessageBox.Show("Miembro añadido con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

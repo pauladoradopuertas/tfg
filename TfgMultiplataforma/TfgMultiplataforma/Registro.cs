@@ -15,7 +15,7 @@ namespace TfgMultiplataforma
 {
     public partial class Registro : Form
     {
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
         public Registro()
         {
             InitializeComponent();
@@ -65,9 +65,9 @@ namespace TfgMultiplataforma
 
                     //Consulta para insertar el nuevo cliente
                     string nuevoCliente = @"INSERT INTO clientes 
-                        (nombre, apellidos, usuario, contrasena, telefono, dni, email, id_estado_usuario, id_rol_usuario) 
+                        (nombre, apellidos, usuario, contrasena, telefono, dni, email, admin, id_estado_usuario) 
                         VALUES 
-                        (@nombre, @apellidos, @usuario, @contrasena, @telefono, @dni, @email, @id_estado_usuario, @id_rol_usuario)";
+                        (@nombre, @apellidos, @usuario, @contrasena, @telefono, @dni, @email, @admin, @id_estado_usuario)";
 
                     using (MySqlCommand comando = new MySqlCommand(nuevoCliente, conexion))
                     {
@@ -79,7 +79,7 @@ namespace TfgMultiplataforma
                         comando.Parameters.AddWithValue("@dni", string.IsNullOrEmpty(dni) ? (object)DBNull.Value : dni);
                         comando.Parameters.AddWithValue("@email", email);
                         comando.Parameters.AddWithValue("@id_estado_usuario", 2);
-                        comando.Parameters.AddWithValue("@id_rol_usuario", null);
+                        comando.Parameters.AddWithValue("@admin", "no"); // Por defecto, 'no', puedes cambiarlo si deseas
 
                         int filas = comando.ExecuteNonQuery();
 

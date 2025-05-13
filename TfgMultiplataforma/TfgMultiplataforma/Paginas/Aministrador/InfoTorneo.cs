@@ -25,7 +25,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         {
             CargarClasificacion(idTorneo);
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -161,7 +161,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             string equipo2 = match.Groups[4].Value;
             int puntos1 = 0, puntos2 = 0;
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -259,7 +259,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 string resultado1 = newP1 > newP2 ? "victoria" : (newP1 < newP2 ? "derrota" : "empate");
                 string resultado2 = newP2 > newP1 ? "victoria" : (newP2 < newP1 ? "derrota" : "empate");
 
-                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
                 {
                     conn.Open();
 
@@ -297,7 +297,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Mostramos en un listbox la posicion de cada equipo y los puntos que tiene
         private void CargarClasificacion(int idTorneo)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
@@ -349,7 +349,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Boton estadistcias
         private void button_estadisticas_torneo_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 

@@ -15,7 +15,7 @@ namespace TfgMultiplataforma
 {
     public partial class Login : Form
     {
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
 
         public Login()
         {
@@ -48,7 +48,7 @@ namespace TfgMultiplataforma
                     conexion.Open();
 
                     string consulta = @"
-                        SELECT id_cliente, id_rol_usuario 
+                        SELECT id_cliente, admin 
                         FROM clientes 
                         WHERE usuario = @usuario AND contrasena = @contrasena";
 
@@ -62,12 +62,12 @@ namespace TfgMultiplataforma
                             if (reader.Read())
                             {
                                 int idCliente = Convert.ToInt32(reader["id_cliente"]);
-                                int idRolUsuario = Convert.ToInt32(reader["id_rol_usuario"]);
+                                string esAdmin = reader["admin"].ToString(); // Obtiene el valor del enum 'admin'
 
                                 this.Hide();
 
                                 // Admin
-                                if (idRolUsuario == 3)
+                                if (esAdmin == "si")
                                 {
                                     AdminForm adminForm = new AdminForm();
                                     adminForm.FormClosed += (s, args) => this.Show();

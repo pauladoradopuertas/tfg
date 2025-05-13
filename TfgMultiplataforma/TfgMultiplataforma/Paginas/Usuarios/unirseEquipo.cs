@@ -14,7 +14,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
     public partial class unirseEquipo : Form
     {
 
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
         private int idUsuario;
 
         public unirseEquipo(int idUsuario)
@@ -96,11 +96,14 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 try
                 {
                     //Actualizar el campo id_equipo de la tabla clientes para asociar al usuario con el equipo
-                    string queryUpdateEquipo = @"UPDATE clientes 
-                         SET id_equipo = @idEquipo, 
-                             id_estado_usuario = 1, 
-                             id_rol_usuario = 2  -- Rol de miembro
-                         WHERE id_cliente = @idUsuario";
+                    string queryUpdateEquipo = @"
+                        UPDATE clientes
+                        SET id_estado_usuario = 1
+                        WHERE id_cliente = @idUsuario;
+
+                        INSERT INTO `clientes-equipos` (id_cliente, id_equipo, id_rol)
+                        VALUES (@idUsuario, @idEquipo, 2);";
+
 
                     MySqlCommand cmdUpdateEquipo = new MySqlCommand(queryUpdateEquipo, conn, transaction);
                     cmdUpdateEquipo.Parameters.AddWithValue("@idUsuario", idUsuario);

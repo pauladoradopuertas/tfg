@@ -15,7 +15,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
     {
 
         private int idEquipo;
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
 
         public InfoEquipo(int idEquipo)
         {
@@ -59,9 +59,11 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 //Obtener los miembros del equipo y sus roles
                 string queryMiembros = @"
                     SELECT c.nombre, c.apellidos, c.usuario, ru.nombre AS rol
-                    FROM clientes c
-                    JOIN roles_usuario ru ON c.id_rol_usuario = ru.id_rol_usuario
-                    WHERE c.id_equipo = @id_equipo";
+                    FROM `clientes-equipos` ce
+                    INNER JOIN clientes c ON ce.id_cliente = c.id_cliente
+                    INNER JOIN roles_usuario ru ON ce.id_rol = ru.id_rol_usuario
+                    WHERE ce.id_equipo = @id_equipo
+                      AND ce.fecha_fin IS NULL";
 
                 using (MySqlCommand cmd = new MySqlCommand(queryMiembros, conn))
                 {

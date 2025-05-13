@@ -13,7 +13,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 {
     public partial class crearEquipo : Form
     {
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
         private UsuariosForm usuariosForm;
         private int idUsuario;
 
@@ -116,10 +116,14 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 {
                     //Asignar el rol de Capitán al cliente en la base de datos
                     string queryActualizarRol = @"
-                        UPDATE clientes 
-                        SET id_rol_usuario = (SELECT id_rol_usuario FROM roles_usuario WHERE nombre = 'capitan'),
-                            id_estado_usuario = 1 
-                        WHERE id_cliente = @idUsuario;";
+                        UPDATE `clientes-equipos` ce
+                        JOIN roles_usuario ru ON ru.nombre = 'capitan'
+                        SET ce.id_rol = ru.id_rol_usuario
+                        WHERE ce.id_cliente = @idUsuario AND ce.fecha_fin IS NULL;
+
+                    UPDATE clientes
+                    SET id_estado_usuario = 1
+                    WHERE id_cliente = @idUsuario;";
 
 
                     using (MySqlCommand cmd = new MySqlCommand(queryActualizarRol, conn))

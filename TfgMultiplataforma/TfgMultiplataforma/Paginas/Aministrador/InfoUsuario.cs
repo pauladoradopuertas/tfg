@@ -15,7 +15,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
     {
 
         private string usuario;
-        private string conexionString = "Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;";
+        private string conexionString = "Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;";
 
         public InfoUsuario(string usuario)
         {
@@ -82,7 +82,12 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 conn.Open();
 
-                string queryIdEquipo = "SELECT id_equipo FROM clientes WHERE usuario = @usuario";
+                string queryIdEquipo = @"
+                    SELECT ce.id_equipo
+                    FROM `clientes-equipos` ce
+                    INNER JOIN clientes c ON ce.id_cliente = c.id_cliente
+                    WHERE c.usuario = @usuario
+                      AND ce.fecha_fin IS NULL";
                 int idEquipo = -1;
 
                 using (MySqlCommand cmd = new MySqlCommand(queryIdEquipo, conn))
@@ -139,7 +144,12 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 conn.Open();
 
-                string queryEquipo = "SELECT id_equipo FROM clientes WHERE usuario = @usuario";
+                string queryEquipo = @"
+                    SELECT ce.id_equipo 
+                    FROM clientes c
+                    INNER JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+                    WHERE c.usuario = @usuario
+                    AND ce.fecha_fin IS NULL";
                 int idEquipo = -1;
 
                 using (MySqlCommand cmd = new MySqlCommand(queryEquipo, conn))
@@ -313,7 +323,12 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 conn.Open();
 
-                string queryEquipo = "SELECT id_equipo FROM clientes WHERE usuario = @usuario";
+                string queryEquipo = @"
+                    SELECT ce.id_equipo
+                    FROM clientes c
+                    INNER JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+                    WHERE c.usuario = @usuario
+                      AND ce.fecha_fin IS NULL";
                 int idEquipo = -1;
 
                 using (MySqlCommand cmd = new MySqlCommand(queryEquipo, conn))

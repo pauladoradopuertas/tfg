@@ -34,7 +34,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Cargamos los juegos y los metemos en el comboBox
         private void CargarJuegos()
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
                 string query = "SELECT id_juego, nombre FROM juegos";
@@ -77,7 +77,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
             int idEstado = ObtenerIdEstado(estado);
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
                 string query = @"
@@ -118,7 +118,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         //Obtener el id del estado
         private int ObtenerIdEstado(string estado)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
                 string query = "SELECT id_estado FROM estados WHERE nombre = @estado";
@@ -217,7 +217,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 return;
             }
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=basedatos_tfg;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
             {
                 conn.Open();
 
