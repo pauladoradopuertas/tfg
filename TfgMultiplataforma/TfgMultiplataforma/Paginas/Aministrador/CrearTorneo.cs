@@ -97,15 +97,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                     cmd.ExecuteNonQuery();
 
-                    // Obtener el ID del torneo recién creado
-                    cmd.CommandText = "SELECT LAST_INSERT_ID()";
-                    int idTorneoCreado = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    // Si el torneo comienza hoy, generar partidas automáticamente
-                    if (fechaInicio.Date == DateTime.Today)
-                    {
-                        GenerarPartidas(idTorneoCreado);
-                    }
+                    
                 }
 
                 MessageBox.Show("Torneo creado correctamente.");
@@ -266,114 +258,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             panelModal.Visible = false;
         }
 
-        private void GenerarPartidas(int idTorneo)
-        {
-            using (var conn = new MySqlConnection("Server=localhost;Database=bbdd_tfg;Uid=root;Pwd=;"))
-            {
-                conn.Open();
-
-                // Obtener datos del torneo
-                var cmdTorneo = new MySqlCommand(@"
-                    SELECT fecha_inicio, fecha_fin, dia_partida 
-                    FROM torneos 
-                    WHERE id_torneo = @idTorneo", conn);
-                cmdTorneo.Parameters.AddWithValue("@idTorneo", idTorneo);
-
-                DateTime fechaInicio, fechaFin;
-                string diaPartida;
-                using (var reader = cmdTorneo.ExecuteReader())
-                {
-                    if (!reader.Read()) return;
-                    fechaInicio = reader.GetDateTime("fecha_inicio");
-                    fechaFin = reader.GetDateTime("fecha_fin");
-                    diaPartida = reader.GetString("dia_partida");
-                }
-
-                // Obtener equipos inscritos
-                List<int> equipos = new List<int>();
-                var cmdEquipos = new MySqlCommand("SELECT id_equipo FROM `equipos-torneos` WHERE id_torneo = @idTorneo", conn);
-                cmdEquipos.Parameters.AddWithValue("@idTorneo", idTorneo);
-                using (var reader = cmdEquipos.ExecuteReader())
-                    while (reader.Read())
-                        equipos.Add(reader.GetInt32("id_equipo"));
-
-                int estadoProgramado = ObtenerIdEstado("Programado");
-                int estadoEnCurso = ObtenerIdEstado("En curso");
-                int estadoFinalizado = ObtenerIdEstado("Finalizado");
-
-                // Obtener fechas válidas
-                DayOfWeek dia = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), diaPartida, true);
-                List<DateTime> fechas = new List<DateTime>();
-                DateTime fecha = fechaInicio;
-                while (fecha <= fechaFin)
-                {
-                    if (fecha.DayOfWeek == dia)
-                        fechas.Add(fecha);
-                    fecha = fecha.AddDays(1);
-                }
-
-                // Round robin
-                int totalRondas = fechas.Count;
-                int numEquipos = equipos.Count;
-                bool esImpar = numEquipos % 2 != 0;
-                if (esImpar) equipos.Add(-1); // Equipo fantasma para descanso
-
-                int n = equipos.Count;
-                List<List<(int, int)>> rondas = new List<List<(int, int)>>();
-
-                for (int ronda = 0; ronda < totalRondas; ronda++)
-                {
-                    List<(int, int)> emparejamientos = new List<(int, int)>();
-                    for (int i = 0; i < n / 2; i++)
-                    {
-                        int equipoA = equipos[i];
-                        int equipoB = equipos[n - 1 - i];
-                        if (equipoA != -1 && equipoB != -1)
-                            emparejamientos.Add((equipoA, equipoB));
-                    }
-
-                    // Rotación
-                    int ultimo = equipos[n - 1];
-                    for (int i = n - 1; i > 1; i--)
-                        equipos[i] = equipos[i - 1];
-                    equipos[1] = ultimo;
-
-                    rondas.Add(emparejamientos);
-                }
-
-                // Insertar partidas
-                for (int i = 0; i < fechas.Count; i++)
-                {
-                    DateTime fechaPartida = fechas[i];
-                    int estado;
-                    if (fechaPartida < DateTime.Today) estado = estadoFinalizado;
-                    else if (fechaPartida == DateTime.Today) estado = estadoEnCurso;
-                    else estado = estadoProgramado;
-
-                    foreach (var (equipo1, equipo2) in rondas[i])
-                    {
-                        var insertPartida = new MySqlCommand(@"
-                            INSERT INTO partidas (fecha_partida, id_torneo, id_estado) 
-                            VALUES (@fecha, @torneo, @estado);
-                            SELECT LAST_INSERT_ID();", conn);
-                        insertPartida.Parameters.AddWithValue("@fecha", fechaPartida);
-                        insertPartida.Parameters.AddWithValue("@torneo", idTorneo);
-                        insertPartida.Parameters.AddWithValue("@estado", estado);
-                        int idPartida = Convert.ToInt32(insertPartida.ExecuteScalar());
-
-                        foreach (var eq in new[] { equipo1, equipo2 })
-                        {
-                            var insertEP = new MySqlCommand(@"
-                                INSERT INTO `equipos-partidas` (id_partida, id_equipo, puntos, resultado) 
-                                VALUES (@idPartida, @idEquipo, NULL, NULL)", conn);
-                            insertEP.Parameters.AddWithValue("@idPartida", idPartida);
-                            insertEP.Parameters.AddWithValue("@idEquipo", eq);
-                            insertEP.ExecuteNonQuery();
-                        }
-                    }
-                }
-            }
-        }
+        
 
         private void ActualizarEstadisticasTorneosFinalizados()
         {

@@ -614,5 +614,132 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         {
 
         }
+
+        private void button_crear_partida_Click(object sender, EventArgs e)
+        {
+            int idTorneo = ObtenerIdTorneoSeleccionado();
+            if (idTorneo == -1) return;
+
+            CrearPartidasDelTorneo(idTorneo);
+        }
+
+        private void CrearPartidasDelTorneo(int idTorneo)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexionString))
+            {
+                conn.Open();
+
+                // Obtener datos del torneo
+                string queryTorneo = @"SELECT fecha_inicio, fecha_fin, dia_partida FROM torneos WHERE id_torneo = @idTorneo";
+                DateTime fechaInicio, fechaFin;
+                string diaPartida;
+
+                using (MySqlCommand cmd = new MySqlCommand(queryTorneo, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idTorneo", idTorneo);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                        {
+                            MessageBox.Show("No se encontraron datos del torneo.");
+                            return;
+                        }
+                        fechaInicio = reader.GetDateTime("fecha_inicio");
+                        fechaFin = reader.GetDateTime("fecha_fin");
+                        diaPartida = reader.GetString("dia_partida").ToLower(); // Enum: lunes, martes...
+                    }
+                }
+
+                // Obtener equipos inscritos
+                List<int> equipos = new List<int>();
+                string queryEquipos = "SELECT id_equipo FROM `equipos-torneos` WHERE id_torneo = @idTorneo";
+                using (MySqlCommand cmd = new MySqlCommand(queryEquipos, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idTorneo", idTorneo);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            equipos.Add(reader.GetInt32("id_equipo"));
+                    }
+                }
+
+                if (equipos.Count < 2)
+                {
+                    MessageBox.Show("No hay suficientes equipos inscritos.");
+                    return;
+                }
+
+                // Generar fechas válidas (filtradas por el día de la semana elegido)
+                List<DateTime> fechasPartidas = new List<DateTime>();
+                for (var fecha = fechaInicio; fecha <= fechaFin; fecha = fecha.AddDays(1))
+                {
+                    if (fecha.ToString("dddd", new System.Globalization.CultureInfo("es-ES")).ToLower() == diaPartida)
+                        fechasPartidas.Add(fecha);
+                }
+
+                // Generar rondas semanales con enfrentamientos rotativos
+                int estadoProgramado = 1, estadoEnCurso = 2, estadoFinalizado = 3;
+                int ronda = 0;
+                Random rng = new Random();
+
+                foreach (var fecha in fechasPartidas)
+                {
+                    ronda++;
+
+                    var equiposTemp = new List<int>(equipos);
+                    int equipoDescansa = -1;
+
+                    if (equiposTemp.Count % 2 != 0)
+                    {
+                        // Si impar, un equipo descansa diferente cada semana
+                        equipoDescansa = equiposTemp[ronda % equiposTemp.Count];
+                        equiposTemp.Remove(equipoDescansa);
+                    }
+
+                    // Mezcla para generar enfrentamientos aleatorios
+                    equiposTemp = equiposTemp.OrderBy(x => rng.Next()).ToList();
+
+                    for (int i = 0; i < equiposTemp.Count; i += 2)
+                    {
+                        int equipo1 = equiposTemp[i];
+                        int equipo2 = equiposTemp[i + 1];
+
+                        // Determinar estado de la partida
+                        int idEstado = fecha.Date < DateTime.Today ? estadoFinalizado :
+                                       fecha.Date == DateTime.Today ? estadoEnCurso : estadoProgramado;
+
+                        // Insertar partida
+                        int idPartida;
+                        string insertPartida = @"INSERT INTO partidas (fecha_partida, id_torneo, id_estado)
+                                         VALUES (@fecha, @idTorneo, @estado);
+                                         SELECT LAST_INSERT_ID();";
+                        using (MySqlCommand cmd = new MySqlCommand(insertPartida, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@fecha", fecha);
+                            cmd.Parameters.AddWithValue("@idTorneo", idTorneo);
+                            cmd.Parameters.AddWithValue("@estado", idEstado);
+                            idPartida = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+
+                        // Insertar equipos-partidas
+                        string insertEquiposPartida = @"INSERT INTO `equipos-partidas` (id_partida, id_equipo, puntos, resultado)
+                                                VALUES (@idPartida, @idEquipo, NULL, NULL)";
+                        using (MySqlCommand cmd = new MySqlCommand(insertEquiposPartida, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@idPartida", idPartida);
+                            cmd.Parameters.Add("@idEquipo", MySqlDbType.Int32);
+
+                            cmd.Parameters["@idEquipo"].Value = equipo1;
+                            cmd.ExecuteNonQuery();
+                            cmd.Parameters["@idEquipo"].Value = equipo2;
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                MessageBox.Show("Partidas generadas correctamente.");
+            }
+        }
+
     }
 }

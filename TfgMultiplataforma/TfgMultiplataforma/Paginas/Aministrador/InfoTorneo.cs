@@ -326,11 +326,12 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                         while (reader.Read())
                         {
                             string equipo = reader.GetString("equipo");
-                            int partidasJugadas = reader.GetInt32("partidas_jugadas");
-                            int partidasGanadas = reader.GetInt32("partidas_ganadas");
-                            int partidasEmpatadas = reader.GetInt32("partidas_empatadas");
-                            int partidasPerdidas = reader.GetInt32("partidas_perdidas");
-                            int puntos = reader.GetInt32("puntos");
+                            int partidasJugadas = reader.IsDBNull(reader.GetOrdinal("partidas_jugadas")) ? 0 : reader.GetInt32("partidas_jugadas");
+                            int partidasGanadas = reader.IsDBNull(reader.GetOrdinal("partidas_ganadas")) ? 0 : reader.GetInt32("partidas_ganadas");
+                            int partidasEmpatadas = reader.IsDBNull(reader.GetOrdinal("partidas_empatadas")) ? 0 : reader.GetInt32("partidas_empatadas");
+                            int partidasPerdidas = reader.IsDBNull(reader.GetOrdinal("partidas_perdidas")) ? 0 : reader.GetInt32("partidas_perdidas");
+                            int puntos = reader.IsDBNull(reader.GetOrdinal("puntos")) ? 0 : reader.GetInt32("puntos");
+
 
                             //Cadena que contiene la posición y la información del equipo
                             string equipoInfo = $"{posicion}. {equipo}: {partidasJugadas} jugadas | {partidasGanadas} ganadas | {partidasEmpatadas} empatadas | {partidasPerdidas} perdidas | {puntos} puntos";

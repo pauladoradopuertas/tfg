@@ -73,6 +73,7 @@
             label_usuario_admin = new Label();
             label_crear_administrador = new Label();
             button_cerrar_sesion = new Button();
+            button_crear_partida = new Button();
             tabControl_usuario.SuspendLayout();
             tabPage_usuario_admin.SuspendLayout();
             tabPage_equipo_admin.SuspendLayout();
@@ -313,6 +314,7 @@
             // 
             // tabPage_torneo_admin
             // 
+            tabPage_torneo_admin.Controls.Add(button_crear_partida);
             tabPage_torneo_admin.Controls.Add(button_crear_torneo_admin);
             tabPage_torneo_admin.Controls.Add(button_editar_torneo_admin);
             tabPage_torneo_admin.Controls.Add(button_borrar_torneo_admin);
@@ -671,6 +673,20 @@
             button_cerrar_sesion.UseVisualStyleBackColor = false;
             button_cerrar_sesion.Click += button_cerrar_sesion_Click;
             // 
+            // button_crear_partida
+            // 
+            button_crear_partida.Anchor = AnchorStyles.Top;
+            button_crear_partida.BackColor = Color.DodgerBlue;
+            button_crear_partida.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_crear_partida.ForeColor = Color.Black;
+            button_crear_partida.Location = new Point(286, 798);
+            button_crear_partida.Name = "button_crear_partida";
+            button_crear_partida.Size = new Size(140, 78);
+            button_crear_partida.TabIndex = 61;
+            button_crear_partida.Text = "Crear partida";
+            button_crear_partida.UseVisualStyleBackColor = false;
+            button_crear_partida.Click += button_crear_partida_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -741,5 +757,6 @@
         private TextBox textBox_dni_admin;
         private Label label_dni_admin;
         private Button button_cerrar_sesion;
+        private Button button_crear_partida;
     }
 }
