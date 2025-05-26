@@ -69,8 +69,22 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             };
 
             //Botones
-            Button btnAnterior = new Button { Text = "<", Width = 40, Dock = DockStyle.Left };
-            Button btnSiguiente = new Button { Text = ">", Width = 40, Dock = DockStyle.Right };
+            Button btnAnterior = new Button 
+            { 
+                Text = "<", 
+                Width = 40, 
+                Dock = DockStyle.Left,
+                Cursor = Cursors.Hand
+            };
+
+            Button btnSiguiente = new Button 
+            { 
+                Text = ">", 
+                Width = 40, 
+                Dock = DockStyle.Right,
+                Cursor = Cursors.Hand
+            };
+
             btnAnterior.BackColor = Color.DodgerBlue;
             btnSiguiente.BackColor = Color.DodgerBlue;
 
@@ -297,10 +311,13 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                     {
                         while (reader.Read())
                         {
+                            string nombre = reader["nombre"].ToString();
+                            int puntos = reader["puntos"] != DBNull.Value ? Convert.ToInt32(reader["puntos"]) : 0;
+
                             clasificacion.Add(new EquipoClasificacion
                             {
-                                Nombre = reader["nombre"].ToString(),
-                                Puntos = Convert.ToInt32(reader["puntos"])
+                                Nombre = nombre,
+                                Puntos = puntos
                             });
                         }
                     }
@@ -337,7 +354,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             Form resultadosForm = new Form
             {
                 Text = "Resultados de Partidas",
-                Size = new Size(400, 300),
+                Size = new Size(600, 500),
                 StartPosition = FormStartPosition.CenterParent
             };
 
@@ -420,7 +437,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             Form estadisticasForm = new Form
             {
                 Text = "Estadísticas del Torneo",
-                Size = new Size(400, 300),
+                Size = new Size(600, 500),
                 StartPosition = FormStartPosition.CenterParent
             };
 
@@ -431,37 +448,45 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 Padding = new Padding(10)
             };
 
+            // Crear un título
+            Label labelTitulo = new Label
+            {
+                Text = "Estadísticas del Torneo",
+                AutoSize = true,
+                Font = new Font("Segoe UI", 16, FontStyle.Bold),
+                Location = new Point(10, 10)
+            };
+
             //Crear las etiquetas para mostrar los resultados
             Label labelVictorias = new Label
             {
-                Text = "Equipo con más victorias: Cargando...",
+                Text = "Equipo con más victorias: ",
                 AutoSize = true,
-                Font = new Font("Segoe UI", 12)
+                Font = new Font("Segoe UI", 12),
+                Location = new Point(10, 90)
             };
 
             Label labelDerrotas = new Label
             {
-                Text = "Equipo con más derrotas: Cargando...",
+                Text = "Equipo con más derrotas: ",
                 AutoSize = true,
-                Font = new Font("Segoe UI", 12)
+                Font = new Font("Segoe UI", 12),
+                Location = new Point(10, 140)
             };
 
             Label labelEmpates = new Label
             {
-                Text = "Equipo con más empates: Cargando...",
+                Text = "Equipo con más empates: ",
                 AutoSize = true,
-                Font = new Font("Segoe UI", 12)
+                Font = new Font("Segoe UI", 12),
+                Location = new Point(10, 190)
             };
 
             //Añadir las etiquetas al panel
+            panel.Controls.Add(labelTitulo);
             panel.Controls.Add(labelVictorias);
             panel.Controls.Add(labelDerrotas);
             panel.Controls.Add(labelEmpates);
-
-            //Ajustar la posición de las etiquetas
-            labelVictorias.Location = new Point(10, 20);
-            labelDerrotas.Location = new Point(10, 70);
-            labelEmpates.Location = new Point(10, 120);
 
             estadisticasForm.Controls.Add(panel);
 

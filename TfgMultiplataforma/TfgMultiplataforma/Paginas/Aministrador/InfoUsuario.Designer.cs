@@ -98,10 +98,10 @@
             tabPage_info_usuario_admin.Controls.Add(textBox_info_usuario_admin);
             tabPage_info_usuario_admin.Controls.Add(label_info_usuario_perfil);
             tabPage_info_usuario_admin.Controls.Add(titulo_usuario_admin);
-            tabPage_info_usuario_admin.Location = new Point(4, 29);
+            tabPage_info_usuario_admin.Location = new Point(4, 37);
             tabPage_info_usuario_admin.Name = "tabPage_info_usuario_admin";
             tabPage_info_usuario_admin.Padding = new Padding(3);
-            tabPage_info_usuario_admin.Size = new Size(981, 811);
+            tabPage_info_usuario_admin.Size = new Size(981, 803);
             tabPage_info_usuario_admin.TabIndex = 0;
             tabPage_info_usuario_admin.Text = "Información del usuario";
             // 
@@ -110,7 +110,6 @@
             textBox_info_email_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_email_admin.BackColor = Color.White;
             textBox_info_email_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_email_admin.Cursor = Cursors.IBeam;
             textBox_info_email_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_email_admin.Location = new Point(283, 723);
             textBox_info_email_admin.Name = "textBox_info_email_admin";
@@ -135,7 +134,6 @@
             textBox_info_dni_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_dni_admin.BackColor = Color.White;
             textBox_info_dni_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_dni_admin.Cursor = Cursors.IBeam;
             textBox_info_dni_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_dni_admin.Location = new Point(283, 626);
             textBox_info_dni_admin.Name = "textBox_info_dni_admin";
@@ -160,7 +158,6 @@
             textBox_info_telefono_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_telefono_admin.BackColor = Color.White;
             textBox_info_telefono_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_telefono_admin.Cursor = Cursors.IBeam;
             textBox_info_telefono_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_telefono_admin.Location = new Point(283, 527);
             textBox_info_telefono_admin.Name = "textBox_info_telefono_admin";
@@ -185,7 +182,6 @@
             textBox_info_apellidos_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_apellidos_admin.BackColor = Color.White;
             textBox_info_apellidos_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_apellidos_admin.Cursor = Cursors.IBeam;
             textBox_info_apellidos_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_apellidos_admin.Location = new Point(283, 430);
             textBox_info_apellidos_admin.Name = "textBox_info_apellidos_admin";
@@ -210,7 +206,6 @@
             textBox_info_nombre_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_nombre_admin.BackColor = Color.White;
             textBox_info_nombre_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_nombre_admin.Cursor = Cursors.IBeam;
             textBox_info_nombre_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_nombre_admin.Location = new Point(283, 335);
             textBox_info_nombre_admin.Name = "textBox_info_nombre_admin";
@@ -235,7 +230,6 @@
             textBox_info_contrasena_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_contrasena_admin.BackColor = Color.White;
             textBox_info_contrasena_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_contrasena_admin.Cursor = Cursors.IBeam;
             textBox_info_contrasena_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_contrasena_admin.Location = new Point(283, 240);
             textBox_info_contrasena_admin.Name = "textBox_info_contrasena_admin";
@@ -261,7 +255,6 @@
             textBox_info_usuario_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_info_usuario_admin.BackColor = Color.White;
             textBox_info_usuario_admin.BorderStyle = BorderStyle.FixedSingle;
-            textBox_info_usuario_admin.Cursor = Cursors.IBeam;
             textBox_info_usuario_admin.Font = new Font("Segoe UI", 15F);
             textBox_info_usuario_admin.Location = new Point(283, 148);
             textBox_info_usuario_admin.Name = "textBox_info_usuario_admin";
@@ -286,7 +279,7 @@
             titulo_usuario_admin.AutoSize = true;
             titulo_usuario_admin.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titulo_usuario_admin.ForeColor = Color.OliveDrab;
-            titulo_usuario_admin.Location = new Point(262, 21);
+            titulo_usuario_admin.Location = new Point(170, 17);
             titulo_usuario_admin.Name = "titulo_usuario_admin";
             titulo_usuario_admin.Size = new Size(441, 67);
             titulo_usuario_admin.TabIndex = 34;
@@ -299,10 +292,10 @@
             tabPage_historial_admin.Controls.Add(listBox_partidas_historial);
             tabPage_historial_admin.Controls.Add(comboBox_juegos_historial);
             tabPage_historial_admin.Controls.Add(label_historial_admin);
-            tabPage_historial_admin.Location = new Point(4, 29);
+            tabPage_historial_admin.Location = new Point(4, 37);
             tabPage_historial_admin.Name = "tabPage_historial_admin";
             tabPage_historial_admin.Padding = new Padding(3);
-            tabPage_historial_admin.Size = new Size(981, 811);
+            tabPage_historial_admin.Size = new Size(981, 803);
             tabPage_historial_admin.TabIndex = 1;
             tabPage_historial_admin.Text = "Historial de partidas";
             tabPage_historial_admin.UseVisualStyleBackColor = true;
@@ -363,10 +356,10 @@
             tabPage_estadisticas_admin.Controls.Add(listBox_estadisticas_estadisticas);
             tabPage_estadisticas_admin.Controls.Add(comboBox_juegos_estadisticas);
             tabPage_estadisticas_admin.Controls.Add(label_estadisticas_admin);
-            tabPage_estadisticas_admin.Location = new Point(4, 29);
+            tabPage_estadisticas_admin.Location = new Point(4, 37);
             tabPage_estadisticas_admin.Name = "tabPage_estadisticas_admin";
             tabPage_estadisticas_admin.Padding = new Padding(3);
-            tabPage_estadisticas_admin.Size = new Size(981, 811);
+            tabPage_estadisticas_admin.Size = new Size(981, 803);
             tabPage_estadisticas_admin.TabIndex = 2;
             tabPage_estadisticas_admin.Text = "Estadísticas";
             tabPage_estadisticas_admin.UseVisualStyleBackColor = true;

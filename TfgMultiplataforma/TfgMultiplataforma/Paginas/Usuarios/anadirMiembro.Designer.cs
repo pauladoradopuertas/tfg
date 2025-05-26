@@ -52,6 +52,7 @@
             // 
             comboBox_rol_anadir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_rol_anadir.BackColor = Color.White;
+            comboBox_rol_anadir.Cursor = Cursors.Hand;
             comboBox_rol_anadir.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_rol_anadir.Font = new Font("Segoe UI", 15F);
             comboBox_rol_anadir.FormattingEnabled = true;
@@ -88,6 +89,7 @@
             // 
             button_cancelar_anadir.Anchor = AnchorStyles.Top;
             button_cancelar_anadir.BackColor = Color.FromArgb(255, 0, 127);
+            button_cancelar_anadir.Cursor = Cursors.Hand;
             button_cancelar_anadir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_cancelar_anadir.Location = new Point(189, 287);
             button_cancelar_anadir.Name = "button_cancelar_anadir";
@@ -101,6 +103,7 @@
             // 
             button_anadir.Anchor = AnchorStyles.Top;
             button_anadir.BackColor = Color.DodgerBlue;
+            button_anadir.Cursor = Cursors.Hand;
             button_anadir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_anadir.Location = new Point(495, 287);
             button_anadir.Name = "button_anadir";

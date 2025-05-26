@@ -18,6 +18,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         private TextBox textBoxNuevoJuego;
         private Button buttonCrearJuegoModal;
         private Button buttonCancelarJuegoModal;
+        public bool TorneoCreado { get; private set; } = false;
+
 
         public CrearTorneo()
         {
@@ -116,6 +118,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 }
 
                 MessageBox.Show("Torneo creado correctamente.");
+                TorneoCreado = true;
+
                 this.Close();
             }
         }
@@ -181,7 +185,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             {
                 Text = "Nombre del nuevo juego:",
                 Location = new Point(10, 10),
-                AutoSize = true
+                AutoSize = true,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
             };
             panelModal.Controls.Add(label);
 
@@ -200,7 +205,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 Height = 40,
                 Font = new Font("Segoe UI", 10, FontStyle.Bold),
                 BackColor = Color.DodgerBlue,
-                ForeColor = Color.White
+                ForeColor = Color.Black,
+                Cursor = Cursors.Hand
             };
             buttonCrearJuegoModal.Click += ButtonCrearJuegoModal_Click;
             panelModal.Controls.Add(buttonCrearJuegoModal);
@@ -212,9 +218,9 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 Width = 100,
                 Height = 40,
                 Font = new Font("Segoe UI", 10, FontStyle.Bold),
-                BackColor = Color.Pink,
-                ForeColor = Color.Black
-
+                BackColor = Color.DeepPink,
+                ForeColor = Color.Black,
+                Cursor = Cursors.Hand
             };
             buttonCancelarJuegoModal.Click += ButtonCancelarJuegoModal_Click;
             panelModal.Controls.Add(buttonCancelarJuegoModal);

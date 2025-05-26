@@ -72,7 +72,7 @@
             tabControl_informacion_torneo.Location = new Point(13, 12);
             tabControl_informacion_torneo.Name = "tabControl_informacion_torneo";
             tabControl_informacion_torneo.SelectedIndex = 0;
-            tabControl_informacion_torneo.Size = new Size(897, 982);
+            tabControl_informacion_torneo.Size = new Size(970, 864);
             tabControl_informacion_torneo.TabIndex = 0;
             // 
             // tabPage_info_torneo
@@ -98,7 +98,7 @@
             tabPage_info_torneo.Location = new Point(4, 37);
             tabPage_info_torneo.Name = "tabPage_info_torneo";
             tabPage_info_torneo.Padding = new Padding(3);
-            tabPage_info_torneo.Size = new Size(889, 941);
+            tabPage_info_torneo.Size = new Size(962, 823);
             tabPage_info_torneo.TabIndex = 0;
             tabPage_info_torneo.Text = "Información del torneo";
             // 
@@ -108,10 +108,10 @@
             textBox_estado_info_torneo.BackColor = Color.White;
             textBox_estado_info_torneo.BorderStyle = BorderStyle.FixedSingle;
             textBox_estado_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_estado_info_torneo.Location = new Point(312, 872);
+            textBox_estado_info_torneo.Location = new Point(312, 740);
             textBox_estado_info_torneo.Name = "textBox_estado_info_torneo";
             textBox_estado_info_torneo.ReadOnly = true;
-            textBox_estado_info_torneo.Size = new Size(534, 41);
+            textBox_estado_info_torneo.Size = new Size(607, 41);
             textBox_estado_info_torneo.TabIndex = 52;
             // 
             // label_estado_info_torneo
@@ -120,7 +120,7 @@
             label_estado_info_torneo.AutoSize = true;
             label_estado_info_torneo.Font = new Font("Segoe UI", 20F);
             label_estado_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_estado_info_torneo.Location = new Point(12, 868);
+            label_estado_info_torneo.Location = new Point(12, 736);
             label_estado_info_torneo.Name = "label_estado_info_torneo";
             label_estado_info_torneo.Size = new Size(120, 46);
             label_estado_info_torneo.TabIndex = 51;
@@ -131,12 +131,11 @@
             textBox_partida_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_partida_info_torneo.BackColor = Color.White;
             textBox_partida_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            textBox_partida_info_torneo.Cursor = Cursors.IBeam;
             textBox_partida_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_partida_info_torneo.Location = new Point(312, 784);
+            textBox_partida_info_torneo.Location = new Point(312, 667);
             textBox_partida_info_torneo.Name = "textBox_partida_info_torneo";
             textBox_partida_info_torneo.ReadOnly = true;
-            textBox_partida_info_torneo.Size = new Size(534, 41);
+            textBox_partida_info_torneo.Size = new Size(607, 41);
             textBox_partida_info_torneo.TabIndex = 50;
             // 
             // label_partida_info_torneo
@@ -145,7 +144,7 @@
             label_partida_info_torneo.AutoSize = true;
             label_partida_info_torneo.Font = new Font("Segoe UI", 20F);
             label_partida_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_partida_info_torneo.Location = new Point(12, 780);
+            label_partida_info_torneo.Location = new Point(12, 663);
             label_partida_info_torneo.Name = "label_partida_info_torneo";
             label_partida_info_torneo.Size = new Size(229, 46);
             label_partida_info_torneo.TabIndex = 49;
@@ -156,12 +155,11 @@
             textBox_juego_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_juego_info_torneo.BackColor = Color.White;
             textBox_juego_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            textBox_juego_info_torneo.Cursor = Cursors.IBeam;
             textBox_juego_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_juego_info_torneo.Location = new Point(312, 693);
+            textBox_juego_info_torneo.Location = new Point(312, 591);
             textBox_juego_info_torneo.Name = "textBox_juego_info_torneo";
             textBox_juego_info_torneo.ReadOnly = true;
-            textBox_juego_info_torneo.Size = new Size(534, 41);
+            textBox_juego_info_torneo.Size = new Size(607, 41);
             textBox_juego_info_torneo.TabIndex = 48;
             // 
             // label_juego_info_torneo
@@ -170,7 +168,7 @@
             label_juego_info_torneo.AutoSize = true;
             label_juego_info_torneo.Font = new Font("Segoe UI", 20F);
             label_juego_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_juego_info_torneo.Location = new Point(12, 689);
+            label_juego_info_torneo.Location = new Point(12, 587);
             label_juego_info_torneo.Name = "label_juego_info_torneo";
             label_juego_info_torneo.Size = new Size(109, 46);
             label_juego_info_torneo.TabIndex = 47;
@@ -181,12 +179,11 @@
             textBox_cant_equipos_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_cant_equipos_info_torneo.BackColor = Color.White;
             textBox_cant_equipos_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            textBox_cant_equipos_info_torneo.Cursor = Cursors.IBeam;
             textBox_cant_equipos_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_cant_equipos_info_torneo.Location = new Point(312, 600);
+            textBox_cant_equipos_info_torneo.Location = new Point(312, 513);
             textBox_cant_equipos_info_torneo.Name = "textBox_cant_equipos_info_torneo";
             textBox_cant_equipos_info_torneo.ReadOnly = true;
-            textBox_cant_equipos_info_torneo.Size = new Size(534, 41);
+            textBox_cant_equipos_info_torneo.Size = new Size(607, 41);
             textBox_cant_equipos_info_torneo.TabIndex = 46;
             // 
             // label_cant_equipos_info_torneo
@@ -195,7 +192,7 @@
             label_cant_equipos_info_torneo.AutoSize = true;
             label_cant_equipos_info_torneo.Font = new Font("Segoe UI", 20F);
             label_cant_equipos_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_cant_equipos_info_torneo.Location = new Point(12, 596);
+            label_cant_equipos_info_torneo.Location = new Point(12, 509);
             label_cant_equipos_info_torneo.Name = "label_cant_equipos_info_torneo";
             label_cant_equipos_info_torneo.Size = new Size(281, 46);
             label_cant_equipos_info_torneo.TabIndex = 45;
@@ -206,12 +203,11 @@
             textBox_fechaFin_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_fechaFin_info_torneo.BackColor = Color.White;
             textBox_fechaFin_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            textBox_fechaFin_info_torneo.Cursor = Cursors.IBeam;
             textBox_fechaFin_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_fechaFin_info_torneo.Location = new Point(312, 504);
+            textBox_fechaFin_info_torneo.Location = new Point(312, 432);
             textBox_fechaFin_info_torneo.Name = "textBox_fechaFin_info_torneo";
             textBox_fechaFin_info_torneo.ReadOnly = true;
-            textBox_fechaFin_info_torneo.Size = new Size(534, 41);
+            textBox_fechaFin_info_torneo.Size = new Size(607, 41);
             textBox_fechaFin_info_torneo.TabIndex = 44;
             // 
             // label_fechaFin_info_torneo
@@ -220,7 +216,7 @@
             label_fechaFin_info_torneo.AutoSize = true;
             label_fechaFin_info_torneo.Font = new Font("Segoe UI", 20F);
             label_fechaFin_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_fechaFin_info_torneo.Location = new Point(8, 504);
+            label_fechaFin_info_torneo.Location = new Point(8, 432);
             label_fechaFin_info_torneo.Name = "label_fechaFin_info_torneo";
             label_fechaFin_info_torneo.Size = new Size(160, 46);
             label_fechaFin_info_torneo.TabIndex = 43;
@@ -231,13 +227,12 @@
             listBox_equipos_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_equipos_info_torneo.BackColor = Color.White;
             listBox_equipos_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            listBox_equipos_info_torneo.Cursor = Cursors.IBeam;
             listBox_equipos_info_torneo.Font = new Font("Segoe UI", 15F);
             listBox_equipos_info_torneo.FormattingEnabled = true;
             listBox_equipos_info_torneo.ItemHeight = 35;
-            listBox_equipos_info_torneo.Location = new Point(312, 198);
+            listBox_equipos_info_torneo.Location = new Point(312, 156);
             listBox_equipos_info_torneo.Name = "listBox_equipos_info_torneo";
-            listBox_equipos_info_torneo.Size = new Size(534, 142);
+            listBox_equipos_info_torneo.Size = new Size(607, 142);
             listBox_equipos_info_torneo.TabIndex = 42;
             // 
             // label_equipos_info_torneo
@@ -246,7 +241,7 @@
             label_equipos_info_torneo.AutoSize = true;
             label_equipos_info_torneo.Font = new Font("Segoe UI", 20F);
             label_equipos_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_equipos_info_torneo.Location = new Point(16, 198);
+            label_equipos_info_torneo.Location = new Point(16, 156);
             label_equipos_info_torneo.Name = "label_equipos_info_torneo";
             label_equipos_info_torneo.Size = new Size(138, 46);
             label_equipos_info_torneo.TabIndex = 41;
@@ -257,12 +252,11 @@
             textBox_fechaIn_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_fechaIn_info_torneo.BackColor = Color.White;
             textBox_fechaIn_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            textBox_fechaIn_info_torneo.Cursor = Cursors.IBeam;
             textBox_fechaIn_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_fechaIn_info_torneo.Location = new Point(312, 401);
+            textBox_fechaIn_info_torneo.Location = new Point(312, 344);
             textBox_fechaIn_info_torneo.Name = "textBox_fechaIn_info_torneo";
             textBox_fechaIn_info_torneo.ReadOnly = true;
-            textBox_fechaIn_info_torneo.Size = new Size(534, 41);
+            textBox_fechaIn_info_torneo.Size = new Size(607, 41);
             textBox_fechaIn_info_torneo.TabIndex = 40;
             // 
             // label_fechaIn_info_torneo
@@ -271,7 +265,7 @@
             label_fechaIn_info_torneo.AutoSize = true;
             label_fechaIn_info_torneo.Font = new Font("Segoe UI", 20F);
             label_fechaIn_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_fechaIn_info_torneo.Location = new Point(12, 397);
+            label_fechaIn_info_torneo.Location = new Point(12, 340);
             label_fechaIn_info_torneo.Name = "label_fechaIn_info_torneo";
             label_fechaIn_info_torneo.Size = new Size(196, 46);
             label_fechaIn_info_torneo.TabIndex = 39;
@@ -282,12 +276,11 @@
             textBox_nombre_info_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox_nombre_info_torneo.BackColor = Color.White;
             textBox_nombre_info_torneo.BorderStyle = BorderStyle.FixedSingle;
-            textBox_nombre_info_torneo.Cursor = Cursors.IBeam;
             textBox_nombre_info_torneo.Font = new Font("Segoe UI", 15F);
-            textBox_nombre_info_torneo.Location = new Point(312, 102);
+            textBox_nombre_info_torneo.Location = new Point(312, 75);
             textBox_nombre_info_torneo.Name = "textBox_nombre_info_torneo";
             textBox_nombre_info_torneo.ReadOnly = true;
-            textBox_nombre_info_torneo.Size = new Size(534, 41);
+            textBox_nombre_info_torneo.Size = new Size(607, 41);
             textBox_nombre_info_torneo.TabIndex = 38;
             // 
             // label_nombre_info_torneo
@@ -296,7 +289,7 @@
             label_nombre_info_torneo.AutoSize = true;
             label_nombre_info_torneo.Font = new Font("Segoe UI", 20F);
             label_nombre_info_torneo.ForeColor = Color.FromArgb(51, 51, 51);
-            label_nombre_info_torneo.Location = new Point(12, 98);
+            label_nombre_info_torneo.Location = new Point(12, 71);
             label_nombre_info_torneo.Name = "label_nombre_info_torneo";
             label_nombre_info_torneo.Size = new Size(144, 46);
             label_nombre_info_torneo.TabIndex = 37;
@@ -308,7 +301,7 @@
             label_info_torneo.AutoSize = true;
             label_info_torneo.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_info_torneo.ForeColor = Color.OliveDrab;
-            label_info_torneo.Location = new Point(360, 3);
+            label_info_torneo.Location = new Point(397, 1);
             label_info_torneo.Name = "label_info_torneo";
             label_info_torneo.Size = new Size(187, 67);
             label_info_torneo.TabIndex = 36;
@@ -323,7 +316,7 @@
             tabPage_partidas_torneo.Location = new Point(4, 37);
             tabPage_partidas_torneo.Name = "tabPage_partidas_torneo";
             tabPage_partidas_torneo.Padding = new Padding(3);
-            tabPage_partidas_torneo.Size = new Size(889, 941);
+            tabPage_partidas_torneo.Size = new Size(962, 823);
             tabPage_partidas_torneo.TabIndex = 1;
             tabPage_partidas_torneo.Text = "Partidas";
             // 
@@ -333,7 +326,7 @@
             label_partidas_torneo.AutoSize = true;
             label_partidas_torneo.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_partidas_torneo.ForeColor = Color.OliveDrab;
-            label_partidas_torneo.Location = new Point(346, 22);
+            label_partidas_torneo.Location = new Point(383, 3);
             label_partidas_torneo.Name = "label_partidas_torneo";
             label_partidas_torneo.Size = new Size(212, 67);
             label_partidas_torneo.TabIndex = 58;
@@ -346,7 +339,7 @@
             button_editar_partidas_torneo.Cursor = Cursors.Hand;
             button_editar_partidas_torneo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_editar_partidas_torneo.ForeColor = Color.White;
-            button_editar_partidas_torneo.Location = new Point(377, 836);
+            button_editar_partidas_torneo.Location = new Point(416, 753);
             button_editar_partidas_torneo.Name = "button_editar_partidas_torneo";
             button_editar_partidas_torneo.Size = new Size(123, 55);
             button_editar_partidas_torneo.TabIndex = 52;
@@ -359,14 +352,13 @@
             listBox_partidas_torneo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_partidas_torneo.BackColor = Color.White;
             listBox_partidas_torneo.BorderStyle = BorderStyle.FixedSingle;
-            listBox_partidas_torneo.Cursor = Cursors.Hand;
             listBox_partidas_torneo.Font = new Font("Segoe UI", 15F);
             listBox_partidas_torneo.FormattingEnabled = true;
             listBox_partidas_torneo.HorizontalScrollbar = true;
             listBox_partidas_torneo.ItemHeight = 35;
-            listBox_partidas_torneo.Location = new Point(61, 148);
+            listBox_partidas_torneo.Location = new Point(61, 91);
             listBox_partidas_torneo.Name = "listBox_partidas_torneo";
-            listBox_partidas_torneo.Size = new Size(787, 632);
+            listBox_partidas_torneo.Size = new Size(860, 632);
             listBox_partidas_torneo.TabIndex = 51;
             // 
             // tabPage_resultado_torneo
@@ -378,7 +370,7 @@
             tabPage_resultado_torneo.Location = new Point(4, 37);
             tabPage_resultado_torneo.Name = "tabPage_resultado_torneo";
             tabPage_resultado_torneo.Padding = new Padding(3);
-            tabPage_resultado_torneo.Size = new Size(889, 941);
+            tabPage_resultado_torneo.Size = new Size(962, 823);
             tabPage_resultado_torneo.TabIndex = 2;
             tabPage_resultado_torneo.Text = "Resultado";
             // 
@@ -388,7 +380,7 @@
             label_resultado_torneo.AutoSize = true;
             label_resultado_torneo.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_resultado_torneo.ForeColor = Color.OliveDrab;
-            label_resultado_torneo.Location = new Point(317, 12);
+            label_resultado_torneo.Location = new Point(354, 3);
             label_resultado_torneo.Name = "label_resultado_torneo";
             label_resultado_torneo.Size = new Size(254, 67);
             label_resultado_torneo.TabIndex = 61;
@@ -401,7 +393,7 @@
             button_estadisticas_torneo.Cursor = Cursors.Hand;
             button_estadisticas_torneo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_estadisticas_torneo.ForeColor = Color.White;
-            button_estadisticas_torneo.Location = new Point(364, 816);
+            button_estadisticas_torneo.Location = new Point(405, 713);
             button_estadisticas_torneo.Name = "button_estadisticas_torneo";
             button_estadisticas_torneo.Size = new Size(151, 79);
             button_estadisticas_torneo.TabIndex = 60;
@@ -418,17 +410,18 @@
             listBox_resultado_torneo.FormattingEnabled = true;
             listBox_resultado_torneo.HorizontalScrollbar = true;
             listBox_resultado_torneo.ItemHeight = 35;
-            listBox_resultado_torneo.Location = new Point(50, 147);
+            listBox_resultado_torneo.Location = new Point(61, 92);
             listBox_resultado_torneo.Name = "listBox_resultado_torneo";
-            listBox_resultado_torneo.Size = new Size(787, 597);
+            listBox_resultado_torneo.Size = new Size(860, 597);
             listBox_resultado_torneo.TabIndex = 59;
             // 
             // button_volver_info_torneo
             // 
             button_volver_info_torneo.Anchor = AnchorStyles.Top;
             button_volver_info_torneo.BackColor = Color.DodgerBlue;
+            button_volver_info_torneo.Cursor = Cursors.Hand;
             button_volver_info_torneo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_volver_info_torneo.Location = new Point(402, 999);
+            button_volver_info_torneo.Location = new Point(441, 878);
             button_volver_info_torneo.Name = "button_volver_info_torneo";
             button_volver_info_torneo.Size = new Size(115, 51);
             button_volver_info_torneo.TabIndex = 52;
@@ -441,7 +434,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(922, 1055);
+            ClientSize = new Size(995, 937);
             Controls.Add(button_volver_info_torneo);
             Controls.Add(tabControl_informacion_torneo);
             Name = "InfoTorneo";

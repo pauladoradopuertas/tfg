@@ -77,7 +77,7 @@
             button_editar_crear.Name = "button_editar_crear";
             button_editar_crear.Size = new Size(164, 72);
             button_editar_crear.TabIndex = 40;
-            button_editar_crear.Text = "Editar equipo";
+            button_editar_crear.Text = "Crear equipo";
             button_editar_crear.UseVisualStyleBackColor = false;
             button_editar_crear.Click += button_editar_crear_Click;
             // 

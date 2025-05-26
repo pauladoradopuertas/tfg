@@ -86,10 +86,10 @@
             tabPage_info_equipo_admin.Controls.Add(listBox_miembros_equipo_admin);
             tabPage_info_equipo_admin.Controls.Add(label_miembros_equipo_admin);
             tabPage_info_equipo_admin.Controls.Add(label_nombre_equipo_admin);
-            tabPage_info_equipo_admin.Location = new Point(4, 29);
+            tabPage_info_equipo_admin.Location = new Point(4, 37);
             tabPage_info_equipo_admin.Name = "tabPage_info_equipo_admin";
             tabPage_info_equipo_admin.Padding = new Padding(3);
-            tabPage_info_equipo_admin.Size = new Size(1004, 837);
+            tabPage_info_equipo_admin.Size = new Size(1004, 829);
             tabPage_info_equipo_admin.TabIndex = 0;
             tabPage_info_equipo_admin.Text = "Información del equipo";
             // 
@@ -134,7 +134,7 @@
             label_titulo_equipo_admin.AutoSize = true;
             label_titulo_equipo_admin.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_titulo_equipo_admin.ForeColor = Color.OliveDrab;
-            label_titulo_equipo_admin.Location = new Point(283, 27);
+            label_titulo_equipo_admin.Location = new Point(191, 26);
             label_titulo_equipo_admin.Name = "label_titulo_equipo_admin";
             label_titulo_equipo_admin.Size = new Size(418, 67);
             label_titulo_equipo_admin.TabIndex = 50;
@@ -205,10 +205,10 @@
             tabPage_equipo_historial_admin.Controls.Add(listBox_equipo_partidas_historial);
             tabPage_equipo_historial_admin.Controls.Add(comboBox_equipo_juegos_historial);
             tabPage_equipo_historial_admin.Controls.Add(label_equipo_historial_admin);
-            tabPage_equipo_historial_admin.Location = new Point(4, 29);
+            tabPage_equipo_historial_admin.Location = new Point(4, 37);
             tabPage_equipo_historial_admin.Name = "tabPage_equipo_historial_admin";
             tabPage_equipo_historial_admin.Padding = new Padding(3);
-            tabPage_equipo_historial_admin.Size = new Size(1004, 837);
+            tabPage_equipo_historial_admin.Size = new Size(1004, 829);
             tabPage_equipo_historial_admin.TabIndex = 1;
             tabPage_equipo_historial_admin.Text = "Historial partidas";
             // 
@@ -242,6 +242,7 @@
             // 
             comboBox_equipo_juegos_historial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_equipo_juegos_historial.BackColor = Color.White;
+            comboBox_equipo_juegos_historial.Cursor = Cursors.Hand;
             comboBox_equipo_juegos_historial.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_equipo_juegos_historial.Font = new Font("Segoe UI", 15F);
             comboBox_equipo_juegos_historial.FormattingEnabled = true;
@@ -270,10 +271,10 @@
             tabPage_equipo_estadisticas_admin.Controls.Add(listBox_equipo_estadisticas);
             tabPage_equipo_estadisticas_admin.Controls.Add(comboBox_equipo_juegos_estadisticas);
             tabPage_equipo_estadisticas_admin.Controls.Add(label_equipo_estadisticas_admin);
-            tabPage_equipo_estadisticas_admin.Location = new Point(4, 29);
+            tabPage_equipo_estadisticas_admin.Location = new Point(4, 37);
             tabPage_equipo_estadisticas_admin.Name = "tabPage_equipo_estadisticas_admin";
             tabPage_equipo_estadisticas_admin.Padding = new Padding(3);
-            tabPage_equipo_estadisticas_admin.Size = new Size(1004, 837);
+            tabPage_equipo_estadisticas_admin.Size = new Size(1004, 829);
             tabPage_equipo_estadisticas_admin.TabIndex = 2;
             tabPage_equipo_estadisticas_admin.Text = "Estadísticas";
             // 

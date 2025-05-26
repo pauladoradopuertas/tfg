@@ -463,6 +463,13 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             //Abrir el formulario de editar
             EditarTorneo editarTorneoForm = new EditarTorneo(nombreTorneo, this);
             editarTorneoForm.ShowDialog();
+
+            // Volver a cargar los torneos del estado seleccionado
+            if (comboBox_estado_torneo_admin.SelectedValue != null)
+            {
+                int idEstadoSeleccionado = Convert.ToInt32(comboBox_estado_torneo_admin.SelectedValue);
+                CargarTorneosPorEstado(idEstadoSeleccionado);
+            }
         }
 
         //Crear torneo
@@ -470,6 +477,13 @@ namespace TfgMultiplataforma.Paginas.Aministrador
         {
             CrearTorneo crearTorneoForm = new CrearTorneo();
             crearTorneoForm.ShowDialog();
+
+            // Aquí recargamos los torneos según el estado seleccionado
+            if (comboBox_estado_torneo_admin.SelectedValue != null)
+            {
+                int idEstadoSeleccionado = Convert.ToInt32(comboBox_estado_torneo_admin.SelectedValue);
+                CargarTorneosPorEstado(idEstadoSeleccionado);
+            }
         }
 
         //Obtenemos el id del torneo
@@ -623,6 +637,14 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                     if (filasAfectadas > 0)
                     {
                         MessageBox.Show("Administrador creado correctamente.");
+                        // Limpiar los campos del formulario
+                        textBox_usuario_admin.Text = "";
+                        textBox_contrasena_admin.Text = "";
+                        textBox_nombre_admin.Text = "";
+                        textBox_apellidos_admin.Text = "";
+                        textBox_telefono_admin.Text = "";
+                        textBox_dni_admin.Text = "";
+                        textBox_email_admin.Text = "";
                     }
                     else
                     {

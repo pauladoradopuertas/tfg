@@ -102,7 +102,6 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                     if (idNuevoEquipo > 0)
                     {
                         AsignarCapitanAlEquipo(idNuevoEquipo);
-                        MessageBox.Show("El equipo ha sido creado correctamente.");
                         this.Close();
                     }
                     else
@@ -126,8 +125,8 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 {
                     // Insertar la relación entre el usuario y el equipo en la tabla `clientes-equipos` 
                     string queryInsertRelacion = @"
-                INSERT INTO `clientes-equipos` (id_cliente, id_equipo, fecha_inicio, fecha_fin, id_rol)
-                VALUES (@idUsuario, @idEquipo, CURDATE(), NULL, 1);"; // 1 es el rol de capitán
+                        INSERT INTO `clientes-equipos` (id_cliente, id_equipo, fecha_inicio, fecha_fin, id_rol)
+                        VALUES (@idUsuario, @idEquipo, CURDATE(), NULL, 1);"; // 1 es el rol de capitán
 
                     using (MySqlCommand cmdInsertRelacion = new MySqlCommand(queryInsertRelacion, conn))
                     {
@@ -139,9 +138,9 @@ namespace TfgMultiplataforma.Paginas.Usuarios
 
                     // Actualizar el estado del usuario a activo (si no está ya activo)
                     string queryActualizarEstado = @"
-                UPDATE clientes
-                SET id_estado_usuario = 1
-                WHERE id_cliente = @idUsuario;"; // Estado 1 es activo
+                        UPDATE clientes
+                        SET id_estado_usuario = 1
+                        WHERE id_cliente = @idUsuario;"; // Estado 1 es activo
 
                     using (MySqlCommand cmdActualizarEstado = new MySqlCommand(queryActualizarEstado, conn))
                     {

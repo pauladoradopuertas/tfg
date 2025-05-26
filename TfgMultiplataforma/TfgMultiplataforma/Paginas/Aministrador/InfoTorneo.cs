@@ -233,8 +233,27 @@ namespace TfgMultiplataforma.Paginas.Aministrador
             };
 
             //Botones
-            Button buttonNo = new Button() { Text = "No", Location = new Point(100, 150), Width = 80, Height = 30 };
-            Button buttonSi = new Button() { Text = "Sí", Location = new Point(240, 150), Width = 80, Height = 30 };
+            Button buttonNo = new Button() 
+            { 
+                Text = "No", 
+                Location = new Point(100, 150), 
+                Width = 80, 
+                Height = 40,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                BackColor = Color.DeepPink,
+                Cursor = Cursors.Hand
+            };
+
+            Button buttonSi = new Button() 
+            { 
+                Text = "Sí", 
+                Location = new Point(240, 150), 
+                Width = 80, 
+                Height = 40,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                BackColor = Color.DodgerBlue,
+                Cursor = Cursors.Hand
+            };
 
             modal.Controls.Add(labelEquipo1);
             modal.Controls.Add(textBoxPuntos1);
@@ -498,7 +517,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 Form modal = new Form
                 {
                     Text = "Estadísticas destacadas del torneo",
-                    Size = new Size(450, 300),
+                    Font = new Font("Segoe UI", 20),
+                    Size = new Size(1200, 700),
                     StartPosition = FormStartPosition.CenterParent,
                     FormBorderStyle = FormBorderStyle.FixedDialog,
                     MaximizeBox = false,
@@ -522,8 +542,12 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 Button buttonCerrar = new Button
                 {
                     Text = "Cerrar",
-                    Location = new Point(160, y),
-                    Width = 100
+                    Font = new Font("Segoe UI", 15, FontStyle.Bold),
+                    Location = new Point(500, 350),
+                    Width = 140,
+                    Height = 90,
+                    BackColor = Color.DodgerBlue,
+                    Cursor = Cursors.Hand
                 };
                 buttonCerrar.Click += (s, ev) => modal.Close();
 

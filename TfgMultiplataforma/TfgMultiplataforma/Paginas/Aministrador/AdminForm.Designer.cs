@@ -42,11 +42,11 @@
             label_buscar_equipo_admin = new Label();
             textBox_buscar_equipo_admin = new TextBox();
             button_borrar_equipo_admin = new Button();
-            button_unir_evento = new Button();
             button_info_equipo_admin = new Button();
             listBox_equipos_admin = new ListBox();
             label_equipos_admin = new Label();
             tabPage_torneo_admin = new TabPage();
+            button_crear_partida = new Button();
             button_crear_torneo_admin = new Button();
             button_editar_torneo_admin = new Button();
             button_borrar_torneo_admin = new Button();
@@ -73,7 +73,6 @@
             label_usuario_admin = new Label();
             label_crear_administrador = new Label();
             button_cerrar_sesion = new Button();
-            button_crear_partida = new Button();
             tabControl_usuario.SuspendLayout();
             tabPage_usuario_admin.SuspendLayout();
             tabPage_equipo_admin.SuspendLayout();
@@ -88,12 +87,11 @@
             tabControl_usuario.Controls.Add(tabPage_equipo_admin);
             tabControl_usuario.Controls.Add(tabPage_torneo_admin);
             tabControl_usuario.Controls.Add(tabPage_crear_admin);
-            tabControl_usuario.Cursor = Cursors.Hand;
             tabControl_usuario.Font = new Font("Segoe UI", 12F);
             tabControl_usuario.Location = new Point(12, 39);
             tabControl_usuario.Name = "tabControl_usuario";
             tabControl_usuario.SelectedIndex = 0;
-            tabControl_usuario.Size = new Size(976, 950);
+            tabControl_usuario.Size = new Size(976, 879);
             tabControl_usuario.TabIndex = 1;
             // 
             // tabPage_usuario_admin
@@ -108,7 +106,7 @@
             tabPage_usuario_admin.Location = new Point(4, 37);
             tabPage_usuario_admin.Name = "tabPage_usuario_admin";
             tabPage_usuario_admin.Padding = new Padding(3);
-            tabPage_usuario_admin.Size = new Size(968, 909);
+            tabPage_usuario_admin.Size = new Size(968, 838);
             tabPage_usuario_admin.TabIndex = 0;
             tabPage_usuario_admin.Text = "Usuarios";
             // 
@@ -119,7 +117,7 @@
             button_borrar_usuario_admin.Cursor = Cursors.Hand;
             button_borrar_usuario_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_borrar_usuario_admin.ForeColor = Color.Black;
-            button_borrar_usuario_admin.Location = new Point(249, 802);
+            button_borrar_usuario_admin.Location = new Point(246, 684);
             button_borrar_usuario_admin.Name = "button_borrar_usuario_admin";
             button_borrar_usuario_admin.Size = new Size(149, 75);
             button_borrar_usuario_admin.TabIndex = 53;
@@ -133,7 +131,7 @@
             label_estado_admin.AutoSize = true;
             label_estado_admin.Font = new Font("Segoe UI", 20F);
             label_estado_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_estado_admin.Location = new Point(65, 173);
+            label_estado_admin.Location = new Point(62, 95);
             label_estado_admin.Name = "label_estado_admin";
             label_estado_admin.Size = new Size(120, 46);
             label_estado_admin.TabIndex = 52;
@@ -146,7 +144,7 @@
             button_info_usuario_admin.Cursor = Cursors.Hand;
             button_info_usuario_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_info_usuario_admin.ForeColor = Color.Black;
-            button_info_usuario_admin.Location = new Point(577, 802);
+            button_info_usuario_admin.Location = new Point(574, 684);
             button_info_usuario_admin.Name = "button_info_usuario_admin";
             button_info_usuario_admin.Size = new Size(149, 75);
             button_info_usuario_admin.TabIndex = 51;
@@ -162,7 +160,7 @@
             listBox_usuarios_admin.FormattingEnabled = true;
             listBox_usuarios_admin.HorizontalScrollbar = true;
             listBox_usuarios_admin.ItemHeight = 35;
-            listBox_usuarios_admin.Location = new Point(65, 314);
+            listBox_usuarios_admin.Location = new Point(62, 236);
             listBox_usuarios_admin.Name = "listBox_usuarios_admin";
             listBox_usuarios_admin.Size = new Size(856, 422);
             listBox_usuarios_admin.TabIndex = 50;
@@ -173,7 +171,7 @@
             comboBox_estado_admin.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_estado_admin.Font = new Font("Segoe UI", 15F);
             comboBox_estado_admin.FormattingEnabled = true;
-            comboBox_estado_admin.Location = new Point(225, 178);
+            comboBox_estado_admin.Location = new Point(222, 100);
             comboBox_estado_admin.Name = "comboBox_estado_admin";
             comboBox_estado_admin.Size = new Size(696, 43);
             comboBox_estado_admin.TabIndex = 49;
@@ -196,14 +194,13 @@
             tabPage_equipo_admin.Controls.Add(label_buscar_equipo_admin);
             tabPage_equipo_admin.Controls.Add(textBox_buscar_equipo_admin);
             tabPage_equipo_admin.Controls.Add(button_borrar_equipo_admin);
-            tabPage_equipo_admin.Controls.Add(button_unir_evento);
             tabPage_equipo_admin.Controls.Add(button_info_equipo_admin);
             tabPage_equipo_admin.Controls.Add(listBox_equipos_admin);
             tabPage_equipo_admin.Controls.Add(label_equipos_admin);
             tabPage_equipo_admin.Location = new Point(4, 37);
             tabPage_equipo_admin.Name = "tabPage_equipo_admin";
             tabPage_equipo_admin.Padding = new Padding(3);
-            tabPage_equipo_admin.Size = new Size(968, 909);
+            tabPage_equipo_admin.Size = new Size(968, 838);
             tabPage_equipo_admin.TabIndex = 1;
             tabPage_equipo_admin.Text = "Equipos";
             tabPage_equipo_admin.UseVisualStyleBackColor = true;
@@ -214,9 +211,10 @@
             button_buscar_equipo_admin.BackColor = Color.DodgerBlue;
             button_buscar_equipo_admin.BackgroundImage = (Image)resources.GetObject("button_buscar_equipo_admin.BackgroundImage");
             button_buscar_equipo_admin.BackgroundImageLayout = ImageLayout.Stretch;
+            button_buscar_equipo_admin.Cursor = Cursors.Hand;
             button_buscar_equipo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_buscar_equipo_admin.ForeColor = Color.Black;
-            button_buscar_equipo_admin.Location = new Point(879, 138);
+            button_buscar_equipo_admin.Location = new Point(879, 83);
             button_buscar_equipo_admin.Name = "button_buscar_equipo_admin";
             button_buscar_equipo_admin.Size = new Size(65, 62);
             button_buscar_equipo_admin.TabIndex = 52;
@@ -229,7 +227,7 @@
             label_buscar_equipo_admin.AutoSize = true;
             label_buscar_equipo_admin.Font = new Font("Segoe UI", 20F);
             label_buscar_equipo_admin.ForeColor = Color.FromArgb(51, 51, 51);
-            label_buscar_equipo_admin.Location = new Point(39, 142);
+            label_buscar_equipo_admin.Location = new Point(39, 87);
             label_buscar_equipo_admin.Name = "label_buscar_equipo_admin";
             label_buscar_equipo_admin.Size = new Size(117, 46);
             label_buscar_equipo_admin.TabIndex = 51;
@@ -242,7 +240,7 @@
             textBox_buscar_equipo_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_buscar_equipo_admin.Cursor = Cursors.IBeam;
             textBox_buscar_equipo_admin.Font = new Font("Segoe UI", 15F);
-            textBox_buscar_equipo_admin.Location = new Point(162, 148);
+            textBox_buscar_equipo_admin.Location = new Point(162, 93);
             textBox_buscar_equipo_admin.Name = "textBox_buscar_equipo_admin";
             textBox_buscar_equipo_admin.Size = new Size(693, 41);
             textBox_buscar_equipo_admin.TabIndex = 50;
@@ -251,9 +249,10 @@
             // 
             button_borrar_equipo_admin.Anchor = AnchorStyles.Top;
             button_borrar_equipo_admin.BackColor = Color.FromArgb(255, 0, 127);
+            button_borrar_equipo_admin.Cursor = Cursors.Hand;
             button_borrar_equipo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_borrar_equipo_admin.ForeColor = Color.Black;
-            button_borrar_equipo_admin.Location = new Point(261, 736);
+            button_borrar_equipo_admin.Location = new Point(258, 681);
             button_borrar_equipo_admin.Name = "button_borrar_equipo_admin";
             button_borrar_equipo_admin.Size = new Size(148, 72);
             button_borrar_equipo_admin.TabIndex = 48;
@@ -261,25 +260,14 @@
             button_borrar_equipo_admin.UseVisualStyleBackColor = false;
             button_borrar_equipo_admin.Click += button_borrar_equipo_admin_Click;
             // 
-            // button_unir_evento
-            // 
-            button_unir_evento.Anchor = AnchorStyles.Top;
-            button_unir_evento.BackColor = Color.DodgerBlue;
-            button_unir_evento.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_unir_evento.Location = new Point(420, 826);
-            button_unir_evento.Name = "button_unir_evento";
-            button_unir_evento.Size = new Size(147, 72);
-            button_unir_evento.TabIndex = 5;
-            button_unir_evento.Text = "Unirme a un evento";
-            button_unir_evento.UseVisualStyleBackColor = false;
-            // 
             // button_info_equipo_admin
             // 
             button_info_equipo_admin.Anchor = AnchorStyles.Top;
             button_info_equipo_admin.BackColor = Color.DodgerBlue;
+            button_info_equipo_admin.Cursor = Cursors.Hand;
             button_info_equipo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_info_equipo_admin.ForeColor = Color.Black;
-            button_info_equipo_admin.Location = new Point(567, 736);
+            button_info_equipo_admin.Location = new Point(573, 681);
             button_info_equipo_admin.Name = "button_info_equipo_admin";
             button_info_equipo_admin.Size = new Size(148, 72);
             button_info_equipo_admin.TabIndex = 4;
@@ -295,7 +283,7 @@
             listBox_equipos_admin.FormattingEnabled = true;
             listBox_equipos_admin.HorizontalScrollbar = true;
             listBox_equipos_admin.ItemHeight = 35;
-            listBox_equipos_admin.Location = new Point(39, 274);
+            listBox_equipos_admin.Location = new Point(39, 219);
             listBox_equipos_admin.Name = "listBox_equipos_admin";
             listBox_equipos_admin.Size = new Size(905, 422);
             listBox_equipos_admin.TabIndex = 3;
@@ -326,18 +314,34 @@
             tabPage_torneo_admin.Location = new Point(4, 37);
             tabPage_torneo_admin.Name = "tabPage_torneo_admin";
             tabPage_torneo_admin.Padding = new Padding(3);
-            tabPage_torneo_admin.Size = new Size(968, 909);
+            tabPage_torneo_admin.Size = new Size(968, 838);
             tabPage_torneo_admin.TabIndex = 2;
             tabPage_torneo_admin.Text = "Torneos";
             tabPage_torneo_admin.UseVisualStyleBackColor = true;
+            // 
+            // button_crear_partida
+            // 
+            button_crear_partida.Anchor = AnchorStyles.Top;
+            button_crear_partida.BackColor = Color.DodgerBlue;
+            button_crear_partida.Cursor = Cursors.Hand;
+            button_crear_partida.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button_crear_partida.ForeColor = Color.Black;
+            button_crear_partida.Location = new Point(292, 710);
+            button_crear_partida.Name = "button_crear_partida";
+            button_crear_partida.Size = new Size(140, 78);
+            button_crear_partida.TabIndex = 61;
+            button_crear_partida.Text = "Crear partida";
+            button_crear_partida.UseVisualStyleBackColor = false;
+            button_crear_partida.Click += button_crear_partida_Click;
             // 
             // button_crear_torneo_admin
             // 
             button_crear_torneo_admin.Anchor = AnchorStyles.Top;
             button_crear_torneo_admin.BackColor = Color.DodgerBlue;
+            button_crear_torneo_admin.Cursor = Cursors.Hand;
             button_crear_torneo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_crear_torneo_admin.ForeColor = Color.Black;
-            button_crear_torneo_admin.Location = new Point(39, 798);
+            button_crear_torneo_admin.Location = new Point(45, 710);
             button_crear_torneo_admin.Name = "button_crear_torneo_admin";
             button_crear_torneo_admin.Size = new Size(140, 78);
             button_crear_torneo_admin.TabIndex = 60;
@@ -349,9 +353,10 @@
             // 
             button_editar_torneo_admin.Anchor = AnchorStyles.Top;
             button_editar_torneo_admin.BackColor = Color.DodgerBlue;
+            button_editar_torneo_admin.Cursor = Cursors.Hand;
             button_editar_torneo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_editar_torneo_admin.ForeColor = Color.Black;
-            button_editar_torneo_admin.Location = new Point(610, 798);
+            button_editar_torneo_admin.Location = new Point(616, 710);
             button_editar_torneo_admin.Name = "button_editar_torneo_admin";
             button_editar_torneo_admin.Size = new Size(151, 78);
             button_editar_torneo_admin.TabIndex = 59;
@@ -363,8 +368,9 @@
             // 
             button_borrar_torneo_admin.Anchor = AnchorStyles.Top;
             button_borrar_torneo_admin.BackColor = Color.FromArgb(255, 0, 127);
+            button_borrar_torneo_admin.Cursor = Cursors.Hand;
             button_borrar_torneo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_borrar_torneo_admin.Location = new Point(454, 798);
+            button_borrar_torneo_admin.Location = new Point(460, 710);
             button_borrar_torneo_admin.Name = "button_borrar_torneo_admin";
             button_borrar_torneo_admin.Size = new Size(140, 78);
             button_borrar_torneo_admin.TabIndex = 58;
@@ -378,7 +384,7 @@
             label_estado_torneo_admin.AutoSize = true;
             label_estado_torneo_admin.Font = new Font("Segoe UI", 20F);
             label_estado_torneo_admin.ForeColor = Color.FromArgb(51, 51, 51);
-            label_estado_torneo_admin.Location = new Point(39, 144);
+            label_estado_torneo_admin.Location = new Point(44, 104);
             label_estado_torneo_admin.Name = "label_estado_torneo_admin";
             label_estado_torneo_admin.Size = new Size(120, 46);
             label_estado_torneo_admin.TabIndex = 57;
@@ -388,9 +394,10 @@
             // 
             button_info_torneo_admin.Anchor = AnchorStyles.Top;
             button_info_torneo_admin.BackColor = Color.DodgerBlue;
+            button_info_torneo_admin.Cursor = Cursors.Hand;
             button_info_torneo_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_info_torneo_admin.ForeColor = Color.Black;
-            button_info_torneo_admin.Location = new Point(773, 798);
+            button_info_torneo_admin.Location = new Point(779, 710);
             button_info_torneo_admin.Name = "button_info_torneo_admin";
             button_info_torneo_admin.Size = new Size(140, 78);
             button_info_torneo_admin.TabIndex = 56;
@@ -407,7 +414,7 @@
             listBox_torneo_admin.FormattingEnabled = true;
             listBox_torneo_admin.HorizontalScrollbar = true;
             listBox_torneo_admin.ItemHeight = 35;
-            listBox_torneo_admin.Location = new Point(39, 275);
+            listBox_torneo_admin.Location = new Point(44, 235);
             listBox_torneo_admin.Name = "listBox_torneo_admin";
             listBox_torneo_admin.Size = new Size(874, 422);
             listBox_torneo_admin.TabIndex = 55;
@@ -415,11 +422,11 @@
             // comboBox_estado_torneo_admin
             // 
             comboBox_estado_torneo_admin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox_estado_torneo_admin.Cursor = Cursors.IBeam;
+            comboBox_estado_torneo_admin.Cursor = Cursors.Hand;
             comboBox_estado_torneo_admin.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_estado_torneo_admin.Font = new Font("Segoe UI", 15F);
             comboBox_estado_torneo_admin.FormattingEnabled = true;
-            comboBox_estado_torneo_admin.Location = new Point(163, 145);
+            comboBox_estado_torneo_admin.Location = new Point(168, 105);
             comboBox_estado_torneo_admin.Name = "comboBox_estado_torneo_admin";
             comboBox_estado_torneo_admin.Size = new Size(750, 43);
             comboBox_estado_torneo_admin.TabIndex = 54;
@@ -458,7 +465,7 @@
             tabPage_crear_admin.Location = new Point(4, 37);
             tabPage_crear_admin.Name = "tabPage_crear_admin";
             tabPage_crear_admin.Padding = new Padding(3);
-            tabPage_crear_admin.Size = new Size(968, 909);
+            tabPage_crear_admin.Size = new Size(968, 838);
             tabPage_crear_admin.TabIndex = 3;
             tabPage_crear_admin.Text = "Crear cuenta admin";
             tabPage_crear_admin.UseVisualStyleBackColor = true;
@@ -470,7 +477,7 @@
             textBox_email_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_email_admin.Cursor = Cursors.IBeam;
             textBox_email_admin.Font = new Font("Segoe UI", 15F);
-            textBox_email_admin.Location = new Point(284, 765);
+            textBox_email_admin.Location = new Point(286, 675);
             textBox_email_admin.Name = "textBox_email_admin";
             textBox_email_admin.Size = new Size(649, 41);
             textBox_email_admin.TabIndex = 23;
@@ -481,7 +488,7 @@
             label_email_admin.AutoSize = true;
             label_email_admin.Font = new Font("Segoe UI", 20F);
             label_email_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_email_admin.Location = new Point(51, 765);
+            label_email_admin.Location = new Point(53, 675);
             label_email_admin.Name = "label_email_admin";
             label_email_admin.Size = new Size(99, 46);
             label_email_admin.TabIndex = 22;
@@ -493,7 +500,7 @@
             button_crear_admin.BackColor = Color.DodgerBlue;
             button_crear_admin.Cursor = Cursors.Hand;
             button_crear_admin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_crear_admin.Location = new Point(400, 821);
+            button_crear_admin.Location = new Point(402, 756);
             button_crear_admin.Name = "button_crear_admin";
             button_crear_admin.Size = new Size(180, 73);
             button_crear_admin.TabIndex = 21;
@@ -508,7 +515,7 @@
             textBox_dni_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_dni_admin.Cursor = Cursors.IBeam;
             textBox_dni_admin.Font = new Font("Segoe UI", 15F);
-            textBox_dni_admin.Location = new Point(284, 665);
+            textBox_dni_admin.Location = new Point(286, 580);
             textBox_dni_admin.Name = "textBox_dni_admin";
             textBox_dni_admin.Size = new Size(649, 41);
             textBox_dni_admin.TabIndex = 20;
@@ -519,7 +526,7 @@
             label_dni_admin.AutoSize = true;
             label_dni_admin.Font = new Font("Segoe UI", 20F);
             label_dni_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_dni_admin.Location = new Point(51, 665);
+            label_dni_admin.Location = new Point(53, 580);
             label_dni_admin.Name = "label_dni_admin";
             label_dni_admin.Size = new Size(71, 46);
             label_dni_admin.TabIndex = 19;
@@ -532,7 +539,7 @@
             textBox_telefono_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_telefono_admin.Cursor = Cursors.IBeam;
             textBox_telefono_admin.Font = new Font("Segoe UI", 15F);
-            textBox_telefono_admin.Location = new Point(284, 559);
+            textBox_telefono_admin.Location = new Point(286, 479);
             textBox_telefono_admin.Name = "textBox_telefono_admin";
             textBox_telefono_admin.Size = new Size(649, 41);
             textBox_telefono_admin.TabIndex = 17;
@@ -543,7 +550,7 @@
             label_teléfono_admin.AutoSize = true;
             label_teléfono_admin.Font = new Font("Segoe UI", 20F);
             label_teléfono_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_teléfono_admin.Location = new Point(51, 559);
+            label_teléfono_admin.Location = new Point(53, 479);
             label_teléfono_admin.Name = "label_teléfono_admin";
             label_teléfono_admin.Size = new Size(149, 46);
             label_teléfono_admin.TabIndex = 16;
@@ -556,7 +563,7 @@
             textBox_apellidos_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_apellidos_admin.Cursor = Cursors.IBeam;
             textBox_apellidos_admin.Font = new Font("Segoe UI", 15F);
-            textBox_apellidos_admin.Location = new Point(284, 454);
+            textBox_apellidos_admin.Location = new Point(286, 379);
             textBox_apellidos_admin.Name = "textBox_apellidos_admin";
             textBox_apellidos_admin.Size = new Size(649, 41);
             textBox_apellidos_admin.TabIndex = 15;
@@ -567,7 +574,7 @@
             label_apellidos_admin.AutoSize = true;
             label_apellidos_admin.Font = new Font("Segoe UI", 20F);
             label_apellidos_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_apellidos_admin.Location = new Point(49, 454);
+            label_apellidos_admin.Location = new Point(51, 379);
             label_apellidos_admin.Name = "label_apellidos_admin";
             label_apellidos_admin.Size = new Size(158, 46);
             label_apellidos_admin.TabIndex = 14;
@@ -580,7 +587,7 @@
             textBox_nombre_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_nombre_admin.Cursor = Cursors.IBeam;
             textBox_nombre_admin.Font = new Font("Segoe UI", 15F);
-            textBox_nombre_admin.Location = new Point(284, 349);
+            textBox_nombre_admin.Location = new Point(286, 279);
             textBox_nombre_admin.Name = "textBox_nombre_admin";
             textBox_nombre_admin.Size = new Size(649, 41);
             textBox_nombre_admin.TabIndex = 13;
@@ -591,7 +598,7 @@
             label_nombre_admin.AutoSize = true;
             label_nombre_admin.Font = new Font("Segoe UI", 20F);
             label_nombre_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_nombre_admin.Location = new Point(49, 349);
+            label_nombre_admin.Location = new Point(51, 279);
             label_nombre_admin.Name = "label_nombre_admin";
             label_nombre_admin.Size = new Size(144, 46);
             label_nombre_admin.TabIndex = 12;
@@ -604,7 +611,7 @@
             textBox_contrasena_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_contrasena_admin.Cursor = Cursors.IBeam;
             textBox_contrasena_admin.Font = new Font("Segoe UI", 15F);
-            textBox_contrasena_admin.Location = new Point(284, 248);
+            textBox_contrasena_admin.Location = new Point(286, 183);
             textBox_contrasena_admin.Name = "textBox_contrasena_admin";
             textBox_contrasena_admin.Size = new Size(649, 41);
             textBox_contrasena_admin.TabIndex = 11;
@@ -616,7 +623,7 @@
             label_contrasena_admin.AutoSize = true;
             label_contrasena_admin.Font = new Font("Segoe UI", 20F);
             label_contrasena_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_contrasena_admin.Location = new Point(51, 248);
+            label_contrasena_admin.Location = new Point(53, 183);
             label_contrasena_admin.Name = "label_contrasena_admin";
             label_contrasena_admin.Size = new Size(189, 46);
             label_contrasena_admin.TabIndex = 10;
@@ -629,7 +636,7 @@
             textBox_usuario_admin.BorderStyle = BorderStyle.FixedSingle;
             textBox_usuario_admin.Cursor = Cursors.IBeam;
             textBox_usuario_admin.Font = new Font("Segoe UI", 15F);
-            textBox_usuario_admin.Location = new Point(284, 151);
+            textBox_usuario_admin.Location = new Point(286, 91);
             textBox_usuario_admin.Name = "textBox_usuario_admin";
             textBox_usuario_admin.Size = new Size(649, 41);
             textBox_usuario_admin.TabIndex = 8;
@@ -640,7 +647,7 @@
             label_usuario_admin.AutoSize = true;
             label_usuario_admin.Font = new Font("Segoe UI", 20F);
             label_usuario_admin.ForeColor = Color.FromArgb(81, 51, 51);
-            label_usuario_admin.Location = new Point(51, 151);
+            label_usuario_admin.Location = new Point(53, 91);
             label_usuario_admin.Name = "label_usuario_admin";
             label_usuario_admin.Size = new Size(133, 46);
             label_usuario_admin.TabIndex = 7;
@@ -652,7 +659,7 @@
             label_crear_administrador.AutoSize = true;
             label_crear_administrador.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_crear_administrador.ForeColor = Color.OliveDrab;
-            label_crear_administrador.Location = new Point(241, 17);
+            label_crear_administrador.Location = new Point(246, 3);
             label_crear_administrador.Name = "label_crear_administrador";
             label_crear_administrador.Size = new Size(492, 67);
             label_crear_administrador.TabIndex = 1;
@@ -673,26 +680,12 @@
             button_cerrar_sesion.UseVisualStyleBackColor = false;
             button_cerrar_sesion.Click += button_cerrar_sesion_Click;
             // 
-            // button_crear_partida
-            // 
-            button_crear_partida.Anchor = AnchorStyles.Top;
-            button_crear_partida.BackColor = Color.DodgerBlue;
-            button_crear_partida.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_crear_partida.ForeColor = Color.Black;
-            button_crear_partida.Location = new Point(286, 798);
-            button_crear_partida.Name = "button_crear_partida";
-            button_crear_partida.Size = new Size(140, 78);
-            button_crear_partida.TabIndex = 61;
-            button_crear_partida.Text = "Crear partida";
-            button_crear_partida.UseVisualStyleBackColor = false;
-            button_crear_partida.Click += button_crear_partida_Click;
-            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(1000, 1001);
+            ClientSize = new Size(1000, 930);
             Controls.Add(button_cerrar_sesion);
             Controls.Add(tabControl_usuario);
             Name = "AdminForm";
@@ -718,7 +711,6 @@
         private Label label_usuario_nombre_equipo;
         private TabPage tabPage_equipo_admin;
         private Button button_borrar_equipo_admin;
-        private Button button_unir_evento;
         private Button button_info_equipo_admin;
         private ListBox listBox_equipos_admin;
         private Label label_equipos_admin;

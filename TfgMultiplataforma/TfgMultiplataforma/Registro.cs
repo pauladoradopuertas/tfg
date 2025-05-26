@@ -105,18 +105,18 @@ namespace TfgMultiplataforma
                         comando.Parameters.AddWithValue("@dni", string.IsNullOrEmpty(dni) ? (object)DBNull.Value : dni);
                         comando.Parameters.AddWithValue("@email", email);
                         comando.Parameters.AddWithValue("@id_estado_usuario", 2);
-                        comando.Parameters.AddWithValue("@admin", "no"); // Por defecto, 'no', puedes cambiarlo si deseas
+                        comando.Parameters.AddWithValue("@admin", "no");
 
                         int filas = comando.ExecuteNonQuery();
 
                         if (filas > 0)
                         {
-                            MessageBox.Show("Registro exitoso!");
+                            MessageBox.Show("Te has registrado correctamente.");
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo completar el registro");
+                            MessageBox.Show("No se ha podido registrar el usuario");
                         }
                     }
                 }
@@ -125,7 +125,7 @@ namespace TfgMultiplataforma
             {
                 if (ex.Number == 1062)
                 {
-                    MessageBox.Show("El usuario o email ya está registrado");
+                    MessageBox.Show("El usuario o email ya está usado");
                 }
                 else
                 {

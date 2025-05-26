@@ -66,7 +66,7 @@
             // button_volver_torneo
             // 
             button_volver_torneo.Anchor = AnchorStyles.Top;
-            button_volver_torneo.BackColor = Color.DodgerBlue;
+            button_volver_torneo.BackColor = Color.DeepPink;
             button_volver_torneo.Cursor = Cursors.Hand;
             button_volver_torneo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_volver_torneo.Location = new Point(621, 529);
@@ -96,6 +96,7 @@
             // 
             comboBox_torneos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_torneos.BackColor = Color.White;
+            comboBox_torneos.Cursor = Cursors.Hand;
             comboBox_torneos.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_torneos.Font = new Font("Segoe UI", 15F);
             comboBox_torneos.FormattingEnabled = true;

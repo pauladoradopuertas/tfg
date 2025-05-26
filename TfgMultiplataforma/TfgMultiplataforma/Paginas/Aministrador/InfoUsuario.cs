@@ -83,10 +83,10 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 conn.Open();
 
                 string queryEquiposUsuario = @"
-            SELECT ce.id_equipo
-            FROM clientes c
-            JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
-            WHERE c.usuario = @usuario";
+                    SELECT ce.id_equipo
+                    FROM clientes c
+                    JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+                    WHERE c.usuario = @usuario";
 
                 List<int> equiposUsuario = new List<int>();
 
@@ -102,7 +102,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                 if (equiposUsuario.Count == 0)
                 {
-                    MessageBox.Show("El usuario no ha pertenecido a ningún equipo.");
+                    listBox_partidas_historial.Items.Add("No pertenece a ningún equipo.");
                     return;
                 }
 
@@ -143,10 +143,10 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                 conn.Open();
 
                 string queryEquiposUsuario = @"
-            SELECT ce.id_equipo
-            FROM clientes c
-            JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
-            WHERE c.usuario = @usuario";
+                    SELECT ce.id_equipo
+                    FROM clientes c
+                    JOIN `clientes-equipos` ce ON c.id_cliente = ce.id_cliente
+                    WHERE c.usuario = @usuario";
 
                 List<int> equiposUsuario = new List<int>();
 
@@ -162,7 +162,6 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                 if (equiposUsuario.Count == 0)
                 {
-                    MessageBox.Show("El usuario no ha pertenecido a ningún equipo.");
                     return;
                 }
 
@@ -209,7 +208,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                             string resultadoTexto = (resultado.ToLower() == "victoria") ? "Victoria" : "Derrota";
 
-                            string texto = $"Partida {contador}  |  {equipo1}  {puntos1} puntos VS {equipo2}  {puntos2} puntos  |  {resultadoTexto}";
+                            string texto = $"{equipo1}  {puntos1} puntos VS {equipo2}  {puntos2} puntos  |  {resultadoTexto}";
                             listBox_partidas_historial.Items.Add(texto);
                             contador++;
                         }
@@ -247,6 +246,12 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                         while (reader.Read())
                         {
                             comboBox_juegos_estadisticas.Items.Add(reader["nombre"].ToString());
+                        }
+
+                        if (!reader.HasRows)
+                        {
+                            listBox_estadisticas_estadisticas.Items.Clear();
+                            listBox_estadisticas_estadisticas.Items.Add("No pertenece a ningún equipo.");
                         }
                     }
                 }
@@ -349,7 +354,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                 if (idEquipo == -1)
                 {
-                    MessageBox.Show("El usuario no pertenece a ningún equipo.");
+                    listBox_torneos_torneos.Items.Add("No pertenece a ningún equipo.");
                     return;
                 }
 
@@ -381,14 +386,21 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                         {
                             string torneo = reader["nombre_torneo"].ToString();
                             string equipo = reader["nombre_equipo_usuario"].ToString();
-                            int puntosEquipo = Convert.ToInt32(reader["puntos_equipo_usuario"]);
-                            int maxPuntos = Convert.ToInt32(reader["max_puntos"]);
+
+                            int puntosEquipo = reader["puntos_equipo_usuario"] != DBNull.Value
+                                ? Convert.ToInt32(reader["puntos_equipo_usuario"])
+                                : 0;
+
+                            int maxPuntos = reader["max_puntos"] != DBNull.Value
+                                ? Convert.ToInt32(reader["max_puntos"])
+                                : 0;
 
                             string resultado = puntosEquipo == maxPuntos ? "Ganado" : "Perdido";
 
                             string texto = $"Torneo: {torneo} | Equipo: {equipo} | Resultado: {resultado}";
                             listBox_torneos_torneos.Items.Add(texto);
                         }
+
                     }
                 }
             }

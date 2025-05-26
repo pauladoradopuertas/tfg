@@ -85,7 +85,6 @@
             listBox_miembros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBox_miembros.BackColor = Color.White;
             listBox_miembros.BorderStyle = BorderStyle.FixedSingle;
-            listBox_miembros.Cursor = Cursors.Hand;
             listBox_miembros.Font = new Font("Segoe UI", 15F);
             listBox_miembros.FormattingEnabled = true;
             listBox_miembros.ItemHeight = 35;
@@ -100,7 +99,7 @@
             button_abandonar_equipo.BackColor = Color.DodgerBlue;
             button_abandonar_equipo.Cursor = Cursors.Hand;
             button_abandonar_equipo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_abandonar_equipo.Location = new Point(200, 524);
+            button_abandonar_equipo.Location = new Point(116, 511);
             button_abandonar_equipo.Name = "button_abandonar_equipo";
             button_abandonar_equipo.Size = new Size(180, 74);
             button_abandonar_equipo.TabIndex = 18;
@@ -114,7 +113,7 @@
             button_editar_equipo.BackColor = Color.DodgerBlue;
             button_editar_equipo.Cursor = Cursors.Hand;
             button_editar_equipo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button_editar_equipo.Location = new Point(716, 524);
+            button_editar_equipo.Location = new Point(632, 511);
             button_editar_equipo.Name = "button_editar_equipo";
             button_editar_equipo.Size = new Size(180, 74);
             button_editar_equipo.TabIndex = 17;
@@ -246,6 +245,7 @@
             // 
             comboBox_eventos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBox_eventos.BackColor = Color.White;
+            comboBox_eventos.Cursor = Cursors.Hand;
             comboBox_eventos.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_eventos.Font = new Font("Segoe UI", 15F);
             comboBox_eventos.FormattingEnabled = true;

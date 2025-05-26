@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
 
 
 
@@ -99,50 +100,57 @@ namespace TfgMultiplataforma.Paginas.Usuarios
             Button buttonCrearEquipo = new Button();
             buttonCrearEquipo.Text = "Crear equipo";
             buttonCrearEquipo.Size = new Size(200, 40);
-            buttonCrearEquipo.Font = new Font("Segoe UI", 12);
+            buttonCrearEquipo.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             buttonCrearEquipo.Cursor = Cursors.Hand;
             buttonCrearEquipo.Location = new Point((this.ClientSize.Width - buttonCrearEquipo.Width) / 2, mensaje.Bottom + 100);
             buttonCrearEquipo.Click += ButtonCrearEquipo_Click;
             buttonCrearEquipo.BackColor = Color.DodgerBlue;
             buttonCrearEquipo.ForeColor = Color.Black;
             buttonCrearEquipo.Anchor = AnchorStyles.Top;
+            buttonCrearEquipo.Height = 50;
             this.Controls.Add(buttonCrearEquipo);
 
             //Crear el botón para unirse a un equipo
             Button buttonUnirseEquipo = new Button();
             buttonUnirseEquipo.Text = "Unirse a un equipo";
             buttonUnirseEquipo.Size = new Size(200, 40);
-            buttonUnirseEquipo.Font = new Font("Segoe UI", 12);
+            buttonUnirseEquipo.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             buttonUnirseEquipo.Location = new Point((this.ClientSize.Width - buttonUnirseEquipo.Width) / 2, buttonCrearEquipo.Bottom + 100);
             buttonUnirseEquipo.Click += ButtonUnirseEquipo_Click;
             buttonUnirseEquipo.BackColor= Color.DodgerBlue;
             buttonUnirseEquipo.ForeColor= Color.Black;
             buttonUnirseEquipo.Anchor= AnchorStyles.Top;
             buttonUnirseEquipo.Cursor = Cursors.Hand;
+            buttonUnirseEquipo.Height = 50;
             this.Controls.Add(buttonUnirseEquipo);
         }
 
         private void ButtonCrearEquipo_Click(object sender, EventArgs e)
         {
-            //Crear el formulario crearEquipo
+            // Crear el formulario crearEquipo
             crearEquipo formularioCrearEquipo = new crearEquipo(idCliente);
 
-            //Mostrar el formulario para crear un nuevo equipo
-            formularioCrearEquipo.ShowDialog();
-            this.Close();
+            // Ocultar el formulario actual (por ejemplo UsuariosForm)
+            this.Hide();
+
+            // Cuando se cierre el formulario de crearEquipo, volver a mostrar el actual
+            formularioCrearEquipo.FormClosed += (s, args) => this.Show();
+
+            // Mostrar crearEquipo
+            formularioCrearEquipo.Show();
         }
 
         private void ButtonUnirseEquipo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            unirseEquipo formUnirse = new unirseEquipo(idCliente);
-            formUnirse.ShowDialog();
+            this.Hide(); // Oculta UsuariosForm
 
-            //Al cerrar el formulario de unirse, mostrar el formulario actualizado
-            UsuariosForm nuevosUsuariosForm = new UsuariosForm(idCliente);
-            nuevosUsuariosForm.Show();
-            this.Close();
-        }
+            unirseEquipo formUnirse = new unirseEquipo(idCliente);
+
+            // Cuando se cierre el formulario de unirseEquipo, volver a mostrar UsuariosForm
+            formUnirse.FormClosed += (s, args) => this.Show();
+
+            formUnirse.Show(); // No ShowDialog
+         }
 
         //Método para cargar los miembros del equipo
         private void CargarMiembrosEquipo(int idEquipo)
@@ -432,7 +440,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         {
             if (listBox_torneos.SelectedItem == null)
             {
-                MessageBox.Show("Selecciona un torneo primero");
+                MessageBox.Show("Selecciona un torneo");
                 return;
             }
             dynamic selected = listBox_torneos.SelectedItem;

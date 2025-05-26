@@ -159,7 +159,7 @@
             // button_volver_perfil
             // 
             button_volver_perfil.Anchor = AnchorStyles.Top;
-            button_volver_perfil.BackColor = Color.DodgerBlue;
+            button_volver_perfil.BackColor = Color.DeepPink;
             button_volver_perfil.Cursor = Cursors.Hand;
             button_volver_perfil.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button_volver_perfil.Location = new Point(638, 730);

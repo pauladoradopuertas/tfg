@@ -172,7 +172,7 @@ namespace TfgMultiplataforma.Paginas.Aministrador
                             int puntos2 = Convert.ToInt32(reader["puntos2"]);
                             string resultado = reader["resultado1"].ToString();
 
-                            string texto = $"Partida {contador}  |  {equipo1}  {puntos1} puntos VS {equipo2}  {puntos2} puntos  |  {resultado}";
+                            string texto = $"{equipo1}  {puntos1} puntos VS {equipo2}  {puntos2} puntos  |  {resultado}";
 
                             listBox_equipo_partidas_historial.Items.Add(texto);
                             contador++;
@@ -326,8 +326,8 @@ namespace TfgMultiplataforma.Paginas.Aministrador
 
                             string torneo = reader["nombre_torneo"].ToString();
                             string equipo = reader["nombre_equipo_usuario"].ToString();
-                            int puntosEquipo = Convert.ToInt32(reader["puntos_equipo_usuario"]);
-                            int maxPuntos = Convert.ToInt32(reader["max_puntos"]);
+                            int puntosEquipo = reader["puntos_equipo_usuario"] != DBNull.Value ? Convert.ToInt32(reader["puntos_equipo_usuario"]) : 0;
+                            int maxPuntos = reader["max_puntos"] != DBNull.Value ? Convert.ToInt32(reader["max_puntos"]) : 0;
 
                             string resultado = puntosEquipo == maxPuntos ? "Ganado" : "Perdido";
 

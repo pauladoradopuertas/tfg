@@ -70,6 +70,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
         private void button_volver_buscar_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         //Boton unirse a equipo
