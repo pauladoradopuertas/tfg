@@ -76,13 +76,13 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                 int idCliente = Convert.ToInt32(result);
 
                 //Actualizamos el cliente
-                // 1. Actualiza solo el estado del cliente en la tabla `clientes`
+                //Actualizar el estado del cliente
                 MySqlCommand actualizarEstado = new MySqlCommand("UPDATE clientes SET id_estado_usuario = @idEstado WHERE id_cliente = @idCliente", conexion);
                 actualizarEstado.Parameters.AddWithValue("@idEstado", idEstadoActivo);
                 actualizarEstado.Parameters.AddWithValue("@idCliente", idCliente);
                 actualizarEstado.ExecuteNonQuery();
 
-                // 2. Inserta la relación cliente-equipo con el rol correspondiente en `clientes-equipos`
+                //Actualizar el rol del cliente
                 MySqlCommand insertarRelacion = new MySqlCommand(@"INSERT INTO `clientes-equipos` (id_cliente, id_equipo, fecha_inicio, id_rol) VALUES (@idCliente, @idEquipo, NOW(), @idRol)", conexion);
                 insertarRelacion.Parameters.AddWithValue("@idCliente", idCliente);
                 insertarRelacion.Parameters.AddWithValue("@idEquipo", idEquipo);

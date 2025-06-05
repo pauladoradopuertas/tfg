@@ -12,6 +12,11 @@ using TfgMultiplataforma.Paginas.Aministrador;
 using TfgMultiplataforma.Paginas.Usuarios;
 using System.Security.Cryptography;
 
+//Credenciales:
+// Administrador --> Usuario: admin / Contraseña: 1234
+// Usuario --> Usuario: paula / Contraseña: 1234
+
+
 namespace TfgMultiplataforma
 {
     public partial class Login : Form
