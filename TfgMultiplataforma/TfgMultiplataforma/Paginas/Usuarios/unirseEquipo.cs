@@ -115,10 +115,9 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                     transaction.Commit();
                     MessageBox.Show("Te has unido al equipo correctamente como Miembro.");
 
-                    // Cierra la ventana después de unirse al equipo
                     this.Close();
 
-                    // Abrir el formulario de usuarios
+                    //Abrir el formulario de usuarios
                     UsuariosForm usuariosForm = new UsuariosForm(idUsuario);
                     usuariosForm.Show();
                 }

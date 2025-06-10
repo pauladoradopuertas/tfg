@@ -418,7 +418,7 @@ namespace TfgMultiplataforma.Paginas.Usuarios
                         {
                             while (reader.Read())
                             {
-                                // Manejo seguro de valores nulos
+                                // Manejo de valores null
                                 string equipoLocal = reader["equipo_local"] != DBNull.Value ? reader["equipo_local"].ToString() : "Desconocido";
                                 string equipoVisitante = reader["equipo_visitante"] != DBNull.Value ? reader["equipo_visitante"].ToString() : "Desconocido";
 
