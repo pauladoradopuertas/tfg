@@ -1,26 +1,33 @@
 # App de Gestión de Equipos y Torneos de Videojuegos
 
-Proyecto Final de Grado del ciclo formativo de Desarrollo de Aplicaciones Multiplataforma.
+Aplicación multiplataforma desarrollada en C# para la gestión de equipos, torneos y resultados de videojuegos.
+El proyecto está orientado a practicar y demostrar habilidades de desarrollo de software, organización del código y trabajo con bases de datos.
 
 ## Descripción
-Aplicación multiplataforma destinada a la gestión de equipos de videojuegos.  
-Permite crear y administrar equipos, torneos y registrar resultados de forma organizada y sencilla.
+Esta aplicación permite a usuarios y administradores gestionar equipos de videojuegos, organizar torneos y registrar resultados.
+El sistema muestra clasificaciones y estadísticas de forma automática, facilitando el seguimiento de las competiciones.
 
-## Funcionalidades
-- Creación y gestión de equipos
-- Administración de torneos
-- Registro de resultados
-- Gestión de datos mediante base de datos
+## Funcionalidades principales
+- Gestión de usuarios con roles (administrador y miembro)
+- Creación y administración de equipos
+- Organización de torneos y partidas
+- Registro de resultados y actualización automática de clasificaciones
+- Persistencia de datos mediante base de datos relacional
 
 ## Tecnologías utilizadas
 - C#
+- .NET
 - MySQL
+- Git
 
-## Contexto del proyecto
-Este proyecto ha sido desarrollado como Trabajo de Fin de Grado (TFG) del ciclo de Desarrollo de Aplicaciones Multiplataforma.
+## Qué demuestra este proyecto
+- Desarrollo de aplicaciones multiplataforma desde cero
+- Uso de bases de datos relacionales y consultas SQL
+- Organización del código y buenas prácticas básicas
+- Control de versiones con Git y trabajo con repositorios
 
 ## Estado del proyecto
-Proyecto finalizado.
+Proyecto finalizado como proyecto personal de aprendizaje y demostración técnica.
 
 ## Capturas de pantalla
 ### Pantalla principal del usuario
@@ -40,3 +47,8 @@ Proyecto finalizado.
 
 ## Documentación
 [📄 Manual de usuario (PDF)](docs/manual-usuario.pdf)
+
+## Sobre mí
+Desarrolladora junior de aplicaciones multiplataforma interesada en seguir aprendiendo y mejorar como desarrolladora.
+
+🔗 LinkedIn: https://linkedin.com/in/paula-dorado-puertas
